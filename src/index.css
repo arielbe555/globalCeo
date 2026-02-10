@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* Custom Theme - Disney-Fresh */
+@theme {
+  --color-disney: #0072bc;
+  --color-disney-light: #3a9fd8;
+  --color-disney-dark: #005a96;
+  --color-magic: #ffcc00;
+  --color-magic-light: #ffe066;
+  --color-magic-dark: #e6b800;
+  --font-quicksand: 'Quicksand', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-poppins);
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0072bc;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #005a96;
+}
+
+/* Selection color */
+::selection {
+  background: #0072bc;
+  color: white;
+}
