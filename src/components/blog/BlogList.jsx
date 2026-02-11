@@ -27,11 +27,22 @@ const BlogList = () => {
             to={`/blog/${post.slug}`}
             className="group block bg-white rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:border-disney/20 transition-all duration-300"
           >
-            {/* Image Placeholder */}
-            <div className="h-48 bg-gradient-to-br from-disney/5 via-slate-50 to-disney/10 flex items-center justify-center">
-              <span className="text-6xl font-bold font-quicksand text-disney/20">
-                {i + 1}
-              </span>
+            {/* Image — fotos reales */}
+            <div className="h-52 overflow-hidden bg-slate-100">
+              {post.image ? (
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-disney/5 via-slate-50 to-disney/10 flex items-center justify-center">
+                  <span className="text-6xl font-bold font-quicksand text-disney/20">
+                    {i + 1}
+                  </span>
+                </div>
+              )}
             </div>
 
             <div className="p-6">

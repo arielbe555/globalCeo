@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, ShieldCheck, Award, TrendingUp, Play } from 'lucide-react';
+import { Star, ShieldCheck, Award, TrendingUp } from 'lucide-react';
 
 const credentials = [
   { icon: <ShieldCheck size={18} />, text: 'Agencia Acreditada IATA', sub: 'Respaldo financiero internacional' },
@@ -42,21 +42,13 @@ const CeoBrand = () => {
             className="lg:col-span-2 flex justify-center"
           >
             <div className="relative">
-              {/* Main photo container */}
+              {/* Main photo container — FOTO REAL DE ANDI */}
               <div className="w-72 h-96 md:w-80 md:h-[28rem] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-disney/20 border-4 border-white ring-1 ring-slate-100">
-                {/* Placeholder — reemplazar con foto de Andi */}
-                <div className="w-full h-full bg-gradient-to-br from-disney via-disney-light to-blue-400 flex items-center justify-center relative">
-                  <div className="text-center">
-                    <div className="w-28 h-28 mx-auto bg-white/25 rounded-full flex items-center justify-center mb-4 backdrop-blur-sm">
-                      <span className="text-4xl font-bold font-quicksand text-white">AO</span>
-                    </div>
-                    <div className="text-white/80 text-sm font-medium">Andi Olivera</div>
-                    <div className="text-white/50 text-xs">CEO & Fundadora</div>
-                  </div>
-                  {/* Decorative circles */}
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-magic/20 rounded-full blur-3xl" />
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-                </div>
+                <img
+                  src="/assets/andi-olivera.jpeg"
+                  alt="Andi Olivera - CEO & Fundadora de Global Dream Travel"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
 
               {/* Floating stat card */}
@@ -127,7 +119,7 @@ const CeoBrand = () => {
                 por la que creamos Global Dream Travel.
               </p>
               <div className="mt-4 flex items-center gap-3">
-                <div className="w-10 h-10 bg-disney rounded-full flex items-center justify-center text-white text-xs font-bold">AO</div>
+                <img src="/assets/andi-olivera.jpeg" alt="Andi" className="w-10 h-10 rounded-full object-cover object-top" />
                 <div>
                   <cite className="text-sm font-bold text-disney not-italic">Andi Olivera</cite>
                   <div className="text-[10px] text-slate-400">CEO & Fundadora, Global Dream Travel®</div>

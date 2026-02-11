@@ -1,35 +1,36 @@
 import { motion } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
 
+/* Fotos REALES de Global Dream + complementos */
 const destinos = [
+  {
+    nombre: 'Epic Universe',
+    lugar: 'Universal Orlando — 2025',
+    img: '/assets/epic-universe.jpg',
+    tag: 'NUEVO',
+  },
   {
     nombre: 'Magic Kingdom',
     lugar: 'Walt Disney World, Orlando',
-    img: 'https://images.unsplash.com/photo-1597466599360-3b9775841aec?q=80&w=800&auto=format',
+    img: '/assets/familia-parque.jpg',
     tag: 'Disney',
   },
   {
     nombre: 'Universal Studios',
     lugar: 'Universal Orlando Resort',
-    img: 'https://images.unsplash.com/photo-1605714560233-5df328dc3ad3?q=80&w=800&auto=format',
+    img: '/assets/universal-globe.jpeg',
     tag: 'Universal',
-  },
-  {
-    nombre: 'Epic Universe',
-    lugar: 'Universal Orlando — 2025',
-    img: 'https://images.unsplash.com/photo-1536086845203-3e1f6e51b380?q=80&w=800&auto=format',
-    tag: 'NUEVO',
   },
   {
     nombre: 'Disney Cruise Line',
     lugar: 'Caribe & Bahamas',
-    img: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=800&auto=format',
+    img: '/assets/crucero-disney.png',
     tag: 'Cruceros',
   },
   {
     nombre: 'Dubai & Emirates',
     lugar: 'Experiencia de Lujo',
-    img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format',
+    img: '/assets/dubai-skyline.jpeg',
     tag: 'Elite',
   },
   {

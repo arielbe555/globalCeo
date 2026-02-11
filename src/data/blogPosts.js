@@ -1,6 +1,6 @@
 /**
  * Índice de posts del blog con metadata.
- * El contenido completo está en los archivos .md dentro de /content/blog/
+ * Imágenes reales de assets de Global Dream + complementos.
  */
 const blogPosts = [
   {
@@ -9,7 +9,7 @@ const blogPosts = [
     description: 'Todo lo que necesitás saber sobre el nuevo parque de Universal y por qué reservar con un experto certificado hace la diferencia.',
     date: '2025-12-15',
     category: 'Destinos',
-    image: null, // Reemplazar con ruta a imagen
+    image: '/assets/epic-universe.jpg',
   },
   {
     slug: 'sello-iata',
@@ -17,7 +17,7 @@ const blogPosts = [
     description: 'La acreditación IATA es tu garantía internacional. Te explicamos qué significa y por qué es vital para tu viaje.',
     date: '2025-11-28',
     category: 'Seguridad',
-    image: null,
+    image: '/assets/logo-iata.jpg',
   },
   {
     slug: 'app-global-dream',
@@ -25,7 +25,7 @@ const blogPosts = [
     description: 'Conocé nuestra tecnología exclusiva Traza Digital: itinerarios interactivos, documentos offline y logística inteligente.',
     date: '2025-11-10',
     category: 'Tecnología',
-    image: null,
+    image: '/assets/familia-parque.jpg',
   },
   {
     slug: 'disney-cruise-line',
@@ -33,7 +33,7 @@ const blogPosts = [
     description: 'Guía experta para elegir la cabina ideal, actividades a bordo y cómo maximizar tu experiencia en cruceros Disney.',
     date: '2025-10-25',
     category: 'Cruceros',
-    image: null,
+    image: '/assets/crucero-disney.png',
   },
   {
     slug: 'universal-orlando',
@@ -41,7 +41,7 @@ const blogPosts = [
     description: 'Estrategias probadas para aprovechar al máximo tu visita a Universal con la logística de Global Dream.',
     date: '2025-10-10',
     category: 'Destinos',
-    image: null,
+    image: '/assets/universal-globe.jpeg',
   },
   {
     slug: 'academy-gdt',
@@ -49,7 +49,7 @@ const blogPosts = [
     description: 'Descubrí cómo la Academy de Global Dream forma a los mejores agentes de viajes del mundo hispanohablante.',
     date: '2025-09-20',
     category: 'B2B',
-    image: null,
+    image: '/assets/epic-universe.jpg',
   },
   {
     slug: 'magic-kingdom',
@@ -57,7 +57,7 @@ const blogPosts = [
     description: 'Consejos expertos para disfrutar Magic Kingdom con los más pequeños: atracciones, tiempos, descansos y logística.',
     date: '2025-09-05',
     category: 'Destinos',
-    image: null,
+    image: '/assets/familia-parque.jpg',
   },
   {
     slug: 'seguros-viaje',
@@ -65,7 +65,7 @@ const blogPosts = [
     description: 'La tranquilidad de viajar protegido: coberturas, beneficios y por qué siempre recomendamos Assist Card.',
     date: '2025-08-18',
     category: 'Seguridad',
-    image: null,
+    image: '/assets/crucero-disney.png',
   },
   {
     slug: 'dubai-emirates',
@@ -73,7 +73,7 @@ const blogPosts = [
     description: 'Global Dream se expande al mercado de lujo con experiencias exclusivas en Dubai y Emirates.',
     date: '2025-08-01',
     category: 'Destinos',
-    image: null,
+    image: '/assets/dubai-skyline.jpeg',
   },
   {
     slug: 'testimonios',
@@ -81,7 +81,7 @@ const blogPosts = [
     description: 'Experiencias reales de familias que confiaron en Global Dream y vivieron el viaje de sus sueños.',
     date: '2025-07-15',
     category: 'Testimonios',
-    image: null,
+    image: '/assets/epic-universe.jpg',
   },
 ];
 

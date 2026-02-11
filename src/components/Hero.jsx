@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
+/* Fotos REALES de Global Dream — solo parques, accion y crucero */
 const heroImages = [
-  'https://images.unsplash.com/photo-1597466599360-3b9775841aec?q=80&w=2000&auto=format',
-  'https://images.unsplash.com/photo-1568454537842-d933259bb258?q=80&w=2000&auto=format',
-  'https://images.unsplash.com/photo-1605714560233-5df328dc3ad3?q=80&w=2000&auto=format',
-  'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2000&auto=format',
+  '/assets/epic-universe.jpg',        // Grupo GDT en Epic Universe con bandera argentina
+  '/assets/familia-parque.jpg',        // Familia en Disney Boardwalk con burbujas
+  '/assets/universal-globe.jpeg',      // Minions y personajes en Universal
+  '/assets/crucero-disney.png',        // Mickey & Minnie capitanes en crucero Disney
 ];
 
 const Hero = () => {
@@ -27,7 +28,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background Images */}
+      {/* Animated Background — fotos reales de los parques */}
       {heroImages.map((img, i) => (
         <div
           key={i}
@@ -47,8 +48,8 @@ const Hero = () => {
       ))}
 
       {/* Overlays */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
-      <div className="absolute inset-0 z-[1] bg-disney/20 mix-blend-overlay" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
+      <div className="absolute inset-0 z-[1] bg-disney/15 mix-blend-overlay" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-6xl">
@@ -112,22 +113,35 @@ const Hero = () => {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center pt-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1.5 h-1.5 bg-white rounded-full"
+        {/* Image indicator dots */}
+        <div className="flex justify-center gap-2 mt-12">
+          {heroImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentImage(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                currentImage === i ? 'bg-white w-8' : 'bg-white/40'
+              }`}
             />
-          </div>
-        </motion.div>
+          ))}
+        </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
+      >
+        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center pt-2">
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            className="w-1.5 h-1.5 bg-white rounded-full"
+          />
+        </div>
+      </motion.div>
 
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0 z-10">
