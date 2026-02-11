@@ -54,7 +54,7 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Acceso Agentes</h4>
             <div className="space-y-3">
               <a
-                href="https://globaldream.netlify.app/login"
+                href="https://app.globaldream.travel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-slate-400 hover:text-magic transition-colors"

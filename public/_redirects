@@ -1,5 +1,9 @@
-/Alta          https://globaldreamtravel.wixsite.com/alta          200
-/GRUPAL2026    https://globaldreamtravel.wixsite.com/grupal2026    200
-/Link          https://globaldreamtravel.wixsite.com/link          200
-/Pago1         https://globaldreamtravel.wixsite.com/pago1         200
-/*             /index.html                                         200
+/Alta          https://globaldream.travel/alta          301
+/alta          https://globaldream.travel/alta          301
+/GRUPAL2026    https://globaldream.travel/grupal2026    301
+/grupal2026    https://globaldream.travel/grupal2026    301
+/Link          https://globaldream.travel/link          301
+/link          https://globaldream.travel/link          301
+/Pago1         https://globaldream.travel/pago1         301
+/pago1         https://globaldream.travel/pago1         301
+/*             /index.html                              200

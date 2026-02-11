@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
 
-/* Fotos REALES de Global Dream + complementos */
+/* Fotos REALES de Global Dream */
 const destinos = [
   {
     nombre: 'Epic Universe',
@@ -12,7 +12,7 @@ const destinos = [
   {
     nombre: 'Magic Kingdom',
     lugar: 'Walt Disney World, Orlando',
-    img: '/assets/familia-parque.jpg',
+    img: '/assets/gruoal2026.jpg',
     tag: 'Disney',
   },
   {
@@ -24,20 +24,20 @@ const destinos = [
   {
     nombre: 'Disney Cruise Line',
     lugar: 'Caribe & Bahamas',
-    img: '/assets/crucero-disney.png',
+    img: '/assets/cruceroo.jpeg',
     tag: 'Cruceros',
+  },
+  {
+    nombre: 'NASA Kennedy',
+    lugar: 'Kennedy Space Center, FL',
+    img: '/assets/nasa.jpeg',
+    tag: 'Experiencia',
   },
   {
     nombre: 'Dubai & Emirates',
     lugar: 'Experiencia de Lujo',
     img: '/assets/dubai-skyline.jpeg',
     tag: 'Elite',
-  },
-  {
-    nombre: 'Europa Familiar',
-    lugar: 'París, Roma, Barcelona',
-    img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format',
-    tag: 'Europa',
   },
 ];
 
@@ -46,8 +46,8 @@ const tagColors = {
   Universal: 'bg-purple-600 text-white',
   NUEVO: 'bg-magic text-slate-800',
   Cruceros: 'bg-cyan-500 text-white',
+  Experiencia: 'bg-red-500 text-white',
   Elite: 'bg-slate-800 text-magic',
-  Europa: 'bg-rose-500 text-white',
 };
 
 const DestinosGallery = () => {
@@ -77,7 +77,6 @@ const DestinosGallery = () => {
         </motion.div>
       </div>
 
-      {/* Horizontal scroll on mobile, grid on desktop */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:overflow-visible">
           {destinos.map((d, i) => (
@@ -90,25 +89,18 @@ const DestinosGallery = () => {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="group relative min-w-[280px] lg:min-w-0 aspect-[3/4] rounded-[2rem] overflow-hidden snap-center cursor-pointer"
             >
-              {/* Image */}
               <img
                 src={d.img}
                 alt={d.nombre}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 loading="lazy"
               />
-
-              {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              {/* Tag */}
               <div className="absolute top-5 left-5">
                 <span className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider ${tagColors[d.tag] || 'bg-white text-slate-800'}`}>
                   {d.tag}
                 </span>
               </div>
-
-              {/* Info */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl font-bold text-white font-quicksand mb-1 group-hover:translate-x-2 transition-transform duration-300">
                   {d.nombre}
@@ -118,8 +110,6 @@ const DestinosGallery = () => {
                   {d.lugar}
                 </div>
               </div>
-
-              {/* Hover arrow */}
               <div className="absolute bottom-6 right-6 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <ArrowRight size={18} className="text-white" />
               </div>

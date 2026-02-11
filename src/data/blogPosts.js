@@ -4,6 +4,14 @@
  */
 const blogPosts = [
   {
+    slug: 'grupal-2026',
+    title: 'Grupal 2026: 14 Días a Pura Emoción — Del 7 al 20',
+    description: 'Después del éxito rotundo del Grupal 2025, volvemos con todo. Disney World, Universal, Epic Universe, NASA y mucho más. Reservá tu lugar.',
+    date: '2026-02-10',
+    category: 'Grupal',
+    image: '/assets/gruoal2026.jpg',
+  },
+  {
     slug: 'epic-universe-2025',
     title: 'Epic Universe 2025: Cómo Reservar el Portal Más Grande de la Historia',
     description: 'Todo lo que necesitás saber sobre el nuevo parque de Universal y por qué reservar con un experto certificado hace la diferencia.',
@@ -33,7 +41,7 @@ const blogPosts = [
     description: 'Guía experta para elegir la cabina ideal, actividades a bordo y cómo maximizar tu experiencia en cruceros Disney.',
     date: '2025-10-25',
     category: 'Cruceros',
-    image: '/assets/crucero-disney.png',
+    image: '/assets/cruceroo.jpeg',
   },
   {
     slug: 'universal-orlando',
@@ -49,7 +57,7 @@ const blogPosts = [
     description: 'Descubrí cómo la Academy de Global Dream forma a los mejores agentes de viajes del mundo hispanohablante.',
     date: '2025-09-20',
     category: 'B2B',
-    image: '/assets/epic-universe.jpg',
+    image: '/assets/grupales.jpeg',
   },
   {
     slug: 'magic-kingdom',
@@ -57,7 +65,7 @@ const blogPosts = [
     description: 'Consejos expertos para disfrutar Magic Kingdom con los más pequeños: atracciones, tiempos, descansos y logística.',
     date: '2025-09-05',
     category: 'Destinos',
-    image: '/assets/familia-parque.jpg',
+    image: '/assets/castillidenocheandiywalt.jpeg',
   },
   {
     slug: 'seguros-viaje',
@@ -65,7 +73,7 @@ const blogPosts = [
     description: 'La tranquilidad de viajar protegido: coberturas, beneficios y por qué siempre recomendamos Assist Card.',
     date: '2025-08-18',
     category: 'Seguridad',
-    image: '/assets/crucero-disney.png',
+    image: '/assets/nasa.jpeg',
   },
   {
     slug: 'dubai-emirates',
@@ -81,7 +89,7 @@ const blogPosts = [
     description: 'Experiencias reales de familias que confiaron en Global Dream y vivieron el viaje de sus sueños.',
     date: '2025-07-15',
     category: 'Testimonios',
-    image: '/assets/epic-universe.jpg',
+    image: '/assets/waltyandy.jpeg',
   },
 ];
 

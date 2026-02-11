@@ -81,7 +81,7 @@ const Navbar = () => {
 
           {/* Agent Buttons */}
           <a
-            href="https://globaldream.netlify.app/login"
+            href="https://app.globaldream.travel"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-disney text-white px-6 py-2.5 rounded-xl text-[10px] font-bold shadow-lg shadow-disney/20 hover:scale-105 hover:shadow-xl transition-all uppercase tracking-wider flex items-center gap-2"
@@ -130,7 +130,7 @@ const Navbar = () => {
               <Link to="/blog" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">Blog Mágico</Link>
               <div className="border-t border-slate-100 pt-5 flex flex-col gap-3">
                 <a
-                  href="https://globaldream.netlify.app/login"
+                  href="https://app.globaldream.travel"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-disney text-white px-8 py-4 rounded-2xl text-sm font-bold text-center shadow-xl flex items-center justify-center gap-2"

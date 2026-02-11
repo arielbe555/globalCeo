@@ -42,12 +42,12 @@ const CeoBrand = () => {
             className="lg:col-span-2 flex justify-center"
           >
             <div className="relative">
-              {/* Main photo container — FOTO REAL DE ANDI */}
+              {/* Main photo — Andi con Walt y Castillo de noche */}
               <div className="w-72 h-96 md:w-80 md:h-[28rem] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-disney/20 border-4 border-white ring-1 ring-slate-100">
                 <img
-                  src="/assets/andi-olivera.jpeg"
-                  alt="Andi Olivera - CEO & Fundadora de Global Dream Travel"
-                  className="w-full h-full object-cover object-top"
+                  src="/assets/castillidenocheandiywalt.jpeg"
+                  alt="Andi Olivera frente al Castillo de Cinderella y la estatua de Walt Disney"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 

@@ -1,10 +1,11 @@
 import Hero from '../components/Hero';
 import MetricasImpacto from '../components/MetricasImpacto';
 import AuthorityStrip from '../components/AuthorityStrip';
+import Grupal2026 from '../components/Grupal2026';
 import DestinosGallery from '../components/DestinosGallery';
 import AppShowcase from '../components/AppShowcase';
-import HubAgentes from '../components/HubAgentes';
 import CeoBrand from '../components/CeoBrand';
+import HubAgentes from '../components/HubAgentes';
 import PlanificadorMagico from '../components/PlanificadorMagico';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <Hero />
       <MetricasImpacto />
       <AuthorityStrip />
+      <Grupal2026 />
       <DestinosGallery />
       <AppShowcase />
       <CeoBrand />

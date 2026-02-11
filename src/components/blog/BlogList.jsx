@@ -4,6 +4,7 @@ import { ArrowRight, Calendar } from 'lucide-react';
 import blogPosts from '../../data/blogPosts';
 
 const categoryColors = {
+  Grupal: 'bg-gradient-to-r from-pink-500 to-purple-600 text-white',
   Destinos: 'bg-disney/10 text-disney',
   Seguridad: 'bg-green-50 text-green-600',
   Tecnología: 'bg-purple-50 text-purple-600',

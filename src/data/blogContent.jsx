@@ -5,6 +5,55 @@
  */
 
 export const blogContent = {
+  'grupal-2026': (
+    <div>
+      <p>
+        El Grupal 2025 fue un antes y un después para Global Dream Travel®. Más de
+        50 viajeros vivieron 14 días de magia pura por los parques de Orlando. Ahora,
+        <strong> el Grupal 2026 promete superarlo todo.</strong>
+      </p>
+      <h2>Del 7 al 20 — 14 Días a Pura Emoción</h2>
+      <p>
+        Este no es un viaje grupal cualquiera. Es la experiencia más completa que
+        existe en el mercado hispanohablante para familias que quieren vivir Orlando
+        como nunca antes. Con la logística de Global Dream, la tecnología Traza Digital
+        y el respaldo de Andi Olivera personalmente.
+      </p>
+      <h2>¿Qué incluye el Grupal 2026?</h2>
+      <ul>
+        <li><strong>Disney World:</strong> Magic Kingdom, EPCOT, Hollywood Studios y Animal Kingdom — con itinerario optimizado día por día.</li>
+        <li><strong>Universal Orlando:</strong> Universal Studios, Islands of Adventure y el NUEVO Epic Universe.</li>
+        <li><strong>Kennedy Space Center (NASA):</strong> Experiencia espacial única a solo 1 hora de Orlando.</li>
+        <li><strong>Disney Cruise Line:</strong> Posibilidad de extensión con crucero por el Caribe.</li>
+        <li><strong>App Traza Digital:</strong> Todo tu itinerario en el celular, tickets offline, logística inteligente.</li>
+        <li><strong>Concierge 24/7:</strong> Soporte directo con tu agente durante los 14 días.</li>
+      </ul>
+      <h2>Lo que vivimos en 2025</h2>
+      <p>
+        El año pasado, del 8 al 20, más de 50 viajeros vivieron la experiencia de su
+        vida. Familias enteras disfrazadas frente al Castillo de Cinderella, grupos
+        celebrando en el Rainforest Café, momentos únicos en Epic Universe con la
+        bandera argentina. Las fotos hablan solas.
+      </p>
+      <p>
+        El Grupal 2025 se agotó en semanas. Y el feedback fue unánime: <strong>"fue
+        el mejor viaje de nuestras vidas"</strong>.
+      </p>
+      <h2>¿Por qué reservar ahora?</h2>
+      <ul>
+        <li><strong>Plazas limitadas:</strong> El Grupal 2025 se agotó rápido. Este año esperamos lo mismo.</li>
+        <li><strong>Mejores tarifas:</strong> Reservar temprano asegura los mejores precios en hoteles y parques.</li>
+        <li><strong>Planificación personalizada:</strong> Cada familia recibe su itinerario adaptado.</li>
+        <li><strong>Comunidad GDT:</strong> Viajás con gente que comparte tu misma pasión por la magia.</li>
+      </ul>
+      <p>
+        <strong>No dejes pasar esta oportunidad.</strong> Completá el formulario de contacto
+        y un agente de Global Dream te va a contactar para reservar tu lugar en el
+        Grupal 2026. Del 7 al 20 — 14 días que van a cambiar la historia de tu familia.
+      </p>
+    </div>
+  ),
+
   'epic-universe-2025': (
     <div>
       <p>

@@ -71,7 +71,7 @@ const HubAgentes = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="https://globaldream.netlify.app/login"
+              href="https://app.globaldream.travel"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-magic text-slate-900 px-8 py-4 rounded-2xl font-bold text-sm hover:scale-105 transition-all shadow-xl shadow-magic/20 flex items-center justify-center gap-3"

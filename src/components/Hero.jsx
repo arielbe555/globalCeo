@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-/* Fotos REALES de Global Dream — solo parques, accion y crucero */
+/* Fotos REALES de Global Dream — las mejores del arsenal */
 const heroImages = [
-  '/assets/epic-universe.jpg',        // Grupo GDT en Epic Universe con bandera argentina
-  '/assets/familia-parque.jpg',        // Familia en Disney Boardwalk con burbujas
-  '/assets/universal-globe.jpeg',      // Minions y personajes en Universal
-  '/assets/crucero-disney.png',        // Mickey & Minnie capitanes en crucero Disney
+  '/assets/castillidenocheandiywalt.jpeg', // Andi con Walt y castillo de noche — ICONICA
+  '/assets/epic-universe.jpg',              // Grupo GDT en Epic Universe con bandera argentina
+  '/assets/cruceroo.jpeg',                  // Disney Fantasy con personajes y fuegos artificiales
+  '/assets/gruoal2026.jpg',                 // Grupo disfrazados frente al castillo de Cinderella
+  '/assets/nasa.jpeg',                      // Kennedy Space Center — cohetes
+  '/assets/familia-parque.jpg',             // Familia en Disney Boardwalk
 ];
 
 const Hero = () => {
@@ -16,7 +18,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 4500);
     return () => clearInterval(interval);
   }, []);
 
@@ -28,7 +30,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background — fotos reales de los parques */}
+      {/* Animated Background — fotos reales */}
       {heroImages.map((img, i) => (
         <div
           key={i}
@@ -106,20 +108,20 @@ const Hero = () => {
             <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
           <a
-            href="#destinos"
-            className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all"
+            href="#grupal2026"
+            className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-purple-500/20 animate-pulse hover:animate-none"
           >
-            Explorar Destinos
+            GRUPAL 2026
           </a>
         </motion.div>
 
-        {/* Image indicator dots */}
+        {/* Image dots */}
         <div className="flex justify-center gap-2 mt-12">
           {heroImages.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentImage(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-500 ${
+              className={`w-2 h-2 rounded-full transition-all duration-500 cursor-pointer ${
                 currentImage === i ? 'bg-white w-8' : 'bg-white/40'
               }`}
             />
@@ -146,10 +148,7 @@ const Hero = () => {
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0 z-10">
         <svg viewBox="0 0 1440 100" className="w-full" preserveAspectRatio="none">
-          <path
-            fill="white"
-            d="M0,60 C320,100 640,20 960,60 C1120,80 1280,50 1440,60 L1440,100 L0,100 Z"
-          />
+          <path fill="white" d="M0,60 C320,100 640,20 960,60 C1120,80 1280,50 1440,60 L1440,100 L0,100 Z" />
         </svg>
       </div>
     </section>
