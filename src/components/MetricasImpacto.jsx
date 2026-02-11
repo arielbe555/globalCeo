@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { Heart, Globe, Users, CheckCircle } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /* Animated Counter Hook */
 function useCounter(target, duration = 2000, start = false) {
@@ -27,11 +28,11 @@ function formatValue(raw, template) {
   return Math.round(raw) + '+';
 }
 
-const stats = [
-  { label: 'Vistas Virales', value: '2.7M+', icon: <Heart className="text-pink-500" size={28} />, color: 'from-pink-500/10 to-pink-500/5' },
-  { label: 'Compartidos', value: '51K+', icon: <Globe className="text-disney" size={28} />, color: 'from-disney/10 to-disney/5' },
-  { label: 'Agentes Certificados', value: '150+', icon: <Users className="text-purple-500" size={28} />, color: 'from-purple-500/10 to-purple-500/5' },
-  { label: 'Familias Felices', value: '5000+', icon: <CheckCircle className="text-green-500" size={28} />, color: 'from-green-500/10 to-green-500/5' },
+const buildStats = (t) => [
+  { label: t('metrics.vistasVirales'), value: '2.7M+', icon: <Heart className="text-pink-500" size={28} />, color: 'from-pink-500/10 to-pink-500/5' },
+  { label: t('metrics.compartidos'), value: '51K+', icon: <Globe className="text-disney" size={28} />, color: 'from-disney/10 to-disney/5' },
+  { label: t('metrics.agentesCertificados'), value: '150+', icon: <Users className="text-purple-500" size={28} />, color: 'from-purple-500/10 to-purple-500/5' },
+  { label: t('metrics.familiasFelices'), value: '5000+', icon: <CheckCircle className="text-green-500" size={28} />, color: 'from-green-500/10 to-green-500/5' },
 ];
 
 function StatCard({ stat, index }) {
@@ -66,6 +67,9 @@ function StatCard({ stat, index }) {
 }
 
 const MetricasImpacto = () => {
+  const { t } = useTranslation();
+  const stats = buildStats(t);
+
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Subtle background pattern */}
@@ -81,10 +85,10 @@ const MetricasImpacto = () => {
           className="text-center mb-16"
         >
           <span className="text-[10px] font-bold text-disney uppercase tracking-[0.3em]">
-            Impacto Global
+            {t('metrics.sectionLabel')}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold font-quicksand text-slate-800 mt-3">
-            Los Números que Hablan por Nosotros
+            {t('metrics.title')}
           </h2>
         </motion.div>
 

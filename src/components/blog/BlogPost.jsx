@@ -1,16 +1,20 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const BlogPost = ({ post, content }) => {
+  const { t, i18n } = useTranslation();
+  const locale = i18n.language === 'pt' ? 'pt-BR' : i18n.language === 'en' ? 'en-US' : 'es-AR';
+
   if (!post) {
     return (
       <div className="pt-32 pb-20 min-h-screen bg-white text-center">
         <h1 className="text-3xl font-bold text-disney font-quicksand mb-4">
-          Artículo no encontrado
+          {t('blog.articuloNoEncontrado')}
         </h1>
         <Link to="/blog" className="text-disney hover:underline">
-          Volver al Blog
+          {t('blog.volverAlBlog')}
         </Link>
       </div>
     );
@@ -30,7 +34,7 @@ const BlogPost = ({ post, content }) => {
             className="inline-flex items-center gap-2 text-sm text-disney hover:text-disney-dark transition-colors mb-8"
           >
             <ArrowLeft size={16} />
-            Volver al Blog
+            {t('blog.volverAlBlog')}
           </Link>
 
           {/* Meta */}
@@ -41,7 +45,7 @@ const BlogPost = ({ post, content }) => {
             </span>
             <span className="flex items-center gap-1.5 text-[10px] text-slate-400 font-medium">
               <Calendar size={12} />
-              {new Date(post.date).toLocaleDateString('es-AR', {
+              {new Date(post.date).toLocaleDateString(locale, {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -65,16 +69,16 @@ const BlogPost = ({ post, content }) => {
           {/* CTA */}
           <div className="mt-16 p-8 bg-disney/5 rounded-3xl text-center border border-disney/10">
             <h3 className="text-xl font-bold font-quicksand text-disney mb-3">
-              ¿Listo para vivir la magia?
+              {t('blog.ctaTitle')}
             </h3>
             <p className="text-sm text-slate-500 mb-6">
-              Contactanos y armamos tu viaje soñado con tecnología y calidez humana.
+              {t('blog.ctaDesc')}
             </p>
             <a
               href="/#planificador"
               className="inline-block bg-disney text-white px-8 py-3 rounded-2xl font-bold text-sm hover:scale-105 transition-transform"
             >
-              Planificar mi Viaje
+              {t('blog.ctaBtn')}
             </a>
           </div>
         </motion.div>

@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Layout, BarChart3, GraduationCap, Shield, Zap, LogIn, Mail, ArrowRight } from 'lucide-react';
 
-const hubFeatures = [
-  { icon: <BarChart3 size={22} />, title: 'Gestión IATA', desc: 'Reservas centralizadas con respaldo internacional.' },
-  { icon: <GraduationCap size={22} />, title: 'Academy GDT', desc: 'Capacitaciones de élite en destinos y protocolos.' },
-  { icon: <Shield size={22} />, title: 'Marca Global', desc: 'Respaldo de la marca más viral del sector.' },
-  { icon: <Zap size={22} />, title: 'Tech Stack', desc: 'Herramientas digitales para gestión eficiente.' },
-];
-
 const HubAgentes = () => {
+  const { t } = useTranslation();
+  const hubFeatures = [
+    { icon: <BarChart3 size={22} />, title: t('hub.featGestion'), desc: t('hub.featGestionDesc') },
+    { icon: <GraduationCap size={22} />, title: t('hub.featAcademy'), desc: t('hub.featAcademyDesc') },
+    { icon: <Shield size={22} />, title: t('hub.featMarca'), desc: t('hub.featMarcaDesc') },
+    { icon: <Zap size={22} />, title: t('hub.featTech'), desc: t('hub.featTechDesc') },
+  ];
   return (
     <section id="hub" className="py-28 bg-slate-900 text-white relative overflow-hidden">
       {/* Background image */}
@@ -30,17 +31,13 @@ const HubAgentes = () => {
           transition={{ duration: 0.7 }}
         >
           <span className="text-[10px] font-bold text-magic uppercase tracking-[0.3em]">
-            Exclusivo Agentes
+            {t('hub.sectionLabel')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-8 font-quicksand leading-tight">
-            El Hub para el
-            <br />
-            <span className="text-magic">Agente Profesional.</span>
+            {t('hub.title')}
           </h2>
           <p className="text-lg text-slate-300 mb-10 leading-relaxed font-light max-w-lg">
-            Somos la infraestructura que impulsa a +150 agentes en el mundo.
-            Tecnología administrativa B2B, capacitaciones de élite y
-            el respaldo de la marca más viral del sector.
+            {t('hub.description')}
           </p>
 
           <div className="grid grid-cols-2 gap-3 mb-10">
@@ -77,7 +74,7 @@ const HubAgentes = () => {
               className="group bg-magic text-slate-900 px-8 py-4 rounded-2xl font-bold text-sm hover:scale-105 transition-all shadow-xl shadow-magic/20 flex items-center justify-center gap-3"
             >
               <LogIn size={18} />
-              Ingresar a la App
+              {t('hub.ctaApp')}
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
@@ -87,7 +84,7 @@ const HubAgentes = () => {
               className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-sm hover:bg-white/20 hover:scale-105 transition-all flex items-center justify-center gap-3"
             >
               <Mail size={18} />
-              Correo Agentes
+              {t('hub.ctaCorreo')}
             </a>
           </motion.div>
         </motion.div>
@@ -113,31 +110,31 @@ const HubAgentes = () => {
             {/* Dashboard content */}
             <div className="space-y-4">
               <div className="bg-gradient-to-r from-disney to-disney-light p-5 rounded-xl">
-                <div className="text-[9px] uppercase tracking-widest text-white/60 font-bold mb-1">Reservas este mes</div>
+                <div className="text-[9px] uppercase tracking-widest text-white/60 font-bold mb-1">{t('hub.dashReservas')}</div>
                 <div className="text-3xl font-bold font-quicksand text-white">$247,850</div>
-                <div className="text-[10px] text-white/70 mt-1">+23% vs mes anterior</div>
+                <div className="text-[10px] text-white/70 mt-1">{t('hub.dashCrecimiento')}</div>
               </div>
 
               <div className="grid grid-cols-3 gap-3">
                 <div className="bg-white/5 p-4 rounded-xl text-center">
                   <div className="text-xl font-bold text-magic font-quicksand">38</div>
-                  <div className="text-[9px] text-slate-400 uppercase tracking-wider">Activas</div>
+                  <div className="text-[9px] text-slate-400 uppercase tracking-wider">{t('hub.dashActivas')}</div>
                 </div>
                 <div className="bg-white/5 p-4 rounded-xl text-center">
                   <div className="text-xl font-bold text-green-400 font-quicksand">12</div>
-                  <div className="text-[9px] text-slate-400 uppercase tracking-wider">Confirmadas</div>
+                  <div className="text-[9px] text-slate-400 uppercase tracking-wider">{t('hub.dashConfirmadas')}</div>
                 </div>
                 <div className="bg-white/5 p-4 rounded-xl text-center">
                   <div className="text-xl font-bold text-disney-light font-quicksand">5</div>
-                  <div className="text-[9px] text-slate-400 uppercase tracking-wider">Pendientes</div>
+                  <div className="text-[9px] text-slate-400 uppercase tracking-wider">{t('hub.dashPendientes')}</div>
                 </div>
               </div>
 
               <div className="space-y-2">
-                {['Fam. Rodriguez — Disney World', 'Fam. López — Crucero Disney', 'Fam. Martínez — Universal'].map((item, i) => (
+                {[t('hub.dashFam1'), t('hub.dashFam2'), t('hub.dashFam3')].map((item, i) => (
                   <div key={i} className="flex items-center justify-between p-3 bg-white/5 rounded-xl">
                     <span className="text-[11px] text-slate-300">{item}</span>
-                    <span className="text-[9px] px-2 py-0.5 bg-green-500/20 text-green-400 rounded-full font-bold">Confirmada</span>
+                    <span className="text-[9px] px-2 py-0.5 bg-green-500/20 text-green-400 rounded-full font-bold">{t('hub.dashConfirmada')}</span>
                   </div>
                 ))}
               </div>
@@ -150,7 +147,7 @@ const HubAgentes = () => {
             transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
             className="absolute -top-4 -right-4 bg-magic text-slate-900 px-4 py-2 rounded-xl shadow-xl text-xs font-bold"
           >
-            +3 reservas hoy
+            {t('hub.dashNotif')}
           </motion.div>
         </motion.div>
       </div>

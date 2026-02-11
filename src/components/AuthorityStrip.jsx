@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const partners = [
-  { src: '/assets/logo-disney.png', alt: 'Disney', height: 'h-7' },
-  { src: '/assets/logo-universal.png', alt: 'Universal', height: 'h-6' },
-  { src: '/assets/logo-iata.jpg', alt: 'IATAN Acreditada', height: 'h-10' },
+  { src: '/assets/logo-disney.png', alt: 'Disney' },
+  { src: '/assets/logo-universal.png', alt: 'Universal' },
+  { src: '/assets/logo-iata.jpg', alt: 'IATA Acreditada' },
 ];
 
 const AuthorityStrip = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-12 bg-gradient-to-r from-disney via-disney-dark to-disney relative overflow-hidden">
       {/* Pattern overlay */}
@@ -24,15 +27,15 @@ const AuthorityStrip = () => {
           {/* Left text */}
           <div className="text-center md:text-left shrink-0">
             <div className="text-[10px] font-bold text-magic uppercase tracking-[0.3em] mb-1">
-              Respaldo Internacional
+              {t('authority.label')}
             </div>
             <div className="text-lg md:text-xl font-bold text-white font-quicksand">
-              Certificados por los Mejores del Mundo
+              {t('authority.title')}
             </div>
           </div>
 
-          {/* Real Partner Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
+          {/* Real Partner Logos — uniform proportional canvases */}
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {partners.map((p, i) => (
               <motion.div
                 key={i}
@@ -41,11 +44,11 @@ const AuthorityStrip = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
               >
-                <div className="bg-white/15 rounded-xl px-4 py-2">
+                <div className="w-28 h-14 md:w-36 md:h-16 bg-white rounded-2xl flex items-center justify-center px-4 shadow-lg hover:scale-105 transition-transform duration-300">
                   <img
                     src={p.src}
                     alt={p.alt}
-                    className={`${p.height} object-contain`}
+                    className="max-h-10 md:max-h-12 max-w-full object-contain"
                   />
                 </div>
               </motion.div>

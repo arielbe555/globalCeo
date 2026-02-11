@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /* Fotos REALES de Global Dream — las mejores del arsenal */
 const heroImages = [
@@ -7,11 +8,13 @@ const heroImages = [
   '/assets/epic-universe.jpg',              // Grupo GDT en Epic Universe con bandera argentina
   '/assets/cruceroo.jpeg',                  // Disney Fantasy con personajes y fuegos artificiales
   '/assets/gruoal2026.jpg',                 // Grupo disfrazados frente al castillo de Cinderella
-  '/assets/nasa.jpeg',                      // Kennedy Space Center — cohetes
+  '/assets/disney-paris.png',              // Joy frente al castillo de Disneyland Paris
+  '/assets/montanarusauniversal.png',      // Hulk Coaster en Universal Orlando — acción
   '/assets/familia-parque.jpg',             // Familia en Disney Boardwalk
 ];
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [currentImage, setCurrentImage] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
@@ -62,9 +65,9 @@ const Hero = () => {
           className="flex flex-wrap justify-center gap-3 mb-8 mt-6"
         >
           {[
-            { text: 'IATA Acreditada', color: 'bg-disney/80 border-disney-light/40' },
-            { text: 'Disney Certified', color: 'bg-blue-900/60 border-blue-400/30' },
-            { text: 'Universal Partner', color: 'bg-purple-900/60 border-purple-400/30' },
+            { text: t('hero.badgeIata'), color: 'bg-disney/80 border-disney-light/40' },
+            { text: t('hero.badgeDisney'), color: 'bg-blue-900/60 border-blue-400/30' },
+            { text: t('hero.badgeUniversal'), color: 'bg-purple-900/60 border-purple-400/30' },
           ].map((badge) => (
             <span
               key={badge.text}
@@ -81,10 +84,10 @@ const Hero = () => {
           transition={{ duration: 0.9, delay: 0.2 }}
           className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] font-bold text-white mb-6 font-quicksand leading-[0.95] tracking-tight"
         >
-          La Magia en
+          {t('hero.titleLine1')}
           <br />
           <span className="bg-gradient-to-r from-magic via-magic-light to-magic bg-clip-text text-transparent">
-            Buenas Manos
+            {t('hero.titleLine2')}
           </span>
         </motion.h1>
 
@@ -94,8 +97,9 @@ const Hero = () => {
           transition={{ delay: 0.6 }}
           className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto font-light mb-14 leading-relaxed"
         >
-          El Hub tecnológico que traza los sueños de tu familia con el
-          respaldo de <strong className="font-semibold text-white">150 expertos mundiales</strong> y tecnología propietaria.
+          {t('hero.subtitle')}{' '}
+          <strong className="font-semibold text-white">{t('hero.subtitleAgents')}</strong>{' '}
+          {t('hero.subtitleEnd')}
         </motion.p>
 
         <motion.div
@@ -108,14 +112,14 @@ const Hero = () => {
             href="#planificador"
             className="group bg-white text-disney px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all flex items-center justify-center gap-3"
           >
-            Planificar mi Sueño
+            {t('hero.ctaPlan')}
             <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
           <a
             href="#grupal2026"
             className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-purple-500/20 animate-pulse hover:animate-none"
           >
-            GRUPAL 2026
+            {t('hero.ctaGrupal')}
           </a>
         </motion.div>
 

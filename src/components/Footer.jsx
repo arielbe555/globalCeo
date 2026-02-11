@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { FileText, ShieldCheck, Mail, LogIn, MapPin, Phone, Heart } from 'lucide-react';
 
 const partnerLogos = [
-  { src: '/assets/logo-disney.png', alt: 'Disney', height: 'h-8' },
-  { src: '/assets/logo-universal.png', alt: 'Universal', height: 'h-7' },
-  { src: '/assets/logo-iata.jpg', alt: 'IATAN Acreditada', height: 'h-12' },
+  { src: '/assets/logo-disney.png', alt: 'Disney' },
+  { src: '/assets/logo-universal.png', alt: 'Universal' },
+  { src: '/assets/logo-iata.jpg', alt: 'IATA Acreditada' },
 ];
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-slate-900 text-white relative overflow-hidden">
       {/* Top wave */}
@@ -28,30 +30,30 @@ const Footer = () => {
               className="h-14 mb-6 object-contain object-left"
             />
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
-              Hub tecnológico de viajes familiares con acreditación IATA y certificación Disney & Universal.
+              {t('footer.description')}
             </p>
             <div className="flex items-center gap-2 text-magic text-sm font-bold">
               <Heart size={14} className="fill-magic" />
-              +5000 familias felices
+              {t('footer.familiasFelices')}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Navegación</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">{t('footer.navegacion')}</h4>
             <div className="space-y-3">
-              <Link to="/" className="block text-sm text-slate-400 hover:text-magic transition-colors">Inicio</Link>
-              <a href="/#app" className="block text-sm text-slate-400 hover:text-magic transition-colors">Tecnología</a>
-              <a href="/#hub" className="block text-sm text-slate-400 hover:text-magic transition-colors">Hub Agentes</a>
-              <a href="/#planificador" className="block text-sm text-slate-400 hover:text-magic transition-colors">Planificar Viaje</a>
-              <Link to="/blog" className="block text-sm text-slate-400 hover:text-magic transition-colors">Blog Mágico</Link>
-              <Link to="/legales" className="block text-sm text-slate-400 hover:text-magic transition-colors">Términos & Privacidad</Link>
+              <Link to="/" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.inicio')}</Link>
+              <a href="/#app" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.tecnologia')}</a>
+              <a href="/#hub" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.hubAgentes')}</a>
+              <a href="/#planificador" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.planificarViaje')}</a>
+              <Link to="/blog" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.blogMagico')}</Link>
+              <Link to="/legales" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.terminosPrivacidad')}</Link>
             </div>
           </div>
 
           {/* Agent Access */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Acceso Agentes</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">{t('footer.accesoAgentes')}</h4>
             <div className="space-y-3">
               <a
                 href="https://app.globaldream.travel"
@@ -59,7 +61,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-slate-400 hover:text-magic transition-colors"
               >
-                <LogIn size={14} /> Plataforma GDT App
+                <LogIn size={14} /> {t('footer.plataformaApp')}
               </a>
               <a
                 href="https://64203.webmail.dynadot.com/user/signin.html?so=1"
@@ -67,14 +69,14 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-slate-400 hover:text-magic transition-colors"
               >
-                <Mail size={14} /> Correo Agentes
+                <Mail size={14} /> {t('footer.correoAgentes')}
               </a>
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">Contacto</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">{t('footer.contacto')}</h4>
             <div className="space-y-3">
               <a href="tel:+5491125905797" className="flex items-center gap-2 text-sm text-slate-400 hover:text-magic transition-colors">
                 <Phone size={14} /> +54 9 11 2590-5797
@@ -83,7 +85,7 @@ const Footer = () => {
                 <Phone size={14} /> +1 (407) 768-2975
               </a>
               <div className="flex items-start gap-2 text-sm text-slate-400">
-                <MapPin size={14} className="mt-0.5 shrink-0" /> Orlando, FL & Buenos Aires, AR
+                <MapPin size={14} className="mt-0.5 shrink-0" /> {t('footer.ubicacion')}
               </div>
             </div>
           </div>
@@ -91,13 +93,13 @@ const Footer = () => {
 
         {/* Partner logos */}
         <div className="border-t border-white/10 pt-10 mb-10">
-          <div className="flex flex-wrap justify-center items-center gap-12">
+          <div className="flex flex-wrap justify-center items-center gap-8">
             {partnerLogos.map((logo) => (
-              <div key={logo.alt} className="bg-white/10 rounded-xl px-6 py-3 hover:bg-white/20 transition-all duration-500">
+              <div key={logo.alt} className="w-28 h-14 md:w-36 md:h-16 bg-white/15 rounded-2xl flex items-center justify-center px-4 hover:bg-white/25 transition-all duration-500">
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className={`${logo.height} object-contain`}
+                  className="max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
             ))}
@@ -107,7 +109,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center">
           <p className="text-[10px] text-slate-500 uppercase tracking-[0.4em] font-medium">
-            Global Dream Travel® — Marca Registrada. Agencia Acreditada IATA. &copy; {new Date().getFullYear()}.
+            {t('footer.copyright')} &copy; {new Date().getFullYear()}.
           </p>
         </div>
       </div>

@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, LogIn, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -24,13 +27,19 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo + IATA Badge */}
         <Link to="/" className="flex items-center gap-3">
           <img
             src="/assets/logo-global-dream.png"
             alt="Global Dream Travel"
             className="h-12 md:h-14 drop-shadow-md"
           />
+          <div className={`hidden md:flex items-center gap-2 pl-3 border-l ${scrolled ? 'border-slate-200' : 'border-white/30'}`}>
+            <img src="/assets/logo-iata.jpg" alt="IATA" className="h-6 rounded" />
+            <span className={`text-[8px] font-bold uppercase tracking-[0.15em] leading-tight ${scrolled ? 'text-slate-500' : 'text-white/80'}`}>
+              {t('nav.iata')}<br />{t('nav.acreditada')}
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -41,7 +50,7 @@ const Navbar = () => {
               scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
             }`}
           >
-            Inicio
+            {t('nav.inicio')}
           </a>
           <a
             href="/#app"
@@ -49,7 +58,7 @@ const Navbar = () => {
               scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
             }`}
           >
-            Servicios
+            {t('nav.servicios')}
           </a>
           <a
             href="/#hub"
@@ -57,7 +66,7 @@ const Navbar = () => {
               scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
             }`}
           >
-            Hub Agentes
+            {t('nav.hubAgentes')}
           </a>
           <a
             href="/#planificador"
@@ -65,7 +74,7 @@ const Navbar = () => {
               scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
             }`}
           >
-            Contacto
+            {t('nav.contacto')}
           </a>
           <Link
             to="/blog"
@@ -73,11 +82,14 @@ const Navbar = () => {
               scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
             }`}
           >
-            Blog Mágico
+            {t('nav.blogMagico')}
           </Link>
 
           {/* Separator */}
           <div className={`h-8 w-px ${scrolled ? 'bg-slate-200' : 'bg-white/30'}`} />
+
+          {/* Language Switcher */}
+          <LanguageSwitcher scrolled={scrolled} />
 
           {/* Agent Buttons */}
           <a
@@ -86,7 +98,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="bg-disney text-white px-6 py-2.5 rounded-xl text-[10px] font-bold shadow-lg shadow-disney/20 hover:scale-105 hover:shadow-xl transition-all uppercase tracking-wider flex items-center gap-2"
           >
-            TU APP
+            {t('nav.tuApp')}
           </a>
           <a
             href="https://64203.webmail.dynadot.com/user/signin.html?so=1"
@@ -97,20 +109,23 @@ const Navbar = () => {
                 ? 'bg-slate-100 text-disney hover:bg-disney hover:text-white'
                 : 'bg-white/20 text-white hover:bg-white hover:text-disney'
             }`}
-            title="Correo Agentes"
+            title={t('nav.correoAgentes')}
           >
             <Mail size={18} />
           </a>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className={`lg:hidden ${scrolled ? 'text-disney' : 'text-white'}`}
-          onClick={() => setMobileMenu(!mobileMenu)}
-          aria-label="Menu"
-        >
-          {mobileMenu ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-3">
+          <LanguageSwitcher scrolled={scrolled} />
+          <button
+            className={`${scrolled ? 'text-disney' : 'text-white'}`}
+            onClick={() => setMobileMenu(!mobileMenu)}
+            aria-label={t('nav.menu')}
+          >
+            {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -123,11 +138,11 @@ const Navbar = () => {
             className="lg:hidden bg-white border-t border-slate-100 shadow-2xl"
           >
             <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-5">
-              <a href="/#" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">Inicio</a>
-              <a href="/#app" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">Servicios</a>
-              <a href="/#hub" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">Hub Agentes</a>
-              <a href="/#planificador" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">Contacto</a>
-              <Link to="/blog" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">Blog Mágico</Link>
+              <a href="/#" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.inicio')}</a>
+              <a href="/#app" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.servicios')}</a>
+              <a href="/#hub" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.hubAgentes')}</a>
+              <a href="/#planificador" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.contacto')}</a>
+              <Link to="/blog" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.blogMagico')}</Link>
               <div className="border-t border-slate-100 pt-5 flex flex-col gap-3">
                 <a
                   href="https://app.globaldream.travel"
@@ -135,7 +150,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="bg-disney text-white px-8 py-4 rounded-2xl text-sm font-bold text-center shadow-xl flex items-center justify-center gap-2"
                 >
-                  <LogIn size={18} /> Ingresar a Tu App
+                  <LogIn size={18} /> {t('nav.ingresarApp')}
                 </a>
                 <a
                   href="https://64203.webmail.dynadot.com/user/signin.html?so=1"
@@ -143,7 +158,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="bg-slate-800 text-white px-8 py-4 rounded-2xl text-sm font-bold text-center shadow-xl flex items-center justify-center gap-2"
                 >
-                  <Mail size={18} /> Correo Agentes
+                  <Mail size={18} /> {t('nav.correoAgentes')}
                 </a>
               </div>
             </div>

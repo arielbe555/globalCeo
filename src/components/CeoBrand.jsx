@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Star, ShieldCheck, Award, TrendingUp } from 'lucide-react';
 
-const credentials = [
-  { icon: <ShieldCheck size={18} />, text: 'Agencia Acreditada IATA', sub: 'Respaldo financiero internacional' },
-  { icon: <Award size={18} />, text: 'Certificación Disney & Universal', sub: 'Agente autorizada y capacitada' },
-  { icon: <TrendingUp size={18} />, text: '2.7M+ Vistas Virales', sub: 'La agencia más viral del mercado hispanohablante' },
-  { icon: <Star size={18} />, text: '5000+ Familias Felices', sub: 'Track record comprobado de excelencia' },
-];
-
 const CeoBrand = () => {
+  const { t } = useTranslation();
+  const credentials = [
+    { icon: <ShieldCheck size={18} />, text: t('ceo.credIata'), sub: t('ceo.credIataDesc') },
+    { icon: <Award size={18} />, text: t('ceo.credDisney'), sub: t('ceo.credDisneyDesc') },
+    { icon: <TrendingUp size={18} />, text: t('ceo.credVistas'), sub: t('ceo.credVistasDesc') },
+    { icon: <Star size={18} />, text: t('ceo.credFamilias'), sub: t('ceo.credFamiliasDesc') },
+  ];
   return (
     <section className="py-28 bg-white relative overflow-hidden">
       {/* Background accent */}
@@ -23,12 +24,12 @@ const CeoBrand = () => {
           className="text-center mb-20"
         >
           <span className="text-[10px] font-bold text-disney uppercase tracking-[0.3em]">
-            La Cara de la Confianza
+            {t('ceo.sectionLabel')}
           </span>
           <h2 className="text-3xl md:text-5xl font-bold font-quicksand text-slate-800 mt-3 leading-tight">
-            Tu familia merece a alguien que
+            {t('ceo.titleLine1')}
             <br className="hidden md:block" />
-            <span className="text-disney">cuide cada detalle.</span>
+            <span className="text-disney">{t('ceo.titleLine2')}</span>
           </h2>
         </motion.div>
 
@@ -43,7 +44,7 @@ const CeoBrand = () => {
           >
             <div className="relative">
               {/* Main photo — Andi con Walt y Castillo de noche */}
-              <div className="w-80 h-[26rem] md:w-[22rem] md:h-[32rem] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-disney/20 border-4 border-white ring-1 ring-slate-100">
+              <div className="w-80 h-[28rem] md:w-[26rem] md:h-[36rem] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-disney/20 border-4 border-white ring-1 ring-slate-100">
                 <img
                   src="/assets/castillidenocheandiywalt.jpeg"
                   alt="Andi Olivera frente al Castillo de Cinderella y la estatua de Walt Disney"
@@ -58,7 +59,7 @@ const CeoBrand = () => {
                 className="absolute -top-6 -right-6 bg-white px-5 py-3 rounded-2xl shadow-xl border border-slate-100"
               >
                 <div className="text-2xl font-bold text-disney font-quicksand">2.7M+</div>
-                <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">Vistas Virales</div>
+                <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest">{t('ceo.vistasVirales')}</div>
               </motion.div>
 
               {/* Floating badge bottom */}
@@ -67,7 +68,7 @@ const CeoBrand = () => {
                 transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
                 className="absolute -bottom-4 -left-4 bg-magic text-slate-900 px-5 py-3 rounded-2xl shadow-xl"
               >
-                <div className="text-[9px] font-bold uppercase tracking-widest">CEO & Fundadora</div>
+                <div className="text-[9px] font-bold uppercase tracking-widest">{t('ceo.ceoFundadora')}</div>
                 <div className="text-sm font-bold font-quicksand">Andi Olivera</div>
               </motion.div>
             </div>
@@ -82,10 +83,7 @@ const CeoBrand = () => {
             className="lg:col-span-3"
           >
             <p className="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed font-light">
-              Andi Olivera convirtió las redes sociales en la herramienta de confianza más
-              poderosa del turismo familiar. Con más de <strong className="font-semibold text-slate-800">2.7 millones de vistas
-              virales</strong> y una red de <strong className="font-semibold text-slate-800">150 agentes certificados</strong>, es la garantía
-              personal de que tu viaje será perfecto.
+              {t('ceo.bio1')} <strong className="font-semibold text-slate-800">{t('ceo.bio2')}</strong> {t('ceo.bio3')} <strong className="font-semibold text-slate-800">{t('ceo.bio4')}</strong>{t('ceo.bio5')}
             </p>
 
             {/* Credentials grid */}
@@ -114,15 +112,13 @@ const CeoBrand = () => {
             <div className="relative p-8 bg-gradient-to-br from-disney/5 to-transparent rounded-3xl border border-disney/10">
               <div className="absolute -top-3 left-8 text-6xl text-disney/20 font-serif leading-none">&ldquo;</div>
               <p className="text-lg text-slate-600 italic font-light leading-relaxed relative z-10">
-                Cada familia que confía en nosotros recibe la misma dedicación
-                que le daría a la mía. Esa es mi promesa, mi misión y la razón
-                por la que creamos Global Dream Travel.
+                {t('ceo.quote')}
               </p>
               <div className="mt-4 flex items-center gap-3">
                 <img src="/assets/andi-olivera.jpeg" alt="Andi" className="w-10 h-10 rounded-full object-cover object-top" />
                 <div>
                   <cite className="text-sm font-bold text-disney not-italic">Andi Olivera</cite>
-                  <div className="text-[10px] text-slate-400">CEO & Fundadora, Global Dream Travel®</div>
+                  <div className="text-[10px] text-slate-400">{t('ceo.quoteCitation')}</div>
                 </div>
               </div>
             </div>

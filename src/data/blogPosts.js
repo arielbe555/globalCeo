@@ -1,6 +1,30 @@
 /**
- * Índice de posts del blog con metadata.
- * Imágenes reales de assets de Global Dream + complementos.
+ * ════════════════════════════════════════════════════════════════════════
+ * BLOG GLOBAL DREAM TRAVEL® — Índice de Posts
+ * ════════════════════════════════════════════════════════════════════════
+ *
+ * CÓMO AGREGAR UN NUEVO POST AL BLOG:
+ *
+ * Paso 1: Agregar la metadata aquí abajo en el array `blogPosts`.
+ *         Campos requeridos:
+ *           - slug:        URL amigable (ej: "mi-nuevo-post")
+ *           - title:       Título del artículo
+ *           - description: Resumen corto (1-2 líneas)
+ *           - date:        Fecha en formato "YYYY-MM-DD"
+ *           - category:    Una de: Grupal, Destinos, Seguridad, Tecnología,
+ *                          Cruceros, B2B, Testimonios
+ *           - image:       Ruta a imagen en /public/assets/ (ej: "/assets/foto.jpg")
+ *
+ * Paso 2: Agregar el contenido JSX en src/data/blogContent.jsx.
+ *         Usar el mismo slug como clave del objeto.
+ *         Ejemplo:   'mi-nuevo-post': (<div>...contenido...</div>),
+ *
+ * Paso 3 (opcional): Crear el archivo Markdown en content/blog/{slug}.md
+ *         con frontmatter (title, description, date, category, image).
+ *
+ * NOTA: Los posts aparecen en el orden de este array. El primero es el
+ *       más reciente/destacado. Para destacar un post, ponerlo primero.
+ * ════════════════════════════════════════════════════════════════════════
  */
 const blogPosts = [
   {
@@ -10,6 +34,38 @@ const blogPosts = [
     date: '2026-02-10',
     category: 'Grupal',
     image: '/assets/gruoal2026.jpg',
+  },
+  {
+    slug: 'disney-tokyo',
+    title: 'Disney Tokyo: Guía Completa para Vivir la Magia en Japón',
+    description: 'Todo sobre Tokyo Disneyland y DisneySea: atracciones, tips, eventos estacionales y cómo Global Dream te lleva hasta allá.',
+    date: '2026-02-11',
+    category: 'Destinos',
+    image: '/assets/disney-tokio.png',
+  },
+  {
+    slug: 'disneyland-paris',
+    title: 'Disneyland Paris: La Magia Disney en el Corazón de Europa',
+    description: 'Guía experta de Disneyland Paris y Walt Disney Studios Park: shows, hoteles, temporadas y logística desde Latinoamérica.',
+    date: '2026-02-11',
+    category: 'Destinos',
+    image: '/assets/disney-paris.png',
+  },
+  {
+    slug: 'universal-studios-japan',
+    title: 'Universal Studios Japan: Super Nintendo World y Mucho Más',
+    description: 'Osaka te espera con Super Nintendo World, The Wizarding World of Harry Potter y más. Tickets, Express Pass y paquetes con Global Dream.',
+    date: '2026-02-11',
+    category: 'Destinos',
+    image: '/assets/universal-osaka.png',
+  },
+  {
+    slug: 'disneysea-3-dias',
+    title: '3 Días en DisneySea: El Hotel de Lujo Más Exclusivo de Disney',
+    description: 'Fantasy Springs Hotel, itinerario de 3 días y los Vacation Packages de Tokyo Disney Resort. La experiencia de lujo definitiva.',
+    date: '2026-02-11',
+    category: 'Destinos',
+    image: '/assets/tokio-packed.png',
   },
   {
     slug: 'epic-universe-2025',

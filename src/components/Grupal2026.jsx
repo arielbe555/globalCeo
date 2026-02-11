@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, Star, Sparkles, ArrowRight, Plane } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const fotos = [
   '/assets/gruoal2026.jpg',
@@ -8,14 +9,16 @@ const fotos = [
   '/assets/castillidenocheandiywalt.jpeg',
 ];
 
-const highlights = [
-  { icon: <Calendar size={20} />, title: '14 Días', desc: 'Del 7 al 20 — A pura emoción' },
-  { icon: <MapPin size={20} />, title: '8 Parques', desc: '4 Disney + 4 Universal' },
-  { icon: <Users size={20} />, title: 'Grupal', desc: 'Viajá con la comunidad GDT' },
-  { icon: <Star size={20} />, title: 'Todo Incluido', desc: 'Logística, app y concierge 24/7' },
-];
-
 const Grupal2026 = () => {
+  const { t } = useTranslation();
+
+  const highlights = [
+    { icon: <Calendar size={20} />, titleKey: 'grupal.h14dias', descKey: 'grupal.h14diasDesc' },
+    { icon: <MapPin size={20} />, titleKey: 'grupal.h8parques', descKey: 'grupal.h8parquesDesc' },
+    { icon: <Users size={20} />, titleKey: 'grupal.hGrupal', descKey: 'grupal.hGrupalDesc' },
+    { icon: <Star size={20} />, titleKey: 'grupal.hTodoIncluido', descKey: 'grupal.hTodoIncluidoDesc' },
+  ];
+
   return (
     <section id="grupal2026" className="relative overflow-hidden">
       {/* Banner image background */}
@@ -47,22 +50,20 @@ const Grupal2026 = () => {
             <div className="flex items-center gap-2 mb-4">
               <Sparkles className="text-magic" size={20} />
               <span className="text-magic text-[10px] font-bold uppercase tracking-[0.3em]">
-                El Viaje del Año
+                {t('grupal.sectionLabel')}
               </span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-white font-quicksand leading-tight mb-6">
-              14 Días a Pura
+              {t('grupal.titleLine1')}
               <br />
               <span className="bg-gradient-to-r from-magic via-magic-light to-magic bg-clip-text text-transparent">
-                Emoción.
+                {t('grupal.titleLine2')}
               </span>
             </h2>
 
             <p className="text-lg text-white/80 mb-8 leading-relaxed font-light max-w-lg">
-              Después del éxito rotundo del Grupal 2025, volvemos con todo.
-              Del <strong className="text-white font-semibold">7 al 20</strong> — Los 4 parques de Disney World + los 4 de Universal: Studios, Islands of Adventure, Epic Universe y Volcano Bay.
-              8 parques, 14 días, 1 comunidad. Viví la experiencia que miles ya vivieron.
+              {t('grupal.description')}
             </p>
 
             {/* Highlights */}
@@ -78,8 +79,8 @@ const Grupal2026 = () => {
                 >
                   <div className="text-magic mt-0.5">{h.icon}</div>
                   <div>
-                    <div className="text-xs font-bold text-white">{h.title}</div>
-                    <div className="text-[10px] text-white/60">{h.desc}</div>
+                    <div className="text-xs font-bold text-white">{t(h.titleKey)}</div>
+                    <div className="text-[10px] text-white/60">{t(h.descKey)}</div>
                   </div>
                 </motion.div>
               ))}
@@ -92,14 +93,14 @@ const Grupal2026 = () => {
                 className="group bg-magic text-slate-900 px-10 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-magic/30 flex items-center justify-center gap-3"
               >
                 <Plane size={20} />
-                Quiero mi Lugar
+                {t('grupal.ctaLugar')}
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="/blog/grupal-2026"
                 className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all text-center"
               >
-                Ver Detalles Completos
+                {t('grupal.ctaDetalles')}
               </a>
             </div>
           </motion.div>
@@ -142,14 +143,14 @@ const Grupal2026 = () => {
           className="mt-16 flex flex-wrap justify-center gap-8 md:gap-16 py-8 border-t border-white/10"
         >
           {[
-            { value: '2025', label: 'Edición Exitosa' },
-            { value: '50+', label: 'Viajeros Grupal' },
-            { value: '14', label: 'Días de Magia' },
-            { value: '8', label: 'Parques Temáticos' },
+            { value: '2025', labelKey: 'grupal.edicionExitosa' },
+            { value: '50+', labelKey: 'grupal.viajeros' },
+            { value: '14', labelKey: 'grupal.diasMagia' },
+            { value: '8', labelKey: 'grupal.parquesTematicos' },
           ].map((s, i) => (
             <div key={i} className="text-center">
               <div className="text-3xl font-bold text-magic font-quicksand">{s.value}</div>
-              <div className="text-[9px] text-white/50 uppercase tracking-widest font-bold">{s.label}</div>
+              <div className="text-[9px] text-white/50 uppercase tracking-widest font-bold">{t(s.labelKey)}</div>
             </div>
           ))}
         </motion.div>

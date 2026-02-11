@@ -1,20 +1,22 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle, Phone, BookOpen } from 'lucide-react';
 
 // Números de contacto de Global Dream
 const WHATSAPP_COMERCIAL = '5491125905797';
 const WHATSAPP_VENTAS_US = '14077682975';
 
-const destinos = [
-  'Disney World & Universal Orlando',
-  'Epic Universe 2025',
-  'Disney Cruise Line / Royal Caribbean',
-  'Europa Familiar Boutique',
-  'Dubai & Emirates — Experiencia de Lujo',
-];
-
 const PlanificadorMagico = () => {
+  const { t } = useTranslation();
+  const destinos = [
+    t('planner.destDisney'),
+    t('planner.destEpic'),
+    t('planner.destCruise'),
+    t('planner.destEuropa'),
+    t('planner.destDubai'),
+  ];
   const [formData, setFormData] = useState({
     familia: '',
     destino: destinos[0],
@@ -30,16 +32,15 @@ const PlanificadorMagico = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const mensaje = `¡Hola Global Dream! Queremos planificar:
+    const mensaje = `${t('planner.waMsg1')}
 
-Familia: ${formData.familia}
-Destino: ${formData.destino}
-Fecha: ${formData.fecha}
-Pasajeros: ${formData.adultos} adultos y ${formData.ninos} niños
-Edades de los niños: ${formData.edades || 'Sin niños'}
-Contacto: ${formData.telefono}
+${t('planner.waFamilia')} ${formData.familia}
+${t('planner.waDestino')} ${formData.destino}
+${t('planner.waPasajeros')} ${formData.adultos} ${t('planner.waAdultosY')} ${formData.ninos} ${t('planner.waNinos')}
+${t('planner.waEdades')} ${formData.edades || t('planner.sinNinos')}
+${t('planner.waContacto')} ${formData.telefono}
 
-¿Nos ayudan con la magia?`;
+${t('planner.waCierre')}`;
     window.open(
       `https://wa.me/${WHATSAPP_COMERCIAL}?text=${encodeURIComponent(mensaje)}`,
       '_blank'
@@ -60,23 +61,22 @@ Contacto: ${formData.telefono}
           className="bg-white p-10 md:p-16 rounded-[4rem] shadow-2xl shadow-disney/10 border border-blue-50"
         >
           <h2 className="text-3xl font-bold text-center text-disney mb-3 font-quicksand">
-            Iniciemos tu Gran Aventura
+            {t('planner.title')}
           </h2>
           <p className="text-center text-slate-400 text-sm mb-10 max-w-md mx-auto">
-            Completá el formulario y te contactamos por WhatsApp para armar tu
-            viaje soñado.
+            {t('planner.subtitle')}
           </p>
 
           <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-8">
             <div className="space-y-2">
               <label className="text-[11px] font-bold text-disney uppercase tracking-widest">
-                Familia
+                {t('planner.labelFamilia')}
               </label>
               <input
                 type="text"
                 required
                 className={inputClass}
-                placeholder="Apellido de la familia"
+                placeholder={t('planner.placeholderFamilia')}
                 value={formData.familia}
                 onChange={handleChange('familia')}
               />
@@ -84,13 +84,13 @@ Contacto: ${formData.telefono}
 
             <div className="space-y-2">
               <label className="text-[11px] font-bold text-disney uppercase tracking-widest">
-                WhatsApp
+                {t('planner.labelWhatsApp')}
               </label>
               <input
                 type="tel"
                 required
                 className={inputClass}
-                placeholder="+54 9 11 ..."
+                placeholder={t('planner.placeholderWhatsApp')}
                 value={formData.telefono}
                 onChange={handleChange('telefono')}
               />
@@ -98,7 +98,7 @@ Contacto: ${formData.telefono}
 
             <div className="md:col-span-2 space-y-2">
               <label className="text-[11px] font-bold text-disney uppercase tracking-widest">
-                Destino
+                {t('planner.labelDestino')}
               </label>
               <select
                 className={`${inputClass} font-medium`}
@@ -113,12 +113,12 @@ Contacto: ${formData.telefono}
 
             <div className="space-y-2">
               <label className="text-[11px] font-bold text-disney uppercase tracking-widest">
-                Fecha Tentativa
+                {t('planner.labelFecha')}
               </label>
               <input
                 type="text"
                 className={inputClass}
-                placeholder="Ej: Julio 2026"
+                placeholder={t('planner.placeholderFecha')}
                 value={formData.fecha}
                 onChange={handleChange('fecha')}
               />
@@ -126,11 +126,11 @@ Contacto: ${formData.telefono}
 
             <div className="space-y-2">
               <label className="text-[11px] font-bold text-disney uppercase tracking-widest">
-                Edades Niños
+                {t('planner.labelEdadesNinos')}
               </label>
               <input
                 type="text"
-                placeholder="Ej: 5, 8 y 12 años"
+                placeholder={t('planner.placeholderEdades')}
                 className={inputClass}
                 value={formData.edades}
                 onChange={handleChange('edades')}
@@ -139,7 +139,7 @@ Contacto: ${formData.telefono}
 
             <div className="space-y-2">
               <label className="text-[11px] font-bold text-disney uppercase tracking-widest">
-                Adultos
+                {t('planner.labelAdultos')}
               </label>
               <select
                 className={`${inputClass} font-medium`}
@@ -148,7 +148,7 @@ Contacto: ${formData.telefono}
               >
                 {[1, 2, 3, 4, 5, 6].map((n) => (
                   <option key={n} value={n}>
-                    {n} {n === 1 ? 'adulto' : 'adultos'}
+                    {n} {n === 1 ? t('planner.adulto') : t('planner.adultos')}
                   </option>
                 ))}
               </select>
@@ -156,7 +156,7 @@ Contacto: ${formData.telefono}
 
             <div className="space-y-2">
               <label className="text-[11px] font-bold text-disney uppercase tracking-widest">
-                Niños
+                {t('planner.labelNinos')}
               </label>
               <select
                 className={`${inputClass} font-medium`}
@@ -165,7 +165,7 @@ Contacto: ${formData.telefono}
               >
                 {[0, 1, 2, 3, 4, 5, 6].map((n) => (
                   <option key={n} value={n}>
-                    {n} {n === 1 ? 'niño' : 'niños'}
+                    {n} {n === 1 ? t('planner.nino') : t('planner.ninos')}
                   </option>
                 ))}
               </select>
@@ -176,14 +176,14 @@ Contacto: ${formData.telefono}
               className="md:col-span-2 bg-green-500 text-white py-6 rounded-3xl font-bold text-xl hover:bg-green-600 hover:scale-[1.02] transition-all shadow-xl shadow-green-100 flex items-center justify-center gap-3 cursor-pointer"
             >
               <MessageCircle size={24} />
-              Enviar a WhatsApp Global Dream
+              {t('planner.submitBtn')}
             </button>
           </form>
 
           {/* Secondary contact */}
           <div className="mt-8 text-center">
             <p className="text-[10px] text-slate-400 uppercase tracking-widest mb-2">
-              Contacto para Ventas & Proveedores (USA)
+              {t('planner.contactoVentas')}
             </p>
             <a
               href={`tel:+${WHATSAPP_VENTAS_US}`}
@@ -192,6 +192,26 @@ Contacto: ${formData.telefono}
               <Phone size={16} />
               +1 (407) 768-2975
             </a>
+          </div>
+
+          {/* Blog CTA */}
+          <div className="mt-12 text-center">
+            <div className="inline-block bg-slate-50 rounded-3xl px-10 py-8 border border-slate-100">
+              <BookOpen size={28} className="mx-auto text-disney mb-3" />
+              <p className="text-lg font-bold text-slate-700 font-quicksand mb-2">
+                {t('planner.blogCtaTitle')}
+              </p>
+              <p className="text-sm text-slate-400 mb-5 max-w-md">
+                {t('planner.blogCtaDesc')}
+              </p>
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 bg-disney text-white px-8 py-3 rounded-2xl font-bold text-sm hover:bg-disney-dark hover:scale-105 transition-all shadow-lg shadow-disney/20"
+              >
+                <BookOpen size={18} />
+                {t('planner.blogCtaBtn')}
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>

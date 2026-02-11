@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 /* Fotos REALES de Global Dream */
 const destinos = [
@@ -28,16 +29,22 @@ const destinos = [
     tag: 'Cruceros',
   },
   {
-    nombre: 'NASA Kennedy',
-    lugar: 'Kennedy Space Center, FL',
-    img: '/assets/nasa.jpeg',
-    tag: 'Experiencia',
+    nombre: 'Tokyo Disneyland',
+    lugar: 'Tokio, Japón',
+    img: '/assets/disney-tokio.png',
+    tag: 'Disney',
   },
   {
-    nombre: 'Dubai & Emirates',
-    lugar: 'Experiencia de Lujo',
-    img: '/assets/dubai-skyline.jpeg',
-    tag: 'Elite',
+    nombre: 'Disneyland Paris',
+    lugar: 'París, Francia',
+    img: '/assets/disney-paris.png',
+    tag: 'Disney',
+  },
+  {
+    nombre: 'Universal Studios Japan',
+    lugar: 'Osaka, Japón',
+    img: '/assets/universal-osaka.png',
+    tag: 'Universal',
   },
 ];
 
@@ -46,8 +53,6 @@ const tagColors = {
   Universal: 'bg-purple-600 text-white',
   NUEVO: 'bg-magic text-slate-800',
   Cruceros: 'bg-cyan-500 text-white',
-  Experiencia: 'bg-red-500 text-white',
-  Elite: 'bg-slate-800 text-magic',
 };
 
 const DestinosGallery = () => {
@@ -72,7 +77,7 @@ const DestinosGallery = () => {
             href="#planificador"
             className="text-sm font-bold text-disney hover:text-disney-dark transition-colors flex items-center gap-2 shrink-0"
           >
-            Ver todos los destinos <ArrowRight size={16} />
+            {t('destinos.verTodos')} <ArrowRight size={16} />
           </a>
         </motion.div>
       </div>

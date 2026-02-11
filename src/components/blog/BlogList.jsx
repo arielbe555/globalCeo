@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import blogPosts from '../../data/blogPosts';
 
 const categoryColors = {
@@ -14,6 +15,9 @@ const categoryColors = {
 };
 
 const BlogList = () => {
+  const { i18n } = useTranslation();
+  const locale = i18n.language === 'pt' ? 'pt-BR' : i18n.language === 'en' ? 'en-US' : 'es-AR';
+
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {blogPosts.map((post, i) => (
@@ -67,7 +71,7 @@ const BlogList = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-[10px] text-slate-300 font-medium">
                   <Calendar size={12} />
-                  {new Date(post.date).toLocaleDateString('es-AR', {
+                  {new Date(post.date).toLocaleDateString(locale, {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',

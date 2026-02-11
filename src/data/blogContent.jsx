@@ -433,4 +433,261 @@ export const blogContent = {
       </p>
     </div>
   ),
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * DISNEY TOKYO
+   * ──────────────────────────────────────────────────────────────────────── */
+  'disney-tokyo': (
+    <div>
+      <p>
+        Japón es sinónimo de cultura, tecnología y hospitalidad. Y cuando
+        combinás todo eso con la magia de Disney, el resultado es <strong>Tokyo
+        Disney Resort</strong>: dos parques temáticos que llevan la experiencia
+        Disney a otro nivel.
+      </p>
+
+      <h2>Tokyo Disneyland — El Clásico Reinventado</h2>
+      <p>
+        Tokyo Disneyland abrió en 1983 y fue el primer parque Disney fuera de
+        Estados Unidos. Hoy es reconocido mundialmente por su limpieza
+        impecable, la amabilidad de su equipo y atracciones que no encontrás en
+        ningún otro parque del planeta.
+      </p>
+      <ul>
+        <li><strong>Enchanted Tale of Beauty and the Beast:</strong> Un dark ride exclusivo con tecnología de punta.</li>
+        <li><strong>Pooh's Hunny Hunt:</strong> Sin rieles, con movimiento libre — única en el mundo.</li>
+        <li><strong>Space Mountain:</strong> Versión renovada y espectacular.</li>
+        <li><strong>Paradas y shows nocturnos:</strong> Tokio tiene los desfiles más elaborados de todos los Disney.</li>
+      </ul>
+
+      <h2>Tokyo DisneySea — El Parque Más Hermoso del Mundo</h2>
+      <p>
+        DisneySea es considerado por muchos como el parque Disney más bello y
+        sofisticado jamás construido. Con temáticas náuticas y de exploración,
+        ofrece una experiencia premium.
+      </p>
+      <ul>
+        <li><strong>Fantasy Springs:</strong> La nueva área inaugurada en 2024 con Frozen, Tangled y Peter Pan.</li>
+        <li><strong>Journey to the Center of the Earth:</strong> La montaña rusa más icónica de DisneySea.</li>
+        <li><strong>Soaring: Fantastic Flight:</strong> Volá sobre paisajes del mundo con tecnología 4D.</li>
+        <li><strong>Mediterranean Harbor:</strong> Una recreación de Venecia y la Toscana que te deja sin palabras.</li>
+      </ul>
+
+      <h2>Tips para tu Viaje a Disney Tokyo</h2>
+      <ul>
+        <li><strong>Mejor época:</strong> Primavera (marzo-abril) para los cerezos en flor, u otoño (octubre-noviembre) para Halloween.</li>
+        <li><strong>Idioma:</strong> Todo está en japonés e inglés. La app de Disney te guía en tiempo real.</li>
+        <li><strong>Transporte:</strong> El resort está a 15 minutos de la estación Tokyo en tren.</li>
+        <li><strong>Estadía recomendada:</strong> Mínimo 3 días (1 por parque + 1 extra).</li>
+      </ul>
+
+      <h2>¿Por Qué Reservar con Global Dream?</h2>
+      <p>
+        Japón puede ser intimidante si no conocés el idioma ni la cultura.
+        <strong> Con Global Dream Travel® tenés:</strong>
+      </p>
+      <ul>
+        <li>Paquetes con hotel, tickets y traslados incluidos.</li>
+        <li>Itinerario Traza Digital con cada día planificado.</li>
+        <li>Asesoría experta sobre épocas, combinaciones de parques y eventos especiales.</li>
+        <li>Soporte 24/7 durante todo tu viaje.</li>
+      </ul>
+      <p>
+        <strong>Contactá a Global Dream Travel® hoy y empezá a planificar
+        tu viaje a Disney Tokyo.</strong> La magia japonesa te espera.
+      </p>
+    </div>
+  ),
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * DISNEYLAND PARIS
+   * ──────────────────────────────────────────────────────────────────────── */
+  'disneyland-paris': (
+    <div>
+      <p>
+        A solo 35 minutos de París, la ciudad más romántica del mundo,
+        <strong> Disneyland Paris</strong> combina la magia Disney con el
+        encanto europeo. Dos parques, hoteles temáticos y una experiencia que
+        es diferente a cualquier otro resort Disney.
+      </p>
+
+      <h2>Disneyland Park — El Castillo de la Bella Durmiente</h2>
+      <p>
+        El parque principal es una reinterpretación europea del clásico
+        Disneyland de California, con su propio carácter y personalidad.
+      </p>
+      <ul>
+        <li><strong>Le Château de la Belle au Bois Dormant:</strong> El castillo más detallado de todos los Disney, con un dragón real debajo.</li>
+        <li><strong>Big Thunder Mountain:</strong> En una isla rodeada de agua — versión única en el mundo.</li>
+        <li><strong>Hyperspace Mountain:</strong> Star Wars a toda velocidad con efectos de sonido inmersivos.</li>
+        <li><strong>Disney Illuminations:</strong> El show nocturno con proyecciones, fuegos artificiales y drones.</li>
+      </ul>
+
+      <h2>Walt Disney Studios Park — Cine y Aventura</h2>
+      <p>
+        Recientemente expandido con la zona World of Frozen y Avengers Campus,
+        este segundo parque creció enormemente.
+      </p>
+      <ul>
+        <li><strong>Avengers Campus:</strong> Spider-Man, Iron Man y encuentros con héroes Marvel.</li>
+        <li><strong>World of Frozen:</strong> La nueva área de Arendelle con atracciones y ambientación de primer nivel.</li>
+        <li><strong>Ratatouille:</strong> Un dark ride que te encoge al tamaño de Remy por las cocinas de París.</li>
+        <li><strong>Crush's Coaster:</strong> Montaña rusa giratoria con temática de Finding Nemo.</li>
+      </ul>
+
+      <h2>Hoteles y Temporadas</h2>
+      <p>
+        Disneyland Paris ofrece 7 hoteles temáticos, desde el lujoso
+        Disneyland Hotel (reabierto en 2024 con estándar 5 estrellas) hasta
+        opciones más accesibles. Las temporadas especiales incluyen:
+      </p>
+      <ul>
+        <li><strong>Halloween Festival:</strong> Septiembre a noviembre, con decoraciones y shows exclusivos.</li>
+        <li><strong>Navidad Encantada:</strong> Noviembre a enero, con el castillo iluminado y nieve artificial.</li>
+        <li><strong>Festival del Rey León & Selva:</strong> Verano, con shows y personajes especiales.</li>
+      </ul>
+
+      <h2>Logística desde Latinoamérica</h2>
+      <p>
+        Llegar a Disneyland Paris desde Argentina, México o cualquier país de
+        LATAM es más fácil de lo que pensás. Vuelos directos a París CDG, y
+        desde ahí el TGV o shuttle te lleva directo al resort.
+      </p>
+      <p>
+        <strong>Global Dream Travel® se encarga de todo:</strong> vuelos,
+        hoteles, tickets con FastPass, itinerario Traza Digital y soporte
+        constante. <strong>Planificá tu viaje europeo con nosotros y viví la
+        magia Disney en el corazón de Europa.</strong>
+      </p>
+    </div>
+  ),
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * UNIVERSAL STUDIOS JAPAN
+   * ──────────────────────────────────────────────────────────────────────── */
+  'universal-studios-japan': (
+    <div>
+      <p>
+        Osaka, la capital gastronómica de Japón, alberga uno de los parques
+        temáticos más impresionantes del planeta: <strong>Universal Studios
+        Japan (USJ)</strong>. Con áreas exclusivas que no existen en ningún
+        otro parque Universal, es un destino obligatorio para familias y fans.
+      </p>
+
+      <h2>Super Nintendo World — El Mundo de Mario en la Vida Real</h2>
+      <p>
+        Esta es la atracción estrella. Inaugurada en 2021, <strong>Super
+        Nintendo World</strong> te sumerge en el universo de Mario, Luigi,
+        Peach y Toad como nunca antes.
+      </p>
+      <ul>
+        <li><strong>Mario Kart: Koopa's Challenge:</strong> Realidad aumentada + montaña rusa interactiva. La atracción más tecnológica del mundo.</li>
+        <li><strong>Yoshi's Adventure:</strong> Un paseo familiar por el Mushroom Kingdom.</li>
+        <li><strong>Power-Up Bands:</strong> Pulseras interactivas para coleccionar monedas, enfrentar desafíos y competir con amigos.</li>
+        <li><strong>Donkey Kong Country:</strong> La nueva expansión con la Mine Cart Madness.</li>
+      </ul>
+
+      <h2>The Wizarding World of Harry Potter</h2>
+      <p>
+        Hogwarts en Osaka es espectacular. El castillo, Hogsmeade Village y
+        la atracción Harry Potter and the Forbidden Journey siguen siendo
+        referencia mundial.
+      </p>
+
+      <h2>Otras Áreas Imperdibles</h2>
+      <ul>
+        <li><strong>Minion Park:</strong> La zona de los Minions más grande del mundo.</li>
+        <li><strong>Jurassic Park:</strong> Aventura jurásica con dinosaurios animatrónicos de última generación.</li>
+        <li><strong>Hollywood Dream — The Ride:</strong> Montaña rusa con música a elección.</li>
+        <li><strong>Jaws:</strong> La atracción clásica que ya no existe en Orlando, acá sigue activa.</li>
+      </ul>
+
+      <h2>Tickets y Express Pass — Cómo Comprar</h2>
+      <p>
+        USJ es extremadamente popular, especialmente en temporada alta. Los
+        tickets se agotan y el Express Pass es esencial para evitar filas de
+        más de 2 horas.
+      </p>
+      <ul>
+        <li><strong>1-Day Studio Pass:</strong> Entrada general al parque.</li>
+        <li><strong>Express Pass 4 / 7:</strong> Acceso rápido a 4 o 7 atracciones. Imprescindible.</li>
+        <li><strong>Early Entry:</strong> Acceso 15 minutos antes de la apertura para huéspedes de hoteles asociados.</li>
+      </ul>
+      <p>
+        <strong>Con Global Dream Travel® podés comprar tus tickets, Express
+        Pass y paquetes completos con hotel y traslados.</strong> Nos
+        encargamos de toda la logística para que solo te preocupes por
+        disfrutar. <strong>Contactanos hoy y asegurá tu lugar en USJ.</strong>
+      </p>
+    </div>
+  ),
+
+  /* ────────────────────────────────────────────────────────────────────────
+   * DISNEYSEA 3 DÍAS — LUXURY
+   * ──────────────────────────────────────────────────────────────────────── */
+  'disneysea-3-dias': (
+    <div>
+      <p>
+        Tokyo DisneySea no es solo un parque: es una obra maestra de diseño,
+        ingeniería y narrativa. Y si querés vivirlo como se merece,
+        <strong> 3 días con el Vacation Package y el Fantasy Springs Hotel
+        es la experiencia de lujo definitiva en el mundo Disney.</strong>
+      </p>
+
+      <h2>Fantasy Springs Hotel — Lujo Dentro del Parque</h2>
+      <p>
+        Inaugurado en 2024 junto con la nueva área Fantasy Springs, este hotel
+        es el más exclusivo de Tokyo Disney Resort. Está <strong>literalmente
+        dentro del parque</strong>, con acceso directo a las atracciones.
+      </p>
+      <ul>
+        <li><strong>Grand Chateau:</strong> La categoría más premium con vista directa a Fantasy Springs.</li>
+        <li><strong>Habitaciones temáticas:</strong> Frozen, Tangled y Peter Pan con decoración inmersiva.</li>
+        <li><strong>Acceso exclusivo:</strong> Happy Entry (15 min antes) + acceso a Fantasy Springs sin espera.</li>
+        <li><strong>Restaurantes gourmet:</strong> Gastronomía japonesa y occidental de primer nivel.</li>
+      </ul>
+
+      <h2>Itinerario de 3 Días Recomendado</h2>
+      <h3>Día 1 — DisneySea Completo</h3>
+      <ul>
+        <li>Check-in temprano y Happy Entry al parque.</li>
+        <li>Fantasy Springs: Anna & Elsa's Frozen Journey + Rapunzel's Lantern Festival.</li>
+        <li>Journey to the Center of the Earth + 20,000 Leagues Under the Sea.</li>
+        <li>Cena en Magellan's (restaurante gourmet dentro del parque).</li>
+        <li>Show nocturno: Believe! Sea of Dreams.</li>
+      </ul>
+      <h3>Día 2 — Tokyo Disneyland</h3>
+      <ul>
+        <li>Desayuno en el hotel y traslado al parque hermano.</li>
+        <li>Enchanted Tale of Beauty and the Beast + Pooh's Hunny Hunt.</li>
+        <li>Space Mountain renovado + Big Thunder Mountain.</li>
+        <li>Desfile diurno y nocturno: Electrical Parade Dreamlights.</li>
+      </ul>
+      <h3>Día 3 — DisneySea Relax + Compras</h3>
+      <ul>
+        <li>Soaring: Fantastic Flight con calma y sin apuro.</li>
+        <li>Mediterranean Harbor: fotos, góndolas y ambiente italiano.</li>
+        <li>Shopping exclusivo en el resort.</li>
+        <li>Último almuerzo gourmet y check-out.</li>
+      </ul>
+
+      <h2>Tokyo Disney Vacation Packages</h2>
+      <p>
+        Los Vacation Packages de Tokyo Disney Resort incluyen hotel, tickets
+        para ambos parques, Attraction Tickets (acceso rápido), Original Items
+        (souvenirs exclusivos) y beneficios especiales como asientos reservados
+        para shows.
+      </p>
+      <p>
+        <strong>Global Dream Travel® es tu puente para acceder a estos
+        paquetes desde Latinoamérica.</strong> Nos encargamos de la reserva,
+        los vuelos, el itinerario Traza Digital y todo lo que necesitás para
+        vivir la experiencia de lujo máxima en Disney.
+      </p>
+      <p>
+        <strong>Reservá tu experiencia de 3 días en DisneySea con nosotros.
+        Contactá a Global Dream hoy.</strong>
+      </p>
+    </div>
+  ),
 };
