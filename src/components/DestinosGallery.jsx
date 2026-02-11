@@ -56,6 +56,8 @@ const tagColors = {
 };
 
 const DestinosGallery = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="destinos" className="py-24 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
