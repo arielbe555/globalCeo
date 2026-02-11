@@ -59,14 +59,18 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
+          className="flex flex-wrap justify-center gap-3 mb-8 mt-6"
         >
-          {['IATA Acreditada', 'Disney Certified', 'Universal Partner'].map((badge) => (
+          {[
+            { text: 'IATA Acreditada', color: 'bg-disney/80 border-disney-light/40' },
+            { text: 'Disney Certified', color: 'bg-blue-900/60 border-blue-400/30' },
+            { text: 'Universal Partner', color: 'bg-purple-900/60 border-purple-400/30' },
+          ].map((badge) => (
             <span
-              key={badge}
-              className="bg-white/15 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/25 text-white text-[9px] font-bold tracking-[0.25em] uppercase"
+              key={badge.text}
+              className={`${badge.color} backdrop-blur-md px-5 py-2 rounded-full border text-white text-[9px] font-bold tracking-[0.25em] uppercase shadow-lg`}
             >
-              {badge}
+              {badge.text}
             </span>
           ))}
         </motion.div>

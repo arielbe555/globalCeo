@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { FileText, ShieldCheck, Mail, LogIn, MapPin, Phone, Heart } from 'lucide-react';
 
 const partnerLogos = [
-  { src: '/assets/logo-disney.png', alt: 'Disney', height: 'h-7' },
-  { src: '/assets/logo-universal.png', alt: 'Universal', height: 'h-6' },
-  { src: '/assets/logo-iata.jpg', alt: 'IATAN', height: 'h-10' },
+  { src: '/assets/logo-disney.png', alt: 'Disney', height: 'h-8' },
+  { src: '/assets/logo-universal.png', alt: 'Universal', height: 'h-7' },
+  { src: '/assets/logo-iata.jpg', alt: 'IATAN Acreditada', height: 'h-12' },
 ];
 
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
             <img
               src="/assets/logo-global-dream.png"
               alt="Global Dream Travel"
-              className="h-14 mb-6 brightness-0 invert opacity-90 object-contain object-left"
+              className="h-14 mb-6 object-contain object-left"
             />
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
               Hub tecnológico de viajes familiares con acreditación IATA y certificación Disney & Universal.
@@ -93,12 +93,13 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-10 mb-10">
           <div className="flex flex-wrap justify-center items-center gap-12">
             {partnerLogos.map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className={`${logo.height} brightness-0 invert opacity-40 hover:opacity-80 transition-opacity duration-500`}
-              />
+              <div key={logo.alt} className="bg-white/10 rounded-xl px-6 py-3 hover:bg-white/20 transition-all duration-500">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={`${logo.height} object-contain`}
+                />
+              </div>
             ))}
           </div>
         </div>

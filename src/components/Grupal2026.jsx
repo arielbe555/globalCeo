@@ -10,7 +10,7 @@ const fotos = [
 
 const highlights = [
   { icon: <Calendar size={20} />, title: '14 Días', desc: 'Del 7 al 20 — A pura emoción' },
-  { icon: <MapPin size={20} />, title: '4 Parques', desc: 'Disney + Universal + Epic Universe + NASA' },
+  { icon: <MapPin size={20} />, title: '8 Parques', desc: '4 Disney + 4 Universal' },
   { icon: <Users size={20} />, title: 'Grupal', desc: 'Viajá con la comunidad GDT' },
   { icon: <Star size={20} />, title: 'Todo Incluido', desc: 'Logística, app y concierge 24/7' },
 ];
@@ -61,8 +61,8 @@ const Grupal2026 = () => {
 
             <p className="text-lg text-white/80 mb-8 leading-relaxed font-light max-w-lg">
               Después del éxito rotundo del Grupal 2025, volvemos con todo.
-              Del <strong className="text-white font-semibold">7 al 20</strong> — Disney World, Universal, Epic Universe, NASA y mucho más.
-              Viajá con la comunidad Global Dream y viví la experiencia que miles ya vivieron.
+              Del <strong className="text-white font-semibold">7 al 20</strong> — Los 4 parques de Disney World + los 4 de Universal: Studios, Islands of Adventure, Epic Universe y Volcano Bay.
+              8 parques, 14 días, 1 comunidad. Viví la experiencia que miles ya vivieron.
             </p>
 
             {/* Highlights */}
@@ -145,7 +145,7 @@ const Grupal2026 = () => {
             { value: '2025', label: 'Edición Exitosa' },
             { value: '50+', label: 'Viajeros Grupal' },
             { value: '14', label: 'Días de Magia' },
-            { value: '4', label: 'Parques Incluidos' },
+            { value: '8', label: 'Parques Temáticos' },
           ].map((s, i) => (
             <div key={i} className="text-center">
               <div className="text-3xl font-bold text-magic font-quicksand">{s.value}</div>

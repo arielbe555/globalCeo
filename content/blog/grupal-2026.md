@@ -13,12 +13,21 @@ El Grupal 2025 fue un antes y un después para Global Dream Travel®. Más de 50
 
 Este no es un viaje grupal cualquiera. Es la experiencia más completa que existe en el mercado hispanohablante para familias que quieren vivir Orlando como nunca antes. Con la logística de Global Dream, la tecnología Traza Digital y el respaldo de Andi Olivera personalmente.
 
-## ¿Qué incluye el Grupal 2026?
+## 8 Parques en 14 Días
 
-- **Disney World:** Magic Kingdom, EPCOT, Hollywood Studios y Animal Kingdom — con itinerario optimizado día por día.
-- **Universal Orlando:** Universal Studios, Islands of Adventure y el NUEVO Epic Universe.
-- **Kennedy Space Center (NASA):** Experiencia espacial única a solo 1 hora de Orlando.
-- **Disney Cruise Line:** Posibilidad de extensión con crucero por el Caribe.
+**4 parques Disney World:**
+- **Magic Kingdom:** El castillo de Cinderella, las atracciones clásicas y los fuegos artificiales.
+- **EPCOT:** Futuro, tecnología y el World Showcase con gastronomía mundial.
+- **Hollywood Studios:** Star Wars Galaxy's Edge, Tower of Terror, Toy Story Land.
+- **Animal Kingdom:** Pandora, safaris y la naturaleza de Disney.
+
+**4 parques Universal Orlando:**
+- **Universal Studios:** Las atracciones más emocionantes de cine y TV.
+- **Islands of Adventure:** Harry Potter, Jurassic World, Marvel.
+- **Epic Universe:** El parque NUEVO más grande y ambicioso de Universal.
+- **Volcano Bay:** El parque acuático temático con el volcán Krakatau.
+
+**Extras incluidos:**
 - **App Traza Digital:** Todo tu itinerario en el celular, tickets offline, logística inteligente.
 - **Concierge 24/7:** Soporte directo con tu agente durante los 14 días.
 

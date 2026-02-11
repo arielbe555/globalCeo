@@ -19,12 +19,23 @@ export const blogContent = {
         como nunca antes. Con la logística de Global Dream, la tecnología Traza Digital
         y el respaldo de Andi Olivera personalmente.
       </p>
-      <h2>¿Qué incluye el Grupal 2026?</h2>
+      <h2>8 Parques en 14 Días — ¿Qué incluye?</h2>
+      <p><strong>4 parques Disney World:</strong></p>
       <ul>
-        <li><strong>Disney World:</strong> Magic Kingdom, EPCOT, Hollywood Studios y Animal Kingdom — con itinerario optimizado día por día.</li>
-        <li><strong>Universal Orlando:</strong> Universal Studios, Islands of Adventure y el NUEVO Epic Universe.</li>
-        <li><strong>Kennedy Space Center (NASA):</strong> Experiencia espacial única a solo 1 hora de Orlando.</li>
-        <li><strong>Disney Cruise Line:</strong> Posibilidad de extensión con crucero por el Caribe.</li>
+        <li><strong>Magic Kingdom:</strong> El castillo de Cinderella, las atracciones clásicas y los fuegos artificiales.</li>
+        <li><strong>EPCOT:</strong> Futuro, tecnología y el World Showcase con gastronomía mundial.</li>
+        <li><strong>Hollywood Studios:</strong> Star Wars Galaxy's Edge, Tower of Terror, Toy Story Land.</li>
+        <li><strong>Animal Kingdom:</strong> Pandora, safaris y la naturaleza de Disney.</li>
+      </ul>
+      <p><strong>4 parques Universal Orlando:</strong></p>
+      <ul>
+        <li><strong>Universal Studios:</strong> Las atracciones más emocionantes de cine y TV.</li>
+        <li><strong>Islands of Adventure:</strong> Harry Potter, Jurassic World, Marvel.</li>
+        <li><strong>Epic Universe:</strong> El parque NUEVO más grande y ambicioso de Universal.</li>
+        <li><strong>Volcano Bay:</strong> El parque acuático temático con el volcán Krakatau.</li>
+      </ul>
+      <p><strong>Extras incluidos:</strong></p>
+      <ul>
         <li><strong>App Traza Digital:</strong> Todo tu itinerario en el celular, tickets offline, logística inteligente.</li>
         <li><strong>Concierge 24/7:</strong> Soporte directo con tu agente durante los 14 días.</li>
       </ul>

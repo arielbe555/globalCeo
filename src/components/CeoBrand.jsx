@@ -43,7 +43,7 @@ const CeoBrand = () => {
           >
             <div className="relative">
               {/* Main photo — Andi con Walt y Castillo de noche */}
-              <div className="w-72 h-96 md:w-80 md:h-[28rem] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-disney/20 border-4 border-white ring-1 ring-slate-100">
+              <div className="w-80 h-[26rem] md:w-[22rem] md:h-[32rem] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-disney/20 border-4 border-white ring-1 ring-slate-100">
                 <img
                   src="/assets/castillidenocheandiywalt.jpeg"
                   alt="Andi Olivera frente al Castillo de Cinderella y la estatua de Walt Disney"

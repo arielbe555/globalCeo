@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 const partners = [
-  { src: '/assets/logo-disney.png', alt: 'Disney', height: 'h-6' },
-  { src: '/assets/logo-universal.png', alt: 'Universal', height: 'h-5' },
-  { src: '/assets/logo-iata.jpg', alt: 'IATAN Acreditada', height: 'h-9' },
+  { src: '/assets/logo-disney.png', alt: 'Disney', height: 'h-7' },
+  { src: '/assets/logo-universal.png', alt: 'Universal', height: 'h-6' },
+  { src: '/assets/logo-iata.jpg', alt: 'IATAN Acreditada', height: 'h-10' },
 ];
 
 const AuthorityStrip = () => {
@@ -41,11 +41,13 @@ const AuthorityStrip = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
               >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  className={`${p.height} brightness-0 invert opacity-70 hover:opacity-100 transition-opacity duration-500`}
-                />
+                <div className="bg-white/15 rounded-xl px-4 py-2">
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    className={`${p.height} object-contain`}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
