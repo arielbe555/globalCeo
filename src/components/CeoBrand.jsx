@@ -26,10 +26,10 @@ const CeoBrand = () => {
           <span className="text-[10px] font-bold text-disney uppercase tracking-[0.3em]">
             {t('ceo.sectionLabel')}
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-quicksand text-slate-800 mt-3 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-bold font-quicksand text-disney mt-3 leading-tight">
             {t('ceo.titleLine1')}
             <br className="hidden md:block" />
-            <span className="text-disney">{t('ceo.titleLine2')}</span>
+            {t('ceo.titleLine2')}
           </h2>
         </motion.div>
 
@@ -82,8 +82,8 @@ const CeoBrand = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-3"
           >
-            <p className="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed font-light">
-              {t('ceo.bio1')} <strong className="font-semibold text-slate-800">{t('ceo.bio2')}</strong> {t('ceo.bio3')} <strong className="font-semibold text-slate-800">{t('ceo.bio4')}</strong>{t('ceo.bio5')}
+            <p className="text-xl md:text-2xl text-slate-500 mb-10 leading-relaxed font-light">
+              {t('ceo.bio1')} <strong className="font-semibold text-disney">{t('ceo.bio2')}</strong> {t('ceo.bio3')} <strong className="font-semibold text-disney">{t('ceo.bio4')}</strong>{t('ceo.bio5')}
             </p>
 
             {/* Credentials grid */}
@@ -101,7 +101,7 @@ const CeoBrand = () => {
                     {c.icon}
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-slate-800">{c.text}</div>
+                    <div className="text-sm font-bold text-disney">{c.text}</div>
                     <div className="text-[10px] text-slate-400 mt-0.5">{c.sub}</div>
                   </div>
                 </motion.div>

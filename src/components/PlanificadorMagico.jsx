@@ -12,7 +12,7 @@ const PlanificadorMagico = () => {
   const { t } = useTranslation();
   const destinos = [
     t('planner.destDisney'),
-    t('planner.destEpic'),
+    t('planner.destJapon'),
     t('planner.destCruise'),
     t('planner.destEuropa'),
     t('planner.destDubai'),

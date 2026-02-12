@@ -49,7 +49,7 @@ const blogPosts = [
     description: 'Guía experta de Disneyland Paris y Walt Disney Studios Park: shows, hoteles, temporadas y logística desde Latinoamérica.',
     date: '2026-02-11',
     category: 'Destinos',
-    image: '/assets/disney-paris.png',
+    image: '/assets/PARIS.jpg',
   },
   {
     slug: 'universal-studios-japan',
