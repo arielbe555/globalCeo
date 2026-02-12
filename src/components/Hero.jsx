@@ -8,8 +8,6 @@ const heroImages = [
   '/assets/epic-universe.jpg',              // Grupo GDT en Epic Universe con bandera argentina
   '/assets/cruceroo.jpeg',                  // Disney Fantasy con personajes y fuegos artificiales
   '/assets/gruoal2026.jpg',                 // Grupo disfrazados frente al castillo de Cinderella
-  '/assets/mickeyparis.jpg',               // Mickey en Disneyland Paris — alta definición
-  '/assets/montanarusauniversal.png',      // Hulk Coaster en Universal Orlando — acción
   '/assets/familia-parque.jpg',             // Familia en Disney Boardwalk
 ];
 
@@ -62,7 +60,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-8 mt-6"
+          className="flex flex-wrap justify-center gap-3 mb-8 mt-20 sm:mt-16"
         >
           {[
             { text: t('hero.badgeIata'), color: 'bg-disney/80 border-disney-light/40' },

@@ -37,7 +37,7 @@ const destinos = [
   {
     nombre: 'Disneyland Paris',
     lugar: 'París, Francia',
-    img: '/assets/mickeyparis.jpg',
+    img: '/assets/daisyparis.jpg',
     tag: 'Disney',
   },
 ];
