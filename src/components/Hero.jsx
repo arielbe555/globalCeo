@@ -60,7 +60,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-8 mt-28 sm:mt-24"
+          className="flex flex-wrap justify-center gap-3 mb-5 mt-24 sm:mt-20"
         >
           {[
             { text: t('hero.badgeIata'), color: 'bg-disney/80 border-disney-light/40' },
@@ -80,7 +80,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
-          className="text-5xl sm:text-7xl md:text-[6rem] lg:text-[7rem] font-bold text-white mb-6 font-quicksand leading-[0.95] tracking-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 font-quicksand leading-[0.95] tracking-tight"
         >
           {t('hero.titleLine1')}
           <br />
@@ -93,7 +93,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto font-light mb-14 leading-relaxed"
+          className="text-base md:text-xl text-white/85 max-w-3xl mx-auto font-light mb-8 leading-relaxed"
         >
           {t('hero.subtitle')}{' '}
           <strong className="font-semibold text-white">{t('hero.subtitleAgents')}</strong>{' '}
