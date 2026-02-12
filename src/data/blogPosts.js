@@ -129,7 +129,7 @@ const blogPosts = [
     description: 'La tranquilidad de viajar protegido: coberturas, beneficios y por qué siempre recomendamos Assist Card.',
     date: '2025-08-18',
     category: 'Seguridad',
-    image: '/assets/nasa.jpeg',
+    image: '/assets/assistcard.webp',
   },
   {
     slug: 'dubai-emirates',
