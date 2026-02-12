@@ -5,7 +5,7 @@ import { FileText, ShieldCheck, Mail, LogIn, MapPin, Phone, Heart } from 'lucide
 const partnerLogos = [
   { src: '/assets/logo-disney.png', alt: 'Disney' },
   { src: '/assets/logo-universal.png', alt: 'Universal' },
-  { src: '/assets/logo-iata.jpg', alt: 'IATA Acreditada' },
+  { src: '/assets/logo-iatan.png', alt: 'IATAN Acreditada' },
 ];
 
 const Footer = () => {
@@ -95,11 +95,11 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-10 mb-10">
           <div className="flex flex-wrap justify-center items-center gap-8">
             {partnerLogos.map((logo) => (
-              <div key={logo.alt} className="w-28 h-14 md:w-36 md:h-16 bg-white rounded-2xl flex items-center justify-center px-4 shadow-lg hover:scale-105 transition-transform duration-300">
+              <div key={logo.alt} className="w-32 h-16 md:w-40 md:h-20 bg-white rounded-2xl flex items-center justify-center px-5 shadow-lg hover:scale-105 transition-transform duration-300">
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-12 md:max-h-14 max-w-full object-contain"
                 />
               </div>
             ))}
