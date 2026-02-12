@@ -16,12 +16,16 @@ i18n
       pt: { translation: pt },
     },
     fallbackLng: 'es',
+    supportedLngs: ['es', 'en', 'pt'],
     interpolation: {
       escapeValue: false, // React already escapes
     },
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
+    },
+    react: {
+      useSuspense: false, // Avoid blank page if no Suspense boundary
     },
   });
 

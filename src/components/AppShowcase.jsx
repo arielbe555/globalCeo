@@ -13,10 +13,12 @@ const AppShowcase = () => {
   ];
 
   const itineraryItems = [
-    { day: 'app.d1', title: 'app.d1Title', status: 'app.d1Status', active: false },
-    { day: 'app.d2', title: 'app.d2Title', status: 'app.d2Status', active: true },
-    { day: 'app.d3', title: 'app.d3Title', status: 'app.d3Status', active: false },
-    { day: 'app.d4', title: 'app.d4Title', status: 'app.d4Status', active: false },
+    { time: '8:30', title: 'app.mk1Title', land: 'app.mk1Land', active: false },
+    { time: '9:00', title: 'app.mk2Title', land: 'app.mk2Land', active: false },
+    { time: '10:00', title: 'app.mk3Title', land: 'app.mk3Land', active: false },
+    { time: '10:45', title: 'app.mk4Title', land: 'app.mk4Land', active: false },
+    { time: '11:30', title: 'app.mk5Title', land: 'app.mk5Land', active: false },
+    { time: '12:30', title: 'app.mk6Title', land: 'app.mk6Land', active: true },
   ];
 
   const tabs = ['app.tabMapa', 'app.tabDocs', 'app.tabChat', 'app.tabPerfil'];
@@ -43,39 +45,39 @@ const AppShowcase = () => {
 
               <div className="p-4 pt-10 h-full bg-white flex flex-col font-poppins">
                 {/* App Header */}
-                <div className="bg-gradient-to-br from-disney to-indigo-500 rounded-2xl p-4 text-white mb-5 relative overflow-hidden">
+                <div className="bg-gradient-to-br from-disney to-indigo-500 rounded-2xl p-4 text-white mb-4 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
                   <div className="text-[8px] font-bold opacity-70 mb-0.5 uppercase tracking-widest">
-                    {t('app.tuItinerario')}
+                    {t('app.mkHeader')}
                   </div>
-                  <div className="text-lg font-bold font-quicksand">{t('app.misionMagica')}</div>
-                  <div className="text-[9px] text-white/60 mt-1">{t('app.orlando7dias')}</div>
+                  <div className="text-base font-bold font-quicksand">{t('app.mkTitle')}</div>
+                  <div className="text-[9px] text-white/60 mt-1">{t('app.mkSubtitle')}</div>
                 </div>
 
-                {/* Itinerary Items */}
-                <div className="space-y-3 flex-1">
+                {/* Magic Kingdom Hour-by-Hour */}
+                <div className="space-y-2 flex-1 overflow-y-auto">
                   {itineraryItems.map((item, i) => (
                     <div
                       key={i}
-                      className={`flex gap-3 items-center p-3 rounded-xl border transition-all ${
+                      className={`flex gap-2.5 items-center p-2.5 rounded-xl border transition-all ${
                         item.active
                           ? 'bg-disney/5 border-disney/20 shadow-sm'
                           : 'bg-slate-50 border-slate-100'
                       }`}
                     >
-                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center font-bold text-[10px] ${
+                      <div className={`w-10 h-8 rounded-lg flex items-center justify-center font-bold text-[9px] shrink-0 ${
                         item.active
                           ? 'bg-disney text-white shadow-sm'
                           : 'bg-white text-disney border border-slate-100'
                       }`}>
-                        {t(item.day)}
+                        {item.time}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-[10px] font-bold text-slate-700 truncate">{t(item.title)}</div>
-                        <div className={`text-[9px] ${item.active ? 'text-disney' : 'text-slate-400'}`}>{t(item.status)}</div>
+                        <div className="text-[9px] font-bold text-slate-700 truncate">{t(item.title)}</div>
+                        <div className={`text-[8px] ${item.active ? 'text-disney font-semibold' : 'text-slate-400'}`}>{t(item.land)}</div>
                       </div>
                       {item.active && (
-                        <div className="w-2 h-2 bg-disney rounded-full animate-pulse" />
+                        <div className="w-2 h-2 bg-disney rounded-full animate-pulse shrink-0" />
                       )}
                     </div>
                   ))}

@@ -8,7 +8,7 @@ const heroImages = [
   '/assets/epic-universe.jpg',              // Grupo GDT en Epic Universe con bandera argentina
   '/assets/cruceroo.jpeg',                  // Disney Fantasy con personajes y fuegos artificiales
   '/assets/gruoal2026.jpg',                 // Grupo disfrazados frente al castillo de Cinderella
-  '/assets/disney-paris.png',              // Joy frente al castillo de Disneyland Paris
+  '/assets/mickeyparis.jpg',               // Mickey en Disneyland Paris — alta definición
   '/assets/montanarusauniversal.png',      // Hulk Coaster en Universal Orlando — acción
   '/assets/familia-parque.jpg',             // Familia en Disney Boardwalk
 ];
@@ -71,7 +71,7 @@ const Hero = () => {
           ].map((badge) => (
             <span
               key={badge.text}
-              className={`${badge.color} backdrop-blur-md px-5 py-2 rounded-full border text-white text-[9px] font-bold tracking-[0.25em] uppercase shadow-lg`}
+              className={`${badge.color} backdrop-blur-md px-6 py-2.5 sm:px-7 sm:py-3 rounded-full border text-white text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase shadow-lg min-w-fit whitespace-nowrap`}
             >
               {badge.text}
             </span>

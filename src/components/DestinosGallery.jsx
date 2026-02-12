@@ -37,14 +37,8 @@ const destinos = [
   {
     nombre: 'Disneyland Paris',
     lugar: 'París, Francia',
-    img: '/assets/disney-paris.png',
+    img: '/assets/mickeyparis.jpg',
     tag: 'Disney',
-  },
-  {
-    nombre: 'Universal Studios Japan',
-    lugar: 'Osaka, Japón',
-    img: '/assets/universal-osaka.png',
-    tag: 'Universal',
   },
 ];
 

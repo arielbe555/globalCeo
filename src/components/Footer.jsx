@@ -95,7 +95,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-10 mb-10">
           <div className="flex flex-wrap justify-center items-center gap-8">
             {partnerLogos.map((logo) => (
-              <div key={logo.alt} className="w-28 h-14 md:w-36 md:h-16 bg-white/15 rounded-2xl flex items-center justify-center px-4 hover:bg-white/25 transition-all duration-500">
+              <div key={logo.alt} className="w-28 h-14 md:w-36 md:h-16 bg-white rounded-2xl flex items-center justify-center px-4 shadow-lg hover:scale-105 transition-transform duration-300">
                 <img
                   src={logo.src}
                   alt={logo.alt}
