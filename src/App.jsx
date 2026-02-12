@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -7,6 +7,10 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import BlogEntry from './pages/BlogEntry';
 import Legales from './pages/Legales';
+import LinkGenerator from './pages/LinkGenerator';
+import PagoSeguro from './pages/PagoSeguro';
+import AltaAgente from './pages/AltaAgente';
+import GrupalContrato from './pages/GrupalContrato';
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -17,20 +21,36 @@ function ScrollToTop() {
   return null;
 }
 
+/* Layout con Navbar + Footer (páginas públicas) */
+function MainLayout() {
+  return (
+    <div className="min-h-screen bg-white font-poppins text-slate-800">
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+}
+
 const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-white font-poppins text-slate-800">
-        <Navbar />
-        <Routes>
+      <Routes>
+        {/* Rutas públicas con Navbar + Footer */}
+        <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogEntry />} />
           <Route path="/legales" element={<Legales />} />
-        </Routes>
-        <Footer />
-      </div>
+        </Route>
+
+        {/* Rutas standalone (herramientas internas, sin Navbar/Footer) */}
+        <Route path="/link" element={<LinkGenerator />} />
+        <Route path="/pago1" element={<PagoSeguro />} />
+        <Route path="/alta" element={<AltaAgente />} />
+        <Route path="/grupal2026" element={<GrupalContrato />} />
+      </Routes>
     </Router>
   );
 };
