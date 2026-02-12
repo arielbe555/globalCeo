@@ -12,6 +12,7 @@ import PagoSeguro from './pages/PagoSeguro';
 import AltaAgente from './pages/AltaAgente';
 import GrupalContrato from './pages/GrupalContrato';
 import ToolLayout from './components/ToolLayout';
+import PinGate from './components/PinGate';
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -46,10 +47,14 @@ const App = () => {
           <Route path="/legales" element={<Legales />} />
         </Route>
 
-        {/* Rutas standalone (herramientas internas, con branding liviano) */}
+        {/* Pago: página pública para clientes (sin PIN) */}
         <Route element={<ToolLayout />}>
-          <Route path="/link" element={<LinkGenerator />} />
           <Route path="/pago1" element={<PagoSeguro />} />
+        </Route>
+
+        {/* Herramientas internas protegidas con PIN */}
+        <Route element={<PinGate><ToolLayout /></PinGate>}>
+          <Route path="/link" element={<LinkGenerator />} />
           <Route path="/alta" element={<AltaAgente />} />
           <Route path="/grupal2026" element={<GrupalContrato />} />
         </Route>
