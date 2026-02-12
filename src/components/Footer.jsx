@@ -5,7 +5,7 @@ import { FileText, ShieldCheck, Mail, LogIn, MapPin, Phone, Heart } from 'lucide
 const partnerLogos = [
   { src: '/assets/logo-disney.png', alt: 'Disney' },
   { src: '/assets/logo-universal.png', alt: 'Universal' },
-  { src: '/assets/logo-iatan.png', alt: 'IATAN Acreditada' },
+  { src: '/assets/logo-iata.jpg', alt: 'IATA Acreditada' },
 ];
 
 const Footer = () => {

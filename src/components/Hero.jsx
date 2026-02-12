@@ -60,7 +60,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-8 mt-20 sm:mt-16"
+          className="flex flex-wrap justify-center gap-3 mb-8 mt-28 sm:mt-24"
         >
           {[
             { text: t('hero.badgeIata'), color: 'bg-disney/80 border-disney-light/40' },

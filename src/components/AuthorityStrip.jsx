@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 const partners = [
   { src: '/assets/logo-disney.png', alt: 'Disney' },
   { src: '/assets/logo-universal.png', alt: 'Universal' },
-  { src: '/assets/logo-iatan.png', alt: 'IATAN Acreditada' },
+  { src: '/assets/logo-iata.jpg', alt: 'IATA Acreditada' },
 ];
 
 const AuthorityStrip = () => {
