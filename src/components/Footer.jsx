@@ -93,14 +93,18 @@ const Footer = () => {
 
         {/* Partner logos */}
         <div className="border-t border-white/10 pt-10 mb-10">
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
             {partnerLogos.map((logo) => (
-              <img
+              <div
                 key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 md:h-14 max-w-[120px] md:max-w-[150px] object-contain hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
-              />
+                className="bg-white rounded-2xl p-2 md:p-3 overflow-hidden hover:scale-105 transition-transform duration-300"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-9 md:h-12 max-w-[110px] md:max-w-[140px] object-contain rounded-lg"
+                />
+              </div>
             ))}
           </div>
         </div>
