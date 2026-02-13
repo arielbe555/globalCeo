@@ -27,7 +27,7 @@ const CeoBrand = () => {
             {t('ceo.sectionLabel')}
           </span>
           <h2 className="text-3xl md:text-5xl font-bold font-quicksand text-disney mt-3 leading-tight">
-            {t('ceo.titleLine1')}
+            {t('ceo.titleLine1')}{' '}
             <br className="hidden md:block" />
             {t('ceo.titleLine2')}
           </h2>
