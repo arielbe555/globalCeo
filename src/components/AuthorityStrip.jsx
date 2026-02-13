@@ -35,7 +35,7 @@ const AuthorityStrip = () => {
           </div>
 
           {/* Real Partner Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {partners.map((p, i) => (
               <motion.div
                 key={i}
@@ -43,13 +43,12 @@ const AuthorityStrip = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="bg-white rounded-xl px-4 py-3 md:px-6 md:py-4 shadow-lg hover:scale-105 transition-transform duration-300"
+                className="hover:scale-110 transition-transform duration-300"
               >
                 <img
                   src={p.src}
                   alt={p.alt}
-                  className="h-8 md:h-12 max-w-[100px] md:max-w-[130px] object-contain"
-                  style={{ filter: 'invert(1)' }}
+                  className="h-10 md:h-14 max-w-[120px] md:max-w-[150px] object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
                 />
               </motion.div>
             ))}

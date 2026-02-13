@@ -93,19 +93,14 @@ const Footer = () => {
 
         {/* Partner logos */}
         <div className="border-t border-white/10 pt-10 mb-10">
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {partnerLogos.map((logo) => (
-              <div
+              <img
                 key={logo.alt}
-                className="bg-white rounded-xl px-4 py-3 md:px-5 md:py-3 hover:scale-105 transition-transform duration-300"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-8 md:h-11 max-w-[100px] md:max-w-[120px] object-contain"
-                  style={{ filter: 'invert(1)' }}
-                />
-              </div>
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 md:h-14 max-w-[120px] md:max-w-[150px] object-contain hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+              />
             ))}
           </div>
         </div>
