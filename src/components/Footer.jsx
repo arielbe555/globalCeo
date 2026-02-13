@@ -97,7 +97,7 @@ const Footer = () => {
             {partnerLogos.map((logo) => (
               <div
                 key={logo.alt}
-                className="bg-white rounded-xl px-4 py-3 md:px-5 md:py-3 hover:scale-105 transition-transform duration-300 opacity-80 hover:opacity-100"
+                className="bg-white rounded-xl px-4 py-3 md:px-5 md:py-3 hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src={logo.src}
