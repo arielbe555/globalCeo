@@ -49,6 +49,7 @@ const AuthorityStrip = () => {
                   src={p.src}
                   alt={p.alt}
                   className="h-8 md:h-12 max-w-[100px] md:max-w-[130px] object-contain"
+                  style={{ filter: 'invert(1)' }}
                 />
               </motion.div>
             ))}

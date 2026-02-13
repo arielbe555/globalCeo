@@ -103,6 +103,7 @@ const Footer = () => {
                   src={logo.src}
                   alt={logo.alt}
                   className="h-8 md:h-11 max-w-[100px] md:max-w-[120px] object-contain"
+                  style={{ filter: 'invert(1)' }}
                 />
               </div>
             ))}
