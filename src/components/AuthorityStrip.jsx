@@ -44,13 +44,12 @@ const AuthorityStrip = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
               >
-                <div className="w-36 h-20 md:w-40 md:h-20 rounded-2xl flex items-center justify-center px-4 py-3 shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: '#ffffff' }}>
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    className="max-h-14 max-w-full object-contain"
-                  />
-                </div>
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  className="h-10 md:h-14 max-w-[120px] md:max-w-[150px] object-contain hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
               </motion.div>
             ))}
           </div>

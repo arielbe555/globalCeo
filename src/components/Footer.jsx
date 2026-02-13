@@ -95,13 +95,13 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-10 mb-10">
           <div className="flex flex-wrap justify-center items-center gap-8">
             {partnerLogos.map((logo) => (
-              <div key={logo.alt} className="w-36 h-20 md:w-40 md:h-20 rounded-2xl flex items-center justify-center px-4 py-3 shadow-lg hover:scale-105 transition-transform duration-300" style={{ backgroundColor: '#ffffff' }}>
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="max-h-14 max-w-full object-contain"
-                />
-              </div>
+              <img
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 md:h-14 max-w-[120px] md:max-w-[150px] object-contain hover:scale-110 transition-transform duration-300 opacity-60 hover:opacity-100"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             ))}
           </div>
         </div>
