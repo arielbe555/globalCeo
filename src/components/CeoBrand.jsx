@@ -115,7 +115,7 @@ const CeoBrand = () => {
                 {t('ceo.quote')}
               </p>
               <div className="mt-6 flex items-center gap-4">
-                <img src="/assets/andi-olivera.jpeg" alt="Andi" className="w-16 h-16 rounded-full object-cover object-top shadow-lg ring-2 ring-disney/20" />
+                <img src="/assets/andi-olivera.jpg" alt="Andi" className="w-16 h-16 rounded-full object-cover object-top shadow-lg ring-2 ring-disney/20" />
                 <div>
                   <cite className="text-lg font-bold text-disney not-italic">Andi Olivera</cite>
                   <div className="text-sm text-slate-400">{t('ceo.quoteCitation')}</div>
