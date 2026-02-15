@@ -41,35 +41,36 @@ const MediaKit = () => {
     <div className="bg-white min-h-screen font-poppins">
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* HERO — Group photo at Disney park                   */}
+      {/* HERO — White, clean, corporate                       */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-end justify-center overflow-hidden">
-        <img
-          src="/assets/grupales.jpeg"
-          alt="Global Dream Travel Group at Disney"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+      <section className="min-h-screen flex items-center justify-center bg-white">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 text-center px-6 pb-20 max-w-3xl mx-auto"
+          className="text-center px-6 max-w-4xl mx-auto"
         >
           <img
             src="/assets/logo-global-dream.png"
             alt="Global Dream Travel"
-            className="h-16 md:h-20 mx-auto mb-8 object-contain drop-shadow-lg"
+            className="h-24 md:h-32 mx-auto mb-10 object-contain"
           />
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-3 tracking-tight drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-4 tracking-tight">
             Global Dream Travel
           </h1>
-          <p className="text-lg md:text-xl text-white/80 font-light mb-2">
+          <p className="text-lg md:text-xl text-slate-500 font-light mb-6 max-w-2xl mx-auto">
             Strategic LATAM Growth Partner
           </p>
-          <div className="w-16 h-px bg-white/40 mx-auto my-6" />
-          <p className="text-sm text-white/60 uppercase tracking-[0.25em] font-medium">
-            Theme Parks & Destination Experiences
+          <div className="w-20 h-px bg-disney mx-auto my-8" />
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {['Technology', 'Infrastructure', 'Destination Experiences', 'IATA Agency'].map((tag) => (
+              <span key={tag} className="text-[10px] font-bold uppercase tracking-[0.2em] text-disney bg-disney/5 border border-disney/10 px-4 py-2 rounded-lg">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="text-sm text-slate-400 uppercase tracking-[0.25em] font-medium">
+            Theme Parks &middot; Cruises &middot; Proprietary Technology &middot; 150+ Advisors
           </p>
         </motion.div>
       </section>
@@ -137,13 +138,12 @@ const MediaKit = () => {
               </div>
             </div>
 
-            {/* Gallery — Walt photos + group, NO solo selfies */}
+            {/* Gallery — Walt + Roy (brother) statues */}
             <PhotoStrip
               height="h-48 md:h-64"
               images={[
-                { src: '/assets/waltyandy.jpeg', alt: 'Andrea with Walt Disney statue at EPCOT' },
-                { src: '/assets/walt_1.jpeg', alt: 'Andrea with Walt Disney statue' },
-                { src: '/assets/castillidenocheandiywalt.jpeg', alt: 'Andrea at Magic Kingdom with Walt and Mickey statue' },
+                { src: '/assets/WALT.jpeg', alt: 'Andrea with Walt Disney statue at EPCOT' },
+                { src: '/assets/ROY.jpeg', alt: 'Roy Disney statue with Minnie Mouse' },
               ]}
             />
           </motion.div>
@@ -296,15 +296,15 @@ const MediaKit = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* PHOTO BREAKER — Group + castle                       */}
+      {/* PHOTO BREAKER — Group, castle, charla                */}
       {/* ═══════════════════════════════════════════════════ */}
       <div className="max-w-5xl mx-auto px-4 py-4">
         <PhotoStrip
           height="h-48 md:h-64"
           images={[
-            { src: '/assets/andi-family-castle.jpeg', alt: 'Andrea with family at Magic Kingdom' },
-            { src: '/assets/castle-fireworks.jpeg', alt: 'Cinderella Castle fireworks' },
-            { src: '/assets/2026grupal22.png', alt: 'Global Dream Travel group trip 2026' },
+            { src: '/assets/gruoal2026.jpg', alt: 'Global Dream Travel group at Cinderella Castle 2026' },
+            { src: '/assets/CASTILLO1.jpeg', alt: 'Cinderella Castle daytime' },
+            { src: '/assets/CHARLA.png', alt: 'Andrea Olivera professional talk on stage' },
           ]}
         />
       </div>
@@ -366,14 +366,14 @@ const MediaKit = () => {
             {/* Philosophy photo grid */}
             <div className="grid grid-cols-3 gap-2 rounded-2xl overflow-hidden">
               <div className="col-span-2 h-56 md:h-72">
-                <img src="/assets/grupales.jpeg" alt="Global Dream Travel group at parks" className="w-full h-full object-cover" loading="lazy" />
+                <img src="/assets/gruoal2026.jpg" alt="Global Dream Travel group at Cinderella Castle" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex-1 overflow-hidden">
-                  <img src="/assets/castle-fireworks.jpeg" alt="Castle fireworks" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/assets/BACKCASTILLO.jpeg" alt="Fireworks at Cinderella Castle from audience" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="flex-1 overflow-hidden">
-                  <img src="/assets/andi-family-castle.jpeg" alt="Andrea with family at castle" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/assets/familia-parque.jpg" alt="Family enjoying Disney parks" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -504,16 +504,76 @@ const MediaKit = () => {
                   TRIP transforms planning into guided execution.
                 </p>
 
-                {/* Agency OS — compact */}
-                <div className="mt-6 pt-6 border-t border-slate-100">
-                  <h3 className="text-base font-bold text-slate-800 mb-2">Integrated Agency Operating System</h3>
-                  <p className="text-xs text-slate-500 mb-3">Centralized digital workflow connecting:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['Agents', 'Clients', 'Itinerary Engine', 'Sales Structure', 'Operational Visibility'].map((item, i) => (
-                      <span key={i} className="text-[10px] text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 font-medium">
+              </div>
+            </div>
+
+            {/* ── Agent Administration System ─────────────── */}
+            <div className="mt-10 pt-10 border-t border-slate-100">
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                {/* Left: Text */}
+                <div className="flex-1">
+                  <h3 className="text-base font-bold text-slate-800 mb-2">Centralized Agent Operating Platform</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                    Proprietary B2B administration system managing 150+ travel advisors,
+                    booking pipelines, sales tracking and operational visibility in real time.
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    {[
+                      'Internal booking management & pipeline',
+                      'Sales tracking and performance analytics',
+                      'Structured advisor network administration',
+                      'Unified digital workflow across all agents',
+                      'Real-time operational visibility dashboard',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-slate-600">
+                        <div className="w-1 h-1 bg-disney rounded-full mt-1.5 shrink-0" />
                         {item}
-                      </span>
+                      </li>
                     ))}
+                  </ul>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold">
+                    globaldream.netlify.app — Scalable LATAM Infrastructure
+                  </p>
+                </div>
+
+                {/* Right: Dashboard mockup (compact) */}
+                <div className="w-full md:w-[300px] shrink-0">
+                  <div className="bg-slate-800 rounded-2xl border border-slate-700 p-4 shadow-xl">
+                    {/* Browser bar */}
+                    <div className="flex items-center gap-1.5 mb-4">
+                      <div className="w-2 h-2 rounded-full bg-red-400" />
+                      <div className="w-2 h-2 rounded-full bg-yellow-400" />
+                      <div className="w-2 h-2 rounded-full bg-green-400" />
+                      <span className="ml-2 text-[8px] text-slate-500 font-mono">globaldream.netlify.app</span>
+                    </div>
+                    {/* Revenue card */}
+                    <div className="bg-gradient-to-r from-disney to-disney-light p-3 rounded-lg mb-3">
+                      <div className="text-[8px] uppercase tracking-widest text-white/60 font-bold">Bookings this month</div>
+                      <div className="text-xl font-bold font-quicksand text-white">$247,850</div>
+                      <div className="text-[8px] text-white/70">+23% vs last month</div>
+                    </div>
+                    {/* Mini stats */}
+                    <div className="grid grid-cols-3 gap-2 mb-3">
+                      {[
+                        { val: '38', label: 'Active', color: 'text-yellow-400' },
+                        { val: '12', label: 'Confirmed', color: 'text-green-400' },
+                        { val: '5', label: 'Pending', color: 'text-blue-400' },
+                      ].map((s, i) => (
+                        <div key={i} className="bg-white/5 p-2 rounded-lg text-center">
+                          <div className={`text-sm font-bold font-quicksand ${s.color}`}>{s.val}</div>
+                          <div className="text-[7px] text-slate-400 uppercase">{s.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                    {/* Booking rows */}
+                    <div className="space-y-1.5">
+                      {['Fam. Rodriguez — Disney World', 'Fam. Lopez — Disney Cruise', 'Fam. Martinez — Universal'].map((item, i) => (
+                        <div key={i} className="flex items-center justify-between p-2 bg-white/5 rounded-lg">
+                          <span className="text-[9px] text-slate-300">{item}</span>
+                          <span className="text-[7px] px-1.5 py-0.5 bg-green-500/20 text-green-400 rounded-full font-bold">Confirmed</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -523,15 +583,14 @@ const MediaKit = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* PHOTO BREAKER — Walt statues + group                 */}
+      {/* PHOTO BREAKER — Mickey + Castle night                 */}
       {/* ═══════════════════════════════════════════════════ */}
       <div className="max-w-5xl mx-auto px-4 py-4">
         <PhotoStrip
           height="h-48 md:h-64"
           images={[
-            { src: '/assets/waltyandy.jpeg', alt: 'Andrea with Walt Disney statue' },
-            { src: '/assets/walt-minnie-bench.jpeg', alt: 'Walt Disney and Minnie statue' },
-            { src: '/assets/walt_1.jpeg', alt: 'Andrea with Walt Disney at EPCOT' },
+            { src: '/assets/andii_mickey.jpeg', alt: 'Andrea with Sorcerer Mickey' },
+            { src: '/assets/REDCASTILLO.jpeg', alt: 'Cinderella Castle night fireworks' },
           ]}
         />
       </div>
@@ -675,8 +734,8 @@ const MediaKit = () => {
       <section className="py-24 md:py-32 relative overflow-hidden">
         {/* Background image */}
         <img
-          src="/assets/andi-castle-open.jpeg"
-          alt="Andrea at castle"
+          src="/assets/BACKCASTILLO.jpeg"
+          alt="Fireworks at Cinderella Castle"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-slate-900/85" />
