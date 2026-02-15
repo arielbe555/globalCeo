@@ -363,18 +363,19 @@ const MediaKit = () => {
               ))}
             </div>
 
-            {/* Philosophy photo grid */}
-            <div className="grid grid-cols-3 gap-2 rounded-2xl overflow-hidden">
-              <div className="col-span-2 h-56 md:h-72">
+            {/* Philosophy photo grid — 2x2 balanced */}
+            <div className="grid grid-cols-2 gap-3 rounded-2xl overflow-hidden">
+              <div className="h-52 md:h-64 overflow-hidden rounded-xl">
                 <img src="/assets/gruoal2026.jpg" alt="Global Dream Travel group at Cinderella Castle" className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <div className="flex flex-col gap-2">
-                <div className="flex-1 overflow-hidden">
-                  <img src="/assets/BACKCASTILLO.jpeg" alt="Fireworks at Cinderella Castle from audience" className="w-full h-full object-cover" loading="lazy" />
-                </div>
-                <div className="flex-1 overflow-hidden">
-                  <img src="/assets/familia-parque.jpg" alt="Family enjoying Disney parks" className="w-full h-full object-cover" loading="lazy" />
-                </div>
+              <div className="h-52 md:h-64 overflow-hidden rounded-xl">
+                <img src="/assets/BACKCASTILLO.jpeg" alt="Fireworks at Cinderella Castle from audience" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="h-52 md:h-64 overflow-hidden rounded-xl">
+                <img src="/assets/capacitacion.jpg" alt="Andrea Olivera capacitacion profesional" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="h-52 md:h-64 overflow-hidden rounded-xl">
+                <img src="/assets/familia-parque.jpg" alt="Family enjoying Disney parks" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
 
@@ -404,7 +405,7 @@ const MediaKit = () => {
                   platform: 'Instagram',
                   role: 'Mass Reach Engine',
                   metric: '2.7M+ Organic Views',
-                  url: 'https://www.instagram.com/andiolivera',
+                  url: 'https://www.instagram.com/andiiolivera.ok',
                 },
                 {
                   platform: 'LinkedIn',
