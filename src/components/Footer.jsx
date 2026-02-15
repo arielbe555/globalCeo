@@ -46,7 +46,7 @@ const Footer = () => {
               <Link to="/technology" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.tecnologia')}</Link>
               <a href="/#hub" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.hubAgentes')}</a>
               <a href="/#planificador" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.planificarViaje')}</a>
-              <Link to="/blog" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.blogMagico')}</Link>
+              <Link to="/insights" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.insights')}</Link>
               <Link to="/legales" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.terminosPrivacidad')}</Link>
             </div>
           </div>

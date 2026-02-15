@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import BlogPost from '../components/blog/BlogPost';
-import blogPosts from '../data/blogPosts';
-import { blogContent } from '../data/blogContent';
+import insightsPosts from '../data/insightsPosts';
+import { insightsContent } from '../data/insightsContent';
 
 const BlogEntry = () => {
   const { slug } = useParams();
-  const post = blogPosts.find((p) => p.slug === slug);
-  const content = post ? blogContent[slug] : null;
+  const post = insightsPosts.find((p) => p.slug === slug);
+  const content = post ? insightsContent[slug] : null;
 
   return <BlogPost post={post} content={content} />;
 };

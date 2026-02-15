@@ -44,6 +44,9 @@ const App = () => {
         {/* Rutas públicas con Navbar + Footer */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/insights" element={<Blog />} />
+          <Route path="/insights/:vertical/:slug" element={<BlogEntry />} />
+          {/* Legacy /blog redirects */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogEntry />} />
           <Route path="/legales" element={<Legales />} />

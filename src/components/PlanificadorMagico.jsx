@@ -194,22 +194,22 @@ ${t('planner.waCierre')}`;
             </a>
           </div>
 
-          {/* Blog CTA */}
+          {/* Insights CTA */}
           <div className="mt-12 text-center">
             <div className="inline-block bg-slate-50 rounded-3xl px-10 py-8 border border-slate-100">
               <BookOpen size={28} className="mx-auto text-disney mb-3" />
               <p className="text-lg font-bold text-slate-700 font-quicksand mb-2">
-                {t('planner.blogCtaTitle')}
+                {t('planner.insightsCtaTitle')}
               </p>
               <p className="text-sm text-slate-400 mb-5 max-w-md">
-                {t('planner.blogCtaDesc')}
+                {t('planner.insightsCtaDesc')}
               </p>
               <Link
-                to="/blog"
+                to="/insights"
                 className="inline-flex items-center gap-2 bg-disney text-white px-8 py-3 rounded-2xl font-bold text-sm hover:bg-disney-dark hover:scale-105 transition-all shadow-lg shadow-disney/20"
               >
                 <BookOpen size={18} />
-                {t('planner.blogCtaBtn')}
+                {t('planner.insightsCtaBtn')}
               </Link>
             </div>
           </div>

@@ -97,7 +97,7 @@ const Grupal2026 = () => {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="/blog/grupal-2026"
+                href="/#planificador"
                 className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all text-center"
               >
                 {t('grupal.ctaDetalles')}

@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import blogPosts from '../../data/blogPosts';
+import insightsPosts from '../../data/insightsPosts';
 
-const categoryColors = {
-  Grupal: 'bg-gradient-to-r from-pink-500 to-purple-600 text-white',
-  Destinos: 'bg-disney/10 text-disney',
-  Seguridad: 'bg-green-50 text-green-600',
-  Tecnología: 'bg-purple-50 text-purple-600',
-  Cruceros: 'bg-cyan-50 text-cyan-600',
-  B2B: 'bg-orange-50 text-orange-600',
-  Testimonios: 'bg-pink-50 text-pink-600',
+const verticalColors = {
+  disney: 'bg-disney/10 text-disney',
+  universal: 'bg-purple-50 text-purple-600',
+  cruise: 'bg-cyan-50 text-cyan-600',
+  logistics: 'bg-orange-50 text-orange-600',
 };
 
 const BlogList = () => {
@@ -20,7 +17,7 @@ const BlogList = () => {
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {blogPosts.map((post, i) => (
+      {insightsPosts.map((post, i) => (
         <motion.article
           key={post.slug}
           initial={{ opacity: 0, y: 20 }}
@@ -29,10 +26,9 @@ const BlogList = () => {
           transition={{ duration: 0.4, delay: i * 0.05 }}
         >
           <Link
-            to={`/blog/${post.slug}`}
+            to={`/insights/${post.vertical}/${post.slug}`}
             className="group block bg-white rounded-3xl border border-slate-100 overflow-hidden hover:shadow-xl hover:border-disney/20 transition-all duration-300"
           >
-            {/* Image — fotos reales */}
             <div className="h-52 overflow-hidden bg-slate-100">
               {post.image ? (
                 <img
@@ -51,31 +47,31 @@ const BlogList = () => {
             </div>
 
             <div className="p-6">
-              {/* Category Badge */}
-              <span
-                className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 ${
-                  categoryColors[post.category] || 'bg-slate-50 text-slate-500'
-                }`}
-              >
-                {post.category}
-              </span>
+              <div className="flex items-center gap-2 mb-3">
+                <span
+                  className={`inline-block px-2.5 py-1 rounded-lg text-[9px] font-bold uppercase tracking-widest ${
+                    verticalColors[post.vertical] || 'bg-slate-50 text-slate-500'
+                  }`}
+                >
+                  {post.vertical}
+                </span>
+                <span className="text-[9px] text-slate-400 uppercase tracking-wider font-medium">
+                  {post.pillar}
+                </span>
+              </div>
 
               <h3 className="text-lg font-bold text-slate-800 font-quicksand mb-2 group-hover:text-disney transition-colors leading-tight">
                 {post.title}
               </h3>
 
               <p className="text-sm text-slate-400 mb-4 line-clamp-2">
-                {post.description}
+                {post.excerpt}
               </p>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5 text-[10px] text-slate-300 font-medium">
-                  <Calendar size={12} />
-                  {new Date(post.date).toLocaleDateString(locale, {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
+                  <Clock size={12} />
+                  {post.readTime}
                 </div>
                 <ArrowRight
                   size={16}

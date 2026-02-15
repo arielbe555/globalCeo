@@ -85,12 +85,12 @@ const Navbar = () => {
             {t('nav.technology')}
           </Link>
           <Link
-            to="/blog"
+            to="/insights"
             className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${
               scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
             }`}
           >
-            {t('nav.blogMagico')}
+            {t('nav.insights')}
           </Link>
 
           {/* Separator */}
@@ -151,7 +151,7 @@ const Navbar = () => {
               <a href="/#hub" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.hubAgentes')}</a>
               <a href="/#planificador" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.contacto')}</a>
               <Link to="/technology" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.technology')}</Link>
-              <Link to="/blog" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.blogMagico')}</Link>
+              <Link to="/insights" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.insights')}</Link>
               <div className="border-t border-slate-100 pt-5 flex flex-col gap-3">
                 <a
                   href="https://app.globaldream.travel"
