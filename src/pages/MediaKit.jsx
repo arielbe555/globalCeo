@@ -41,13 +41,13 @@ const MediaKit = () => {
     <div className="bg-white min-h-screen font-poppins">
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* HERO — Full-bleed Andrea photo                     */}
+      {/* HERO — Group photo at Disney park                   */}
       {/* ═══════════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-end justify-center overflow-hidden">
         <img
-          src="/assets/castillidenocheandiywalt.jpeg"
-          alt="Andrea Olivera at Magic Kingdom"
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          src="/assets/grupales.jpeg"
+          alt="Global Dream Travel Group at Disney"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <motion.div
@@ -62,99 +62,93 @@ const MediaKit = () => {
             className="h-16 md:h-20 mx-auto mb-8 object-contain drop-shadow-lg"
           />
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-3 tracking-tight drop-shadow-lg">
-            Andrea Olivera
+            Global Dream Travel
           </h1>
           <p className="text-lg md:text-xl text-white/80 font-light mb-2">
-            CEO & Market Operator
+            Strategic LATAM Growth Partner
           </p>
           <div className="w-16 h-px bg-white/40 mx-auto my-6" />
           <p className="text-sm text-white/60 uppercase tracking-[0.25em] font-medium">
-            Strategic LATAM Growth Partner — Theme Parks & Destination Experiences
+            Theme Parks & Destination Experiences
           </p>
         </motion.div>
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* 01 — ANDREA OLIVERA — Personal Brand                */}
+      {/* 01 — ANDREA OLIVERA — CEO & Market Operator          */}
       {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">01</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">The Face Behind the Brand</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">CEO & Market Operator</h2>
 
             <div className="flex flex-col md:flex-row gap-10 items-start mb-14">
-              {/* Corporate photo */}
-              <div className="w-full md:w-[280px] shrink-0">
+              {/* Corporate photo — large, prominent */}
+              <div className="w-full md:w-[340px] shrink-0">
                 <img
                   src="/assets/andi-olivera.jpg"
                   alt="Andrea Olivera — CEO"
-                  className="w-full rounded-3xl shadow-xl object-cover"
+                  className="w-full rounded-3xl shadow-xl object-cover bg-white"
                 />
+                <div className="mt-4 text-center">
+                  <p className="text-lg font-bold text-slate-800">Andrea Johanna Olivera</p>
+                  <p className="text-xs text-disney uppercase tracking-[0.2em] font-bold mt-1">
+                    CEO & Market Operator
+                  </p>
+                </div>
               </div>
 
-              {/* Bio */}
+              {/* Bio — serious executive tone */}
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-slate-800 mb-4">Andrea Johanna Olivera</h3>
-                <p className="text-xs text-disney uppercase tracking-[0.2em] font-bold mb-6">
-                  CEO & Market Operator — Global Dream Travel
+                <p className="text-base text-slate-600 leading-relaxed mb-5">
+                  Andrea Olivera leads Global Dream Travel as CEO and primary market operator,
+                  combining executive agency management with direct field expertise in the LATAM
+                  theme park segment. She manages a structured network of 150+ certified travel
+                  advisors and oversees proprietary technology development.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed mb-5">
+                  With over 2.7 million organic views across digital channels, she operates
+                  as both the strategic decision-maker and the primary distribution channel
+                  for the agency — a dual role that eliminates the gap between brand awareness
+                  and operational execution.
                 </p>
                 <p className="text-base text-slate-600 leading-relaxed mb-6">
-                  Andrea transformed social media into the most powerful trust instrument in LATAM
-                  family tourism. With over 2.7 million organic views and a structured network of
-                  150+ certified travel advisors, she is not a content creator who happens to sell
-                  travel — she is a market operator who uses content as a distribution channel.
+                  Her direct presence in the parks ensures that every itinerary, recommendation
+                  and operational decision is based on first-hand operational knowledge —
+                  not third-party information.
                 </p>
-                <p className="text-base text-slate-600 leading-relaxed mb-6">
-                  She lives the parks. She knows every ride, every restaurant, every shortcut.
-                  When families work with Global Dream Travel, they work with someone who has
-                  walked Magic Kingdom at rope drop hundreds of times — not someone reading from
-                  a brochure.
-                </p>
-                <blockquote className="border-l-4 border-disney pl-5 py-2 mb-6">
-                  <p className="text-sm text-slate-500 italic leading-relaxed">
-                    "Every family that trusts us receives the same dedication I would give to my own.
-                    That is my promise, my mission, and the reason we created Global Dream Travel."
-                  </p>
-                </blockquote>
 
-                {/* Credentials row */}
-                <div className="flex flex-wrap gap-3">
+                {/* Credentials */}
+                <div className="flex flex-wrap gap-3 mb-6">
                   {['IATA Accredited', 'Disney Certified', 'Universal Partner', 'Florida LLC'].map((c) => (
                     <span key={c} className="text-[10px] font-bold uppercase tracking-wider text-disney bg-disney/5 px-3 py-1.5 rounded-lg border border-disney/10">
                       {c}
                     </span>
                   ))}
                 </div>
+
+                <blockquote className="border-l-4 border-slate-300 pl-5 py-2">
+                  <p className="text-sm text-slate-500 italic leading-relaxed">
+                    "Every family that trusts us receives the same dedication I would give to my own.
+                    That is my promise, my mission, and the reason we created Global Dream Travel."
+                  </p>
+                </blockquote>
               </div>
             </div>
 
-            {/* Park gallery strip — Andrea in her element */}
+            {/* Gallery — Walt photos + group, NO solo selfies */}
             <PhotoStrip
-              height="h-56 md:h-72"
+              height="h-48 md:h-64"
               images={[
                 { src: '/assets/waltyandy.jpeg', alt: 'Andrea with Walt Disney statue at EPCOT' },
-                { src: '/assets/walt_1.jpeg', alt: 'Andrea at EPCOT' },
-                { src: '/assets/andii_mickey.jpeg', alt: 'Andrea with Sorcerer Mickey' },
-                { src: '/assets/andi-mainstreet.jpeg', alt: 'Andrea on Main Street USA' },
+                { src: '/assets/walt_1.jpeg', alt: 'Andrea with Walt Disney statue' },
+                { src: '/assets/castillidenocheandiywalt.jpeg', alt: 'Andrea at Magic Kingdom with Walt and Mickey statue' },
               ]}
             />
           </motion.div>
         </div>
       </section>
-
-      {/* ═══════════════════════════════════════════════════ */}
-      {/* PHOTO BREAKER — Castle day                          */}
-      {/* ═══════════════════════════════════════════════════ */}
-      <div className="w-full h-72 md:h-96 overflow-hidden relative">
-        <img
-          src="/assets/andi-castle-fullbody.jpeg"
-          alt="Andrea at Cinderella Castle"
-          className="w-full h-full object-cover object-center"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
-      </div>
 
       {/* ═══════════════════════════════════════════════════ */}
       {/* 02 — EXECUTIVE OVERVIEW                             */}
@@ -302,15 +296,15 @@ const MediaKit = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* PHOTO BREAKER — Andrea castle night + family        */}
+      {/* PHOTO BREAKER — Group + castle                       */}
       {/* ═══════════════════════════════════════════════════ */}
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4 py-4">
         <PhotoStrip
-          height="h-56 md:h-80"
+          height="h-48 md:h-64"
           images={[
-            { src: '/assets/andi-castle-show.jpeg', alt: 'Andrea at castle light show' },
-            { src: '/assets/andi-family-castle.jpeg', alt: 'Andrea with family at castle' },
-            { src: '/assets/andi-castle-open.jpeg', alt: 'Andrea arms open at castle' },
+            { src: '/assets/andi-family-castle.jpeg', alt: 'Andrea with family at Magic Kingdom' },
+            { src: '/assets/castle-fireworks.jpeg', alt: 'Cinderella Castle fireworks' },
+            { src: '/assets/2026grupal22.png', alt: 'Global Dream Travel group trip 2026' },
           ]}
         />
       </div>
@@ -371,15 +365,15 @@ const MediaKit = () => {
 
             {/* Philosophy photo grid */}
             <div className="grid grid-cols-3 gap-2 rounded-2xl overflow-hidden">
-              <div className="col-span-2 h-64 md:h-80">
-                <img src="/assets/andi-family-castle.jpeg" alt="Andrea with family" className="w-full h-full object-cover" loading="lazy" />
+              <div className="col-span-2 h-56 md:h-72">
+                <img src="/assets/grupales.jpeg" alt="Global Dream Travel group at parks" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex-1 overflow-hidden">
                   <img src="/assets/castle-fireworks.jpeg" alt="Castle fireworks" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="flex-1 overflow-hidden">
-                  <img src="/assets/andi-daughter-castle.jpeg" alt="Andrea with daughter" className="w-full h-full object-cover" loading="lazy" />
+                  <img src="/assets/andi-family-castle.jpeg" alt="Andrea with family at castle" className="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -449,49 +443,49 @@ const MediaKit = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* 07 — TECHNOLOGY INFRASTRUCTURE                      */}
+      {/* 07 — TECHNOLOGY INFRASTRUCTURE (compact sidebar)    */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-white border-t border-slate-100">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-16 md:py-24 bg-white border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">07</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">Technology Infrastructure</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Technology Infrastructure</h2>
 
-            {/* TRIP Engine */}
-            <div className="mb-12">
-              <h3 className="text-lg font-bold text-slate-800 mb-4">TRIP — Dynamic Itinerary Engine</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                A proprietary date-activated itinerary system designed specifically for theme park execution.
-                Families open the app and see exactly what to do today — no planning, no stress, just magic.
-              </p>
-
-              {/* Video preview */}
-              <div
-                className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 mb-6 cursor-pointer group"
-                onClick={() => setVideoOpen(!videoOpen)}
-              >
-                {videoOpen ? (
-                  <video
-                    src="/assets/fix/appTRIPGlobal.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-auto"
-                  />
-                ) : (
-                  <div className="bg-slate-100 py-16 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-disney rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                      <Play size={24} className="text-white ml-1" />
+            {/* TRIP Engine — side-by-side layout */}
+            <div className="flex flex-col md:flex-row gap-8 mb-10">
+              {/* Left: Video preview (compact) */}
+              <div className="w-full md:w-[280px] shrink-0">
+                <div
+                  className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer group aspect-[9/16] max-h-[400px]"
+                  onClick={() => setVideoOpen(!videoOpen)}
+                >
+                  {videoOpen ? (
+                    <video
+                      src="/assets/fix/appTRIPGlobal.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="bg-slate-100 w-full h-full flex flex-col items-center justify-center">
+                      <div className="w-14 h-14 bg-disney rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform mb-3">
+                        <Play size={20} className="text-white ml-0.5" />
+                      </div>
+                      <span className="text-xs font-medium text-slate-500">TRIP App Demo</span>
                     </div>
-                    <span className="ml-4 text-sm font-medium text-slate-600">View TRIP App Demo</span>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <p className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-4">Core Capabilities</p>
-                <ul className="grid sm:grid-cols-2 gap-3">
+              {/* Right: Text content */}
+              <div className="flex-1">
+                <h3 className="text-base font-bold text-slate-800 mb-2">TRIP — Dynamic Itinerary Engine</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  Proprietary date-activated itinerary system for theme park execution.
+                </p>
+                <ul className="space-y-2 mb-4">
                   {[
                     'Automatic day recognition based on arrival date',
                     'Daily schedule activation without manual input',
@@ -500,49 +494,44 @@ const MediaKit = () => {
                     'Reduced decision fatigue for families',
                     'Structured experience flow',
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
-                      <div className="w-1.5 h-1.5 bg-disney rounded-full mt-2 shrink-0" />
+                    <li key={i} className="flex items-start gap-2 text-xs text-slate-600">
+                      <div className="w-1 h-1 bg-disney rounded-full mt-1.5 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm text-slate-700 font-medium mt-6 italic">
+                <p className="text-xs text-slate-500 italic">
                   TRIP transforms planning into guided execution.
                 </p>
-              </div>
-            </div>
 
-            {/* Agency OS */}
-            <div>
-              <h3 className="text-lg font-bold text-slate-800 mb-4">Integrated Agency Operating System</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                Centralized digital workflow connecting:
-              </p>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {['Agents', 'Clients', 'Itinerary Engine', 'Sales Structure', 'Operational Visibility'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-slate-600 bg-slate-50 border border-slate-200 rounded-lg p-3">
-                    <div className="w-1.5 h-1.5 bg-disney rounded-full shrink-0" />
-                    {item}
+                {/* Agency OS — compact */}
+                <div className="mt-6 pt-6 border-t border-slate-100">
+                  <h3 className="text-base font-bold text-slate-800 mb-2">Integrated Agency Operating System</h3>
+                  <p className="text-xs text-slate-500 mb-3">Centralized digital workflow connecting:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {['Agents', 'Clients', 'Itinerary Engine', 'Sales Structure', 'Operational Visibility'].map((item, i) => (
+                      <span key={i} className="text-[10px] text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 font-medium">
+                        {item}
+                      </span>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-              <p className="text-xs text-slate-400 mt-4 uppercase tracking-wider">Scalable LATAM Infrastructure</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* PHOTO BREAKER — Andrea with Walt statue              */}
+      {/* PHOTO BREAKER — Walt statues + group                 */}
       {/* ═══════════════════════════════════════════════════ */}
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4 py-4">
         <PhotoStrip
-          height="h-56 md:h-80"
+          height="h-48 md:h-64"
           images={[
-            { src: '/assets/andi-castle-day.jpeg', alt: 'Andrea selfie at castle' },
+            { src: '/assets/waltyandy.jpeg', alt: 'Andrea with Walt Disney statue' },
             { src: '/assets/walt-minnie-bench.jpeg', alt: 'Walt Disney and Minnie statue' },
-            { src: '/assets/andi-castle-bluesky.jpeg', alt: 'Andrea at castle blue sky' },
-            { src: '/assets/andi-castle-closeup.jpeg', alt: 'Andrea closeup at castle' },
+            { src: '/assets/walt_1.jpeg', alt: 'Andrea with Walt Disney at EPCOT' },
           ]}
         />
       </div>
