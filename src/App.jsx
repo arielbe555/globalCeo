@@ -11,6 +11,8 @@ import LinkGenerator from './pages/LinkGenerator';
 import PagoSeguro from './pages/PagoSeguro';
 import AltaAgente from './pages/AltaAgente';
 import GrupalContrato from './pages/GrupalContrato';
+import Technology from './pages/Technology';
+import MediaKit from './pages/MediaKit';
 import ToolLayout from './components/ToolLayout';
 import PinGate from './components/PinGate';
 
@@ -45,6 +47,7 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogEntry />} />
           <Route path="/legales" element={<Legales />} />
+          <Route path="/technology" element={<Technology />} />
         </Route>
 
         {/* Pago: página pública para clientes (sin PIN) */}
@@ -57,6 +60,7 @@ const App = () => {
           <Route path="/link" element={<LinkGenerator />} />
           <Route path="/alta" element={<AltaAgente />} />
           <Route path="/grupal2026" element={<GrupalContrato />} />
+          <Route path="/mediakit" element={<MediaKit />} />
         </Route>
       </Routes>
     </Router>

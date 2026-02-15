@@ -43,7 +43,7 @@ const Footer = () => {
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-white mb-6">{t('footer.navegacion')}</h4>
             <div className="space-y-3">
               <Link to="/" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.inicio')}</Link>
-              <a href="/#app" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.tecnologia')}</a>
+              <Link to="/technology" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.tecnologia')}</Link>
               <a href="/#hub" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.hubAgentes')}</a>
               <a href="/#planificador" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.planificarViaje')}</a>
               <Link to="/blog" className="block text-sm text-slate-400 hover:text-magic transition-colors">{t('footer.blogMagico')}</Link>

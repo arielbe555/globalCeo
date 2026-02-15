@@ -77,6 +77,14 @@ const Navbar = () => {
             {t('nav.contacto')}
           </a>
           <Link
+            to="/technology"
+            className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${
+              scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
+            }`}
+          >
+            {t('nav.technology')}
+          </Link>
+          <Link
             to="/blog"
             className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${
               scrolled ? 'hover:text-disney text-slate-600' : 'text-white/90 hover:text-white'
@@ -142,6 +150,7 @@ const Navbar = () => {
               <a href="/#app" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.servicios')}</a>
               <a href="/#hub" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.hubAgentes')}</a>
               <a href="/#planificador" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.contacto')}</a>
+              <Link to="/technology" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.technology')}</Link>
               <Link to="/blog" onClick={closeMobile} className="text-sm font-bold text-slate-700 hover:text-disney transition-colors">{t('nav.blogMagico')}</Link>
               <div className="border-t border-slate-100 pt-5 flex flex-col gap-3">
                 <a
