@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play } from 'lucide-react';
+import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart } from 'lucide-react';
 import { useState } from 'react';
 
 const sectionFade = {
@@ -9,48 +9,160 @@ const sectionFade = {
   transition: { duration: 0.6 },
 };
 
+/* ── Photo strip component ─────────────────────────── */
+const PhotoStrip = ({ images, height = 'h-64' }) => (
+  <div className="w-full overflow-hidden">
+    <div className="flex gap-2">
+      {images.map((img, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.08, duration: 0.5 }}
+          className={`${height} flex-1 min-w-0 overflow-hidden rounded-2xl`}
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            loading="lazy"
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+);
+
 const MediaKit = () => {
   const [videoOpen, setVideoOpen] = useState(false);
 
   return (
     <div className="bg-white min-h-screen font-poppins">
 
-      {/* PORTADA */}
-      <section className="min-h-screen flex items-center justify-center bg-white relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* HERO — Full-bleed Andrea photo                     */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <section className="relative min-h-screen flex items-end justify-center overflow-hidden">
+        <img
+          src="/assets/castillidenocheandiywalt.jpeg"
+          alt="Andrea Olivera at Magic Kingdom"
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 text-center px-6 max-w-3xl mx-auto"
+          className="relative z-10 text-center px-6 pb-20 max-w-3xl mx-auto"
         >
           <img
             src="/assets/logo-global-dream.png"
             alt="Global Dream Travel"
-            className="h-20 md:h-24 mx-auto mb-12 object-contain"
+            className="h-16 md:h-20 mx-auto mb-8 object-contain drop-shadow-lg"
           />
-          <div className="w-16 h-px bg-slate-300 mx-auto mb-8" />
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight mb-4 tracking-tight">
-            Strategic LATAM Growth Partner
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-3 tracking-tight drop-shadow-lg">
+            Andrea Olivera
           </h1>
-          <p className="text-lg text-slate-500 mb-2">
-            Theme Parks & Destination Experiences
-          </p>
-          <div className="w-16 h-px bg-slate-300 mx-auto my-10" />
-          <div className="text-sm text-slate-600 font-medium">
-            Andrea Johanna Olivera
-          </div>
-          <div className="text-xs text-slate-400 uppercase tracking-widest mt-1">
+          <p className="text-lg md:text-xl text-white/80 font-light mb-2">
             CEO & Market Operator
-          </div>
+          </p>
+          <div className="w-16 h-px bg-white/40 mx-auto my-6" />
+          <p className="text-sm text-white/60 uppercase tracking-[0.25em] font-medium">
+            Strategic LATAM Growth Partner — Theme Parks & Destination Experiences
+          </p>
         </motion.div>
       </section>
 
-      {/* EXECUTIVE OVERVIEW */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 01 — ANDREA OLIVERA — Personal Brand                */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <section className="py-20 md:py-28 bg-white border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...sectionFade}>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">01</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">The Face Behind the Brand</h2>
+
+            <div className="flex flex-col md:flex-row gap-10 items-start mb-14">
+              {/* Corporate photo */}
+              <div className="w-full md:w-[280px] shrink-0">
+                <img
+                  src="/assets/andi-olivera.jpg"
+                  alt="Andrea Olivera — CEO"
+                  className="w-full rounded-3xl shadow-xl object-cover"
+                />
+              </div>
+
+              {/* Bio */}
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-slate-800 mb-4">Andrea Johanna Olivera</h3>
+                <p className="text-xs text-disney uppercase tracking-[0.2em] font-bold mb-6">
+                  CEO & Market Operator — Global Dream Travel
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed mb-6">
+                  Andrea transformed social media into the most powerful trust instrument in LATAM
+                  family tourism. With over 2.7 million organic views and a structured network of
+                  150+ certified travel advisors, she is not a content creator who happens to sell
+                  travel — she is a market operator who uses content as a distribution channel.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed mb-6">
+                  She lives the parks. She knows every ride, every restaurant, every shortcut.
+                  When families work with Global Dream Travel, they work with someone who has
+                  walked Magic Kingdom at rope drop hundreds of times — not someone reading from
+                  a brochure.
+                </p>
+                <blockquote className="border-l-4 border-disney pl-5 py-2 mb-6">
+                  <p className="text-sm text-slate-500 italic leading-relaxed">
+                    "Every family that trusts us receives the same dedication I would give to my own.
+                    That is my promise, my mission, and the reason we created Global Dream Travel."
+                  </p>
+                </blockquote>
+
+                {/* Credentials row */}
+                <div className="flex flex-wrap gap-3">
+                  {['IATA Accredited', 'Disney Certified', 'Universal Partner', 'Florida LLC'].map((c) => (
+                    <span key={c} className="text-[10px] font-bold uppercase tracking-wider text-disney bg-disney/5 px-3 py-1.5 rounded-lg border border-disney/10">
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Park gallery strip — Andrea in her element */}
+            <PhotoStrip
+              height="h-56 md:h-72"
+              images={[
+                { src: '/assets/waltyandy.jpeg', alt: 'Andrea with Walt Disney statue at EPCOT' },
+                { src: '/assets/walt_1.jpeg', alt: 'Andrea at EPCOT' },
+                { src: '/assets/andii_mickey.jpeg', alt: 'Andrea with Sorcerer Mickey' },
+                { src: '/assets/andi-mainstreet.jpeg', alt: 'Andrea on Main Street USA' },
+              ]}
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* PHOTO BREAKER — Castle day                          */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <div className="w-full h-72 md:h-96 overflow-hidden relative">
+        <img
+          src="/assets/andi-castle-fullbody.jpeg"
+          alt="Andrea at Cinderella Castle"
+          className="w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 02 — EXECUTIVE OVERVIEW                             */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">01</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">02</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Executive Overview</h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               Global Dream Travel operates as an IATA-accredited agency with structured LATAM distribution
@@ -80,11 +192,13 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* AGENCY INFRASTRUCTURE */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 03 — AGENCY INFRASTRUCTURE                          */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">02</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">03</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">Agency Infrastructure</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {[
@@ -115,14 +229,18 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* DIGITAL MARKET PENETRATION */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 04 — DIGITAL MARKET PENETRATION + METRIC PROOFS     */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-white border-t border-slate-100">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">03</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">04</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Digital Market Penetration</h2>
-            <p className="text-sm text-slate-400 uppercase tracking-wider mb-10">Organic Reach Metrics</p>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <p className="text-sm text-slate-400 uppercase tracking-wider mb-10">Organic Reach Metrics — Verified</p>
+
+            {/* Metric cards */}
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
               {[
                 { value: '2.7M+', label: 'Viral Reel Views' },
                 { value: '1.9M+', label: 'Secondary High-Impact Reach' },
@@ -143,7 +261,39 @@ const MediaKit = () => {
                 </motion.div>
               ))}
             </div>
-            <p className="text-sm text-slate-500 mt-8 leading-relaxed">
+
+            {/* Instagram proof screenshots */}
+            <div className="mb-8">
+              <p className="text-xs text-slate-400 uppercase tracking-wider font-bold mb-4 text-center">
+                Verified Instagram Analytics
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {[
+                  { src: '/assets/metrics-2.7m.jpeg', alt: '2.7M views reel stats' },
+                  { src: '/assets/metrics-1.9m.jpeg', alt: '1.9M views reel stats' },
+                  { src: '/assets/metrics-904k.jpeg', alt: '904K views reel stats' },
+                  { src: '/assets/metrics-30days.jpeg', alt: '1.1M views last 30 days' },
+                ].map((img, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-auto object-contain bg-white"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <p className="text-sm text-slate-500 leading-relaxed text-center">
               Our digital distribution consistently penetrates beyond our follower base,
               reaching high-intent family audiences organically across LATAM.
             </p>
@@ -151,11 +301,108 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* DIGITAL ECOSYSTEM CONNECTIVITY */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* PHOTO BREAKER — Andrea castle night + family        */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <div className="max-w-7xl mx-auto px-4">
+        <PhotoStrip
+          height="h-56 md:h-80"
+          images={[
+            { src: '/assets/andi-castle-show.jpeg', alt: 'Andrea at castle light show' },
+            { src: '/assets/andi-family-castle.jpeg', alt: 'Andrea with family at castle' },
+            { src: '/assets/andi-castle-open.jpeg', alt: 'Andrea arms open at castle' },
+          ]}
+        />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 05 — EXPERIENCE PHILOSOPHY                          */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <section className="py-20 md:py-28 bg-slate-900 text-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...sectionFade}>
+            <p className="text-xs font-bold text-disney-light uppercase tracking-[0.3em] mb-4">05</p>
+            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              Why Families Spend More and Enjoy More
+            </h2>
+            <p className="text-base text-slate-400 leading-relaxed mb-12 max-w-3xl">
+              When families stop worrying about logistics, navigation and timing, something
+              remarkable happens: they become fully present. Our TRIP App eliminates itinerary
+              stress — and the result is a fundamentally different in-park behavior.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-6 mb-14">
+              {[
+                {
+                  icon: <ShoppingBag size={24} />,
+                  title: 'More Merchandise Purchased',
+                  desc: 'Relaxed families browse and buy. When you are not rushing to the next ride, the gift shop becomes part of the experience — not an obstacle.',
+                },
+                {
+                  icon: <Utensils size={24} />,
+                  title: 'More In-Park Dining',
+                  desc: 'Planned dining means families eat inside the parks instead of skipping meals or leaving the property. Reservations are pre-structured in their TRIP itinerary.',
+                },
+                {
+                  icon: <Sparkles size={24} />,
+                  title: 'More Activities Completed',
+                  desc: 'A structured day eliminates wasted time. Families complete 30-40% more attractions, shows and experiences than unplanned visitors.',
+                },
+                {
+                  icon: <Heart size={24} />,
+                  title: 'A More Immersive Experience',
+                  desc: 'When logistics are invisible, families are present in the moment. They watch the fireworks instead of checking maps. They enjoy the ride instead of planning the next one.',
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white/5 border border-white/10 rounded-2xl p-7"
+                >
+                  <div className="text-disney mb-4">{item.icon}</div>
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Philosophy photo grid */}
+            <div className="grid grid-cols-3 gap-2 rounded-2xl overflow-hidden">
+              <div className="col-span-2 h-64 md:h-80">
+                <img src="/assets/andi-family-castle.jpeg" alt="Andrea with family" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex-1 overflow-hidden">
+                  <img src="/assets/castle-fireworks.jpeg" alt="Castle fireworks" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="flex-1 overflow-hidden">
+                  <img src="/assets/andi-daughter-castle.jpeg" alt="Andrea with daughter" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-10 bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+              <p className="text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
+                <span className="text-white font-bold">The strategic implication for partners:</span>{' '}
+                Global Dream Travel families arrive prepared, stay longer, spend more and leave
+                with higher satisfaction scores. Our technology doesn't just help families —
+                it drives higher per-visitor revenue for every park and resort we send them to.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 06 — DIGITAL ECOSYSTEM CONNECTIVITY                 */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">04</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">06</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">Digital Ecosystem Connectivity</h2>
             <div className="space-y-4">
               {[
@@ -201,11 +448,13 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* TECHNOLOGY INFRASTRUCTURE */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 07 — TECHNOLOGY INFRASTRUCTURE                      */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">05</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">07</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">Technology Infrastructure</h2>
 
             {/* TRIP Engine */}
@@ -213,6 +462,7 @@ const MediaKit = () => {
               <h3 className="text-lg font-bold text-slate-800 mb-4">TRIP — Dynamic Itinerary Engine</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-6">
                 A proprietary date-activated itinerary system designed specifically for theme park execution.
+                Families open the app and see exactly what to do today — no planning, no stress, just magic.
               </p>
 
               {/* Video preview */}
@@ -282,11 +532,28 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* MARKET POSITIONING */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* PHOTO BREAKER — Andrea with Walt statue              */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <div className="max-w-7xl mx-auto px-4">
+        <PhotoStrip
+          height="h-56 md:h-80"
+          images={[
+            { src: '/assets/andi-castle-day.jpeg', alt: 'Andrea selfie at castle' },
+            { src: '/assets/walt-minnie-bench.jpeg', alt: 'Walt Disney and Minnie statue' },
+            { src: '/assets/andi-castle-bluesky.jpeg', alt: 'Andrea at castle blue sky' },
+            { src: '/assets/andi-castle-closeup.jpeg', alt: 'Andrea closeup at castle' },
+          ]}
+        />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 08 — MARKET POSITIONING                              */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">06</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">08</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Market Positioning</h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               Global Dream Travel represents a hybrid model:
@@ -308,11 +575,13 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* STRATEGIC COLLABORATION MODEL */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 09 — STRATEGIC COLLABORATION MODEL                   */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">07</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">09</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Strategic Collaboration Model</h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               We seek alignment beyond traditional influencer campaigns.
@@ -342,11 +611,13 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* DIFFERENTIATION */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 10 — DIFFERENTIATION                                 */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">08</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">10</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Differentiation</h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               Unlike standalone creators or traditional agencies, we combine:
@@ -378,11 +649,13 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* LATAM MARKET OPPORTUNITY */}
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 11 — LATAM MARKET OPPORTUNITY                        */}
+      {/* ═══════════════════════════════════════════════════ */}
       <section className="py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">09</p>
+            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">11</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">LATAM Market Opportunity Snapshot</h2>
             <div className="grid sm:grid-cols-3 gap-6">
               {[
@@ -407,13 +680,23 @@ const MediaKit = () => {
         </div>
       </section>
 
-      {/* STRATEGIC INVITATION */}
-      <section className="py-24 md:py-32 bg-slate-900 border-t border-slate-100">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      {/* ═══════════════════════════════════════════════════ */}
+      {/* 12 — STRATEGIC INVITATION                            */}
+      {/* ═══════════════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        {/* Background image */}
+        <img
+          src="/assets/andi-castle-open.jpeg"
+          alt="Andrea at castle"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-900/85" />
+
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney-light uppercase tracking-[0.3em] mb-4">10</p>
+            <p className="text-xs font-bold text-disney-light uppercase tracking-[0.3em] mb-4">12</p>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Strategic Invitation</h2>
-            <p className="text-base text-slate-400 leading-relaxed mb-10">
+            <p className="text-base text-slate-300 leading-relaxed mb-10">
               We welcome a 20-minute executive conversation to explore long-term
               LATAM growth alignment opportunities.
             </p>
