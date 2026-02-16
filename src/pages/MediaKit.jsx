@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart, Download } from 'lucide-react';
-import { useState } from 'react';
+import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart, Download, Loader2 } from 'lucide-react';
+import { useState, useRef } from 'react';
+import html2pdf from 'html2pdf.js';
 
 const sectionFade = {
   initial: { opacity: 0, y: 20 },
@@ -36,9 +37,25 @@ const PhotoStrip = ({ images, height = 'h-64' }) => (
 
 const MediaKit = () => {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const contentRef = useRef(null);
 
-  const handleDownload = () => {
-    window.print();
+  const handleDownload = async () => {
+    if (!contentRef.current || downloading) return;
+    setDownloading(true);
+    try {
+      const opt = {
+        margin: 0,
+        filename: 'GlobalDreamTravel-MediaKit.pdf',
+        image: { type: 'jpeg', quality: 0.95 },
+        html2canvas: { scale: 2, useCORS: true, logging: false, scrollY: 0 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+      };
+      await html2pdf().set(opt).from(contentRef.current).save();
+    } finally {
+      setDownloading(false);
+    }
   };
 
   return (
@@ -47,11 +64,15 @@ const MediaKit = () => {
       {/* ═══════════════ FLOATING DOWNLOAD BUTTON ═══════════ */}
       <button
         onClick={handleDownload}
-        className="fixed bottom-6 right-6 z-50 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full shadow-2xl shadow-red-600/30 flex items-center gap-2 font-bold text-sm uppercase tracking-wider hover:scale-105 transition-all print:hidden"
+        disabled={downloading}
+        className="fixed bottom-6 right-6 z-50 bg-red-600 hover:bg-red-700 disabled:bg-red-400 text-white px-6 py-3 rounded-full shadow-2xl shadow-red-600/30 flex items-center gap-2 font-bold text-sm uppercase tracking-wider hover:scale-105 transition-all print:hidden"
       >
-        <Download size={18} />
-        Download PDF
+        {downloading ? <Loader2 size={18} className="animate-spin" /> : <Download size={18} />}
+        {downloading ? 'Generating...' : 'Download PDF'}
       </button>
+
+      {/* ═══════ PDF CAPTURE AREA ═══════ */}
+      <div ref={contentRef}>
 
       {/* ═══════════════════════════════════════════════════ */}
       {/* HERO — White, clean, corporate                       */}
@@ -791,6 +812,8 @@ const MediaKit = () => {
           </motion.div>
         </div>
       </section>
+
+      </div>{/* end PDF capture area */}
     </div>
   );
 };
