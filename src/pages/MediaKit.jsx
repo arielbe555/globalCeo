@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart, Download, Loader2 } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
@@ -37,9 +37,27 @@ const PhotoStrip = ({ images, height = 'h-64' }) => (
 );
 
 const MediaKit = () => {
-  const [videoOpen, setVideoOpen] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const contentRef = useRef(null);
+  const videoRef = useRef(null);
+  const videoContainerRef = useRef(null);
+
+  useEffect(() => {
+    const el = videoContainerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play().catch(() => {});
+        } else if (videoRef.current) {
+          videoRef.current.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleDownload = async () => {
     if (!contentRef.current || downloading) return;
@@ -530,29 +548,17 @@ const MediaKit = () => {
 
             {/* TRIP Engine — side-by-side layout */}
             <div className="flex flex-col md:flex-row gap-8 mb-10">
-              {/* Left: Video preview (compact) */}
-              <div className="w-full md:w-[280px] shrink-0">
-                <div
-                  className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer group aspect-[9/16] max-h-[400px]"
-                  onClick={() => setVideoOpen(!videoOpen)}
-                >
-                  {videoOpen ? (
-                    <video
-                      src="/assets/fix/appTRIPGlobal.mp4"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="bg-slate-100 w-full h-full flex flex-col items-center justify-center">
-                      <div className="w-14 h-14 bg-disney rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform mb-3">
-                        <Play size={20} className="text-white ml-0.5" />
-                      </div>
-                      <span className="text-xs font-medium text-slate-500">TRIP App Demo</span>
-                    </div>
-                  )}
+              {/* Left: Video auto-play on scroll */}
+              <div className="w-full md:w-[280px] shrink-0" ref={videoContainerRef}>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 aspect-[9/16] max-h-[400px]">
+                  <video
+                    ref={videoRef}
+                    src="/assets/fix/appTRIPGlobal.mp4"
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
