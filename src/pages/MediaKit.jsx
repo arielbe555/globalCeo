@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart, Download, Loader2 } from 'lucide-react';
 import { useState, useRef } from 'react';
-/* html2pdf loaded dynamically to avoid SSR issues */
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 
 const sectionFade = {
   initial: { opacity: 0, y: 20 },
@@ -43,31 +44,50 @@ const MediaKit = () => {
   const handleDownload = async () => {
     if (!contentRef.current || downloading) return;
     setDownloading(true);
+
     try {
-      const html2pdf = (await import('html2pdf.js')).default;
       const element = contentRef.current;
+      const savedScroll = window.scrollY;
+      window.scrollTo(0, 0);
 
-      const opt = {
-        margin: [5, 5, 5, 5],
-        filename: 'GlobalDreamTravel-MediaKit.pdf',
-        image: { type: 'jpeg', quality: 0.92 },
-        html2canvas: {
-          scale: 1.5,
-          useCORS: true,
-          allowTaint: true,
-          logging: false,
-          windowWidth: element.scrollWidth,
-          scrollY: -window.scrollY,
+      await new Promise((r) => setTimeout(r, 300));
+
+      const canvas = await html2canvas(element, {
+        scale: 1.5,
+        useCORS: true,
+        allowTaint: true,
+        logging: false,
+        backgroundColor: '#ffffff',
+        imageTimeout: 15000,
+        onclone: (doc) => {
+          const el = doc.querySelector('[data-pdf-content]');
+          if (el) el.style.overflow = 'visible';
         },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
-        pagebreak: { mode: ['css', 'legacy'], before: '.pdf-page-break' },
-      };
+      });
 
-      await html2pdf().set(opt).from(element).save();
+      const imgData = canvas.toDataURL('image/jpeg', 0.92);
+      const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+
+      const pageW = pdf.internal.pageSize.getWidth();
+      const pageH = pdf.internal.pageSize.getHeight();
+      const imgW = pageW;
+      const imgH = (canvas.height * pageW) / canvas.width;
+
+      let position = 0;
+      let page = 0;
+
+      while (position < imgH) {
+        if (page > 0) pdf.addPage();
+        pdf.addImage(imgData, 'JPEG', 0, -position, imgW, imgH);
+        position += pageH;
+        page++;
+      }
+
+      pdf.save('GlobalDreamTravel-MediaKit.pdf');
+      window.scrollTo(0, savedScroll);
     } catch (err) {
-      console.error('PDF generation error:', err);
-      alert('Error generating PDF. Trying print fallback...');
-      window.print();
+      console.error('PDF generation failed:', err);
+      alert('PDF generation failed: ' + err.message);
     } finally {
       setDownloading(false);
     }
@@ -87,7 +107,7 @@ const MediaKit = () => {
       </button>
 
       {/* ═══════ PDF CAPTURE AREA ═══════ */}
-      <div ref={contentRef}>
+      <div ref={contentRef} data-pdf-content>
 
       {/* ═══════════════════════════════════════════════════ */}
       {/* HERO — White, clean, corporate                       */}
