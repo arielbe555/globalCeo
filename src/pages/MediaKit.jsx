@@ -64,45 +64,60 @@ const MediaKit = () => {
     setDownloading(true);
 
     try {
-      const element = contentRef.current;
       const savedScroll = window.scrollY;
       window.scrollTo(0, 0);
+      await new Promise((r) => setTimeout(r, 400));
 
-      await new Promise((r) => setTimeout(r, 300));
+      const sections = contentRef.current.querySelectorAll('.pdf-section');
+      if (!sections.length) throw new Error('No sections found');
 
-      const canvas = await html2canvas(element, {
-        scale: 1.5,
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-        backgroundColor: '#ffffff',
-        imageTimeout: 15000,
-        onclone: (doc) => {
-          const el = doc.querySelector('[data-pdf-content]');
-          if (el) el.style.overflow = 'visible';
-        },
-      });
+      const lazyImgs = contentRef.current.querySelectorAll('img[loading="lazy"]');
+      lazyImgs.forEach((img) => img.setAttribute('loading', 'eager'));
+      await new Promise((r) => setTimeout(r, 500));
 
-      const imgData = canvas.toDataURL('image/jpeg', 0.92);
       const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
-
       const pageW = pdf.internal.pageSize.getWidth();
       const pageH = pdf.internal.pageSize.getHeight();
-      const imgW = pageW;
-      const imgH = (canvas.height * pageW) / canvas.width;
 
-      let position = 0;
-      let page = 0;
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        section.scrollIntoView({ behavior: 'instant', block: 'start' });
+        await new Promise((r) => setTimeout(r, 200));
 
-      while (position < imgH) {
-        if (page > 0) pdf.addPage();
-        pdf.addImage(imgData, 'JPEG', 0, -position, imgW, imgH);
-        position += pageH;
-        page++;
+        const canvas = await html2canvas(section, {
+          scale: 1.5,
+          useCORS: true,
+          allowTaint: true,
+          logging: false,
+          backgroundColor: '#ffffff',
+          imageTimeout: 15000,
+        });
+
+        const imgData = canvas.toDataURL('image/jpeg', 0.90);
+        const imgW = pageW;
+        const imgH = (canvas.height * pageW) / canvas.width;
+
+        if (i > 0) pdf.addPage();
+
+        if (imgH <= pageH) {
+          const yOffset = (pageH - imgH) / 2;
+          pdf.addImage(imgData, 'JPEG', 0, yOffset, imgW, imgH);
+        } else {
+          let pos = 0;
+          let subPage = 0;
+          while (pos < imgH) {
+            if (subPage > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', 0, -pos, imgW, imgH);
+            pos += pageH;
+            subPage++;
+          }
+        }
       }
 
       pdf.save('GlobalDreamTravel-MediaKit.pdf');
       window.scrollTo(0, savedScroll);
+
+      lazyImgs.forEach((img) => img.setAttribute('loading', 'lazy'));
     } catch (err) {
       console.error('PDF generation failed:', err);
       alert('PDF generation failed: ' + err.message);
@@ -130,7 +145,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* HERO — White, clean, corporate                       */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="min-h-screen flex items-center justify-center bg-white">
+      <section className="pdf-section min-h-screen flex items-center justify-center bg-white">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -172,7 +187,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 01 — ANDREA OLIVERA — CEO & Market Operator          */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-white border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">01</p>
@@ -247,7 +262,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 02 — EXECUTIVE OVERVIEW                             */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-white border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">02</p>
@@ -283,7 +298,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 03 — AGENCY INFRASTRUCTURE                          */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">03</p>
@@ -320,7 +335,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 04 — DIGITAL MARKET PENETRATION + METRIC PROOFS     */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-white border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">04</p>
@@ -392,7 +407,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* PHOTO BREAKER — Group, castle, charla                */}
       {/* ═══════════════════════════════════════════════════ */}
-      <div className="max-w-5xl mx-auto px-4 py-4">
+      <div className="pdf-section max-w-5xl mx-auto px-4 py-4">
         <PhotoStrip
           height="h-48 md:h-64"
           images={[
@@ -406,7 +421,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 05 — EXPERIENCE PHILOSOPHY                          */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-slate-900 text-white">
+      <section className="pdf-section py-20 md:py-28 bg-slate-900 text-white">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney-light uppercase tracking-[0.3em] mb-4">05</p>
@@ -488,7 +503,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 06 — DIGITAL ECOSYSTEM CONNECTIVITY                 */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">06</p>
@@ -540,7 +555,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 07 — TECHNOLOGY INFRASTRUCTURE (compact sidebar)    */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 bg-white border-t border-slate-100">
+      <section className="pdf-section py-16 md:py-24 bg-white border-t border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">07</p>
@@ -668,7 +683,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* PHOTO BREAKER — Mickey + Castle night                 */}
       {/* ═══════════════════════════════════════════════════ */}
-      <div className="max-w-5xl mx-auto px-4 py-4">
+      <div className="pdf-section max-w-5xl mx-auto px-4 py-4">
         <PhotoStrip
           height="h-48 md:h-64"
           images={[
@@ -681,7 +696,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 08 — MARKET POSITIONING                              */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">08</p>
@@ -709,7 +724,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 09 — STRATEGIC COLLABORATION MODEL                   */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-white border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">09</p>
@@ -745,7 +760,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 10 — DIFFERENTIATION                                 */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-slate-50 border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-slate-50 border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">10</p>
@@ -783,7 +798,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 11 — LATAM MARKET OPPORTUNITY                        */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-20 md:py-28 bg-white border-t border-slate-100">
+      <section className="pdf-section py-20 md:py-28 bg-white border-t border-slate-100">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">11</p>
@@ -814,7 +829,7 @@ const MediaKit = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* 12 — STRATEGIC INVITATION                            */}
       {/* ═══════════════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
+      <section className="pdf-section py-24 md:py-32 relative overflow-hidden">
         {/* Background image */}
         <img
           src="/assets/BACKCASTILLO.jpeg"
