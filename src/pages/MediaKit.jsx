@@ -50,11 +50,18 @@ const MediaKit = () => {
           transition={{ duration: 1 }}
           className="text-center px-6 max-w-4xl mx-auto"
         >
-          <img
-            src="/assets/logo-global-dream.png"
-            alt="Global Dream Travel"
-            className="h-24 md:h-32 mx-auto mb-10 object-contain"
-          />
+          <div className="flex items-center justify-center gap-8 md:gap-12 mb-10">
+            <img
+              src="/assets/logo-global-dream.png"
+              alt="Global Dream Travel"
+              className="h-24 md:h-32 object-contain"
+            />
+            <img
+              src="/assets/logo-iata.jpg"
+              alt="IATA Accredited US"
+              className="h-24 md:h-32 object-contain rounded-xl"
+            />
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-4 tracking-tight">
             Global Dream Travel
           </h1>
@@ -63,7 +70,7 @@ const MediaKit = () => {
           </p>
           <div className="w-20 h-px bg-disney mx-auto my-8" />
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {['Technology', 'Infrastructure', 'Destination Experiences', 'IATA Agency'].map((tag) => (
+            {['Technology', 'Infrastructure', 'Destination Experiences', 'IATA US'].map((tag) => (
               <span key={tag} className="text-[10px] font-bold uppercase tracking-[0.2em] text-disney bg-disney/5 border border-disney/10 px-4 py-2 rounded-lg">
                 {tag}
               </span>
@@ -122,7 +129,7 @@ const MediaKit = () => {
 
                 {/* Credentials */}
                 <div className="flex flex-wrap gap-3 mb-6">
-                  {['IATA Accredited', 'Disney Certified', 'Universal Partner', 'Florida LLC'].map((c) => (
+                  {['IATA Accredited US', 'Disney Certified', 'Universal Partner', 'Florida LLC'].map((c) => (
                     <span key={c} className="text-[10px] font-bold uppercase tracking-wider text-disney bg-disney/5 px-3 py-1.5 rounded-lg border border-disney/10">
                       {c}
                     </span>
@@ -196,7 +203,7 @@ const MediaKit = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">Agency Infrastructure</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {[
-                { icon: <Shield size={20} />, label: 'IATA Accredited Agency' },
+                { icon: <Shield size={20} />, label: 'IATA Accredited Agency — US' },
                 { icon: <Globe size={20} />, label: 'Registered LLC — Florida, USA' },
                 { icon: <Users size={20} />, label: '150+ Active Travel Advisors' },
                 { icon: <Handshake size={20} />, label: 'Disney & Universal Specialization' },
@@ -608,7 +615,7 @@ const MediaKit = () => {
               Global Dream Travel represents a hybrid model:
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
-              {['Digital Acquisition Channel', 'Structured IATA Agency', 'Proprietary Experience Technology'].map((item, i) => (
+              {['Digital Acquisition Channel', 'Structured IATA Agency — US', 'Proprietary Experience Technology'].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="bg-white border border-slate-200 rounded-xl px-6 py-4 text-center">
                     <span className="text-sm font-bold text-slate-700">{item}</span>
