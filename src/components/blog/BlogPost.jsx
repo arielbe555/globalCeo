@@ -74,14 +74,16 @@ const BlogPost = ({ post, content }) => {
             <span className="text-[10px] text-slate-400 uppercase tracking-wider font-medium">
               {post.pillar}
             </span>
-            <span className="flex items-center gap-1.5 text-[10px] text-slate-400 font-medium">
-              <Calendar size={12} />
-              {new Date(post.date).toLocaleDateString(locale, {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </span>
+            {post.date && (
+              <span className="flex items-center gap-1.5 text-[10px] text-slate-400 font-medium">
+                <Calendar size={12} />
+                {new Date(post.date).toLocaleDateString(locale, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </span>
+            )}
             {post.readTime && (
               <span className="flex items-center gap-1 text-[10px] text-slate-300 font-medium">
                 <Clock size={11} />

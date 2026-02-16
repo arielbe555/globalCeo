@@ -298,36 +298,81 @@ export const insightsContent = {
 
   'epic-universe-readiness': (
     <div>
-      <h2>Executive Summary</h2>
+      <h2>La nueva era de los parques temáticos</h2>
       <p>
-        Epic Universe is Universal Orlando's third gate and represents the largest theme park investment
-        in the company's history. Opening in 2025, it introduces five immersive worlds: Super Nintendo
-        World, How to Train Your Dragon, Dark Universe, The Wizarding World (Ministry of Magic), and
-        a Celestial Park hub. For LATAM families, this means Orlando now requires 3-4 days for Universal
-        properties alone — fundamentally changing trip planning.
+        A casi un año de su inauguración oficial (22 de mayo de 2025), Universal Epic Universe se ha
+        consolidado como el destino más ambicioso de Orlando. No es solo un parque más; es un salto
+        tecnológico y narrativo que ha redefinido la experiencia del visitante. Si estás planeando
+        tu viaje ahora, esto es lo que no podés perderte de este gigante de 300 hectáreas.
       </p>
 
-      <h2>Who It's For</h2>
+      <h2>Los 5 mundos inmersivos</h2>
       <p>
-        Every family planning an Orlando trip from 2025 onward. Especially critical for first-time
-        visitors who will now need to choose between 3 Universal parks with limited days.
+        El parque se organiza a través de "portales" que te transportan a universos completamente distintos:
       </p>
 
-      <h2>Key Decisions</h2>
+      <h3>Celestial Park</h3>
+      <p>
+        Es el corazón del parque y, para muchos, la zona más bella. Con jardines ondulantes, fuentes
+        danzantes y una arquitectura inspirada en la astronomía, es el lugar ideal para caminar sin prisa.
+      </p>
       <ul>
-        <li><strong>Ticket strategy:</strong> Epic Universe requires a separate ticket or an upgraded multi-park pass. Budget $150-180/person/day for the new park.</li>
-        <li><strong>Priority worlds:</strong> Super Nintendo World will have the highest demand. Plan to enter this world first at rope drop. Ministry of Magic for Harry Potter fans is the second must-do.</li>
-        <li><strong>Hotel selection:</strong> Universal will open on-site hotels with early admission. Staying on-property will be even more critical than at the existing parks.</li>
-        <li><strong>Trip day allocation:</strong> Recommended minimum: 1 day Epic Universe + 1 day Studios/Islands combined. Ideal: 2 days Epic Universe + 1 day original parks.</li>
+        <li><strong>Lo imperdible:</strong> Stardust Racers, una montaña rusa dual donde los carros parecen "chocar" entre las estrellas.</li>
       </ul>
 
-      <h2>Operational Tips</h2>
+      <h3>The Wizarding World of Harry Potter — Ministry of Magic</h3>
+      <p>
+        Esta vez viajamos al París de Animales Fantásticos y al Ministerio de Magia británico.
+      </p>
       <ul>
-        <li>Opening year (2025-2026) will have the highest crowds. Book 6+ months in advance for hotels and consider weekday visits over weekends.</li>
-        <li>Power-Up Bands (from Super Nintendo World) are interactive wristbands that enhance the experience. Budget $40/person and order in advance if available.</li>
-        <li>How to Train Your Dragon is the family-friendly zone with lower height requirements. Prioritize this if traveling with children under 48 inches.</li>
-        <li>Dark Universe is the thrill-oriented zone. Evaluate height requirements before promising kids they can ride everything.</li>
+        <li><strong>La joya:</strong> Harry Potter and the Battle at the Ministry. Es considerada por muchos la atracción más avanzada del mundo, usando ascensores omnidireccionales que te hacen sentir en el centro de una batalla mágica.</li>
       </ul>
+
+      <h3>SUPER NINTENDO WORLD</h3>
+      <p>
+        Es como entrar literalmente a un videojuego.
+      </p>
+      <ul>
+        <li><strong>Lo más divertido:</strong> Mario Kart: Bowser's Challenge (con realidad aumentada) y la nueva área de Donkey Kong Country con su innovadora montaña rusa de carritos mineros que "saltan" vías rotas.</li>
+      </ul>
+
+      <h3>How to Train Your Dragon — Isle of Berk</h3>
+      <p>
+        Un paraíso vikingo lleno de detalles.
+      </p>
+      <ul>
+        <li><strong>Lo más lindo:</strong> Ver a los dragones animatrónicos de tamaño real. La montaña rusa familiar Hiccup's Wing Gliders ofrece las mejores vistas de la laguna.</li>
+      </ul>
+
+      <h3>Dark Universe</h3>
+      <p>
+        El mundo de los monstruos clásicos de Universal. Tiene una atmósfera gótica y misteriosa
+        que fascina a los fans del terror elegante.
+      </p>
+      <ul>
+        <li><strong>Lo destacado:</strong> Monsters Unchained: The Frankenstein Experiment, una experiencia intensa con los animatrónicos más grandes y fluidos creados hasta la fecha.</li>
+      </ul>
+
+      <h2>Lo más exclusivo</h2>
+      <ul>
+        <li><strong>Universal Helios Grand Hotel:</strong> Lo más increíble es que este hotel está dentro del parque. Tiene una entrada privada directa a Celestial Park y sus vistas desde el rooftop bar al atardecer son la mejor postal de todo Orlando.</li>
+        <li><strong>Gastronomía temática:</strong> No es solo comida rápida; lugares como The Burning Blade Tavern en Dark Universe o las panaderías francesas en el mundo de Harry Potter han superado todo lo anterior.</li>
+        <li><strong>Tecnología invisible:</strong> Las nuevas Magic Bands de Universal permiten interactuar con el entorno de Nintendo y Harry Potter de formas antes imposibles, haciendo que el parque "reaccione" a tu presencia.</li>
+      </ul>
+
+      <h2>Consejos operativos actualizados</h2>
+      <ul>
+        <li><strong>Multitudes:</strong> El parque sigue siendo la novedad número uno. Las esperas en atracciones como Donkey Kong o Harry Potter pueden superar los 120 minutos. Es vital usar el Early Park Admission si te hospedás en hoteles de Universal.</li>
+        <li><strong>Tickets:</strong> Ya están disponibles los pases que permiten repetir Epic Universe varios días, a diferencia de los tickets limitados del año pasado.</li>
+        <li><strong>Clima:</strong> Si vas en febrero, tené en cuenta que las noches en Orlando pueden ser frescas, ideal para disfrutar de la iluminación LED de Celestial Park que es un espectáculo por sí sola.</li>
+      </ul>
+
+      <p>
+        <em>
+          Epic Universe no es solo el parque más grande; es el más detallista. Cada rincón está diseñado
+          para que te olvides de que estás en Florida y sientas que realmente cruzaste un portal.
+        </em>
+      </p>
 
       <ScheduleCTA />
     </div>
