@@ -19,7 +19,7 @@ const insightsPosts = [
     tags: ['hotels', 'early-entry', 'familias', 'strategy'],
     readTime: '4 min',
     date: '2026-02-10',
-    image: '/assets/castillidenocheandiywalt.jpeg',
+    image: '/assets/port-orleans-2023-wdw.jpg',
   },
   {
     slug: 'disney-dining-plan',
@@ -30,7 +30,7 @@ const insightsPosts = [
     tags: ['dining', 'budget', 'familias', 'decision-framework'],
     readTime: '4 min',
     date: '2026-02-12',
-    image: '/assets/familia-parque.jpg',
+    image: '/assets/plandecomidas.jpeg',
   },
   {
     slug: 'magic-kingdom-familias',
@@ -41,7 +41,7 @@ const insightsPosts = [
     tags: ['magic-kingdom', 'familias', 'babies', 'logistics'],
     readTime: '5 min',
     date: '2026-02-08',
-    image: '/assets/castillidenocheandiywalt.jpeg',
+    image: '/assets/CASTILLO1.jpeg',
   },
   {
     slug: 'epcot-strategy',
@@ -52,7 +52,7 @@ const insightsPosts = [
     tags: ['epcot', 'festivals', 'dining', 'strategy'],
     readTime: '5 min',
     date: '2026-02-07',
-    image: '/assets/familia-parque.jpg',
+    image: '/assets/epcot.jpeg',
   },
   {
     slug: 'hollywood-studios-guide',
@@ -63,7 +63,7 @@ const insightsPosts = [
     tags: ['hollywood-studios', 'star-wars', 'strategy', 'lightning-lane'],
     readTime: '5 min',
     date: '2026-02-06',
-    image: '/assets/familia-parque.jpg',
+    image: '/assets/tower.jpg',
   },
   {
     slug: 'disney-seasonal-events',
@@ -74,7 +74,7 @@ const insightsPosts = [
     tags: ['seasonal', 'events', 'calendar', 'planning'],
     readTime: '4 min',
     date: '2026-02-05',
-    image: '/assets/castillidenocheandiywalt.jpeg',
+    image: '/assets/calendar.jpeg',
   },
 
   // ═══════════════════════════════════════════════════
@@ -89,7 +89,7 @@ const insightsPosts = [
     tags: ['express-pass', 'strategy', 'familias', 'optimization'],
     readTime: '4 min',
     date: '2026-02-09',
-    image: '/assets/montanarusauniversal.png',
+    image: '/assets/express.jpeg',
   },
   {
     slug: 'epic-universe-readiness',
@@ -122,7 +122,7 @@ const insightsPosts = [
     tags: ['islands-of-adventure', 'harry-potter', 'familias', 'route'],
     readTime: '4 min',
     date: '2026-02-02',
-    image: '/assets/montanarusauniversal.png',
+    image: '/assets/islas-aventura.jpeg',
   },
   {
     slug: 'volcano-bay-strategy',
@@ -133,7 +133,7 @@ const insightsPosts = [
     tags: ['volcano-bay', 'water-park', 'taputapu', 'logistics'],
     readTime: '3 min',
     date: '2026-02-01',
-    image: '/assets/universal-globe.jpeg',
+    image: '/assets/volcano.jpg',
   },
   {
     slug: 'universal-dining-citywalk',
@@ -144,7 +144,7 @@ const insightsPosts = [
     tags: ['dining', 'citywalk', 'budget', 'familias'],
     readTime: '3 min',
     date: '2026-01-30',
-    image: '/assets/montanarusauniversal.png',
+    image: '/assets/universal-dining.jpg',
   },
 
   // ═══════════════════════════════════════════════════
@@ -170,7 +170,7 @@ const insightsPosts = [
     tags: ['dcl', 'itineraries', 'comparison', 'seasonal'],
     readTime: '5 min',
     date: '2026-02-06',
-    image: '/assets/crucero-disney.png',
+    image: '/assets/dcl-itinerarios.jpg',
   },
   {
     slug: 'disney-cruise-kids',
@@ -181,7 +181,7 @@ const insightsPosts = [
     tags: ['dcl', 'kids', 'activities', 'familias'],
     readTime: '4 min',
     date: '2026-02-04',
-    image: '/assets/cruceroo.jpeg',
+    image: '/assets/dcl-kids.jpg',
   },
   {
     slug: 'disney-cruise-dining',
@@ -192,7 +192,7 @@ const insightsPosts = [
     tags: ['dcl', 'dining', 'rotation', 'reservations'],
     readTime: '4 min',
     date: '2026-02-02',
-    image: '/assets/crucero-disney.png',
+    image: '/assets/dcl-dining.jpg',
   },
   {
     slug: 'disney-cruise-excursiones',
@@ -203,7 +203,7 @@ const insightsPosts = [
     tags: ['dcl', 'excursions', 'castaway-cay', 'ports'],
     readTime: '4 min',
     date: '2026-01-30',
-    image: '/assets/cruceroo.jpeg',
+    image: '/assets/dcl-excursiones.jpeg',
   },
   {
     slug: 'royal-caribbean-vs-dcl',
@@ -214,7 +214,7 @@ const insightsPosts = [
     tags: ['royal-caribbean', 'dcl', 'comparison', 'decision-framework'],
     readTime: '5 min',
     date: '2026-01-28',
-    image: '/assets/crucero-disney.png',
+    image: '/assets/royal-vs-dcl.png',
   },
 
   // ═══════════════════════════════════════════════════
@@ -229,7 +229,7 @@ const insightsPosts = [
     tags: ['brightline', 'florida', 'mobility', 'transfers'],
     readTime: '3 min',
     date: '2026-02-10',
-    image: '/assets/familia-parque.jpg',
+    image: '/assets/brightline.png',
   },
   {
     slug: 'airport-to-resort',
@@ -273,7 +273,7 @@ const insightsPosts = [
     tags: ['grocery', 'delivery', 'resort', 'supplies'],
     readTime: '3 min',
     date: '2026-02-02',
-    image: '/assets/familia-parque.jpg',
+    image: '/assets/grocery-delivery.jpeg',
   },
   {
     slug: 'seguros-viaje-latam',
