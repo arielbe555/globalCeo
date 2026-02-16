@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart, Download, Loader2 } from 'lucide-react';
 import { useState, useRef } from 'react';
-import html2pdf from 'html2pdf.js';
+/* html2pdf loaded dynamically to avoid SSR issues */
 
 const sectionFade = {
   initial: { opacity: 0, y: 20 },
@@ -44,15 +44,30 @@ const MediaKit = () => {
     if (!contentRef.current || downloading) return;
     setDownloading(true);
     try {
+      const html2pdf = (await import('html2pdf.js')).default;
+      const element = contentRef.current;
+
       const opt = {
-        margin: 0,
+        margin: [5, 5, 5, 5],
         filename: 'GlobalDreamTravel-MediaKit.pdf',
-        image: { type: 'jpeg', quality: 0.95 },
-        html2canvas: { scale: 2, useCORS: true, logging: false, scrollY: 0 },
+        image: { type: 'jpeg', quality: 0.92 },
+        html2canvas: {
+          scale: 1.5,
+          useCORS: true,
+          allowTaint: true,
+          logging: false,
+          windowWidth: element.scrollWidth,
+          scrollY: -window.scrollY,
+        },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
+        pagebreak: { mode: ['css', 'legacy'], before: '.pdf-page-break' },
       };
-      await html2pdf().set(opt).from(contentRef.current).save();
+
+      await html2pdf().set(opt).from(element).save();
+    } catch (err) {
+      console.error('PDF generation error:', err);
+      alert('Error generating PDF. Trying print fallback...');
+      window.print();
     } finally {
       setDownloading(false);
     }
