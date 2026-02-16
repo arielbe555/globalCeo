@@ -51,6 +51,7 @@ const App = () => {
           <Route path="/blog/:slug" element={<BlogEntry />} />
           <Route path="/legales" element={<Legales />} />
           <Route path="/technology" element={<Technology />} />
+          <Route path="/mediakit" element={<MediaKit />} />
         </Route>
 
         {/* Pago: página pública para clientes (sin PIN) */}
@@ -63,7 +64,6 @@ const App = () => {
           <Route path="/link" element={<LinkGenerator />} />
           <Route path="/alta" element={<AltaAgente />} />
           <Route path="/grupal2026" element={<GrupalContrato />} />
-          <Route path="/mediakit" element={<MediaKit />} />
         </Route>
       </Routes>
     </Router>

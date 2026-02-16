@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart } from 'lucide-react';
+import { Shield, Users, Globe, TrendingUp, Smartphone, BarChart3, Handshake, ArrowRight, ExternalLink, Play, ShoppingBag, Utensils, Sparkles, Heart, Download } from 'lucide-react';
 import { useState } from 'react';
 
 const sectionFade = {
@@ -37,8 +37,21 @@ const PhotoStrip = ({ images, height = 'h-64' }) => (
 const MediaKit = () => {
   const [videoOpen, setVideoOpen] = useState(false);
 
+  const handleDownload = () => {
+    window.print();
+  };
+
   return (
     <div className="bg-white min-h-screen font-poppins">
+
+      {/* ═══════════════ FLOATING DOWNLOAD BUTTON ═══════════ */}
+      <button
+        onClick={handleDownload}
+        className="fixed bottom-6 right-6 z-50 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full shadow-2xl shadow-red-600/30 flex items-center gap-2 font-bold text-sm uppercase tracking-wider hover:scale-105 transition-all print:hidden"
+      >
+        <Download size={18} />
+        Download PDF
+      </button>
 
       {/* ═══════════════════════════════════════════════════ */}
       {/* HERO — White, clean, corporate                       */}
