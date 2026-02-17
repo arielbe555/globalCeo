@@ -14,6 +14,7 @@ import GrupalContrato from './pages/GrupalContrato';
 import Technology from './pages/Technology';
 import MediaKit from './pages/MediaKit';
 import Mkt from './pages/Mkt';
+import EFBrief from './pages/EFBrief';
 import ToolLayout from './components/ToolLayout';
 import PinGate from './components/PinGate';
 
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/technology" element={<Technology />} />
           <Route path="/mediakit" element={<MediaKit />} />
           <Route path="/mkt" element={<Mkt />} />
+          <Route path="/efbrief" element={<EFBrief />} />
         </Route>
 
         {/* Pago: página pública para clientes (sin PIN) */}

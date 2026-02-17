@@ -417,9 +417,11 @@ const Mkt = () => {
                 <video
                   ref={videoRef}
                   src="/assets/fix/appTRIPGlobal.mp4"
+                  autoPlay
                   muted
                   loop
                   playsInline
+                  preload="auto"
                   className="w-full h-auto"
                 />
               </div>
