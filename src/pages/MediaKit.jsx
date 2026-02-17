@@ -755,148 +755,7 @@ const MediaKit = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════ */}
-      {/* 12 — FINANCIAL & SCALABILITY FRAMEWORK               */}
-      {/* ═══════════════════════════════════════════════════ */}
-      <section className="pdf-section py-20 md:py-28 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">12</p>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Financial & Scalability Framework</h2>
-            <p className="text-sm text-slate-400 uppercase tracking-wider mb-10">Revenue Structure — Conservative Model</p>
-
-            {/* 12.1 Current Disney Revenue Structure */}
-            <div className="grid md:grid-cols-2 gap-10 mb-16">
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                  <span className="w-7 h-7 bg-disney/10 rounded-lg flex items-center justify-center text-disney text-xs font-bold">1</span>
-                  Current Disney Revenue Structure
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { value: '$1.5M', label: 'Annual Disney Volume' },
-                    { value: '$7,000', label: 'Avg Ticket / Family' },
-                    { value: '~214', label: 'Families Served Annually' },
-                    { value: '20%', label: 'Cruise Attach Rate (~43 families)' },
-                    { value: '22%', label: 'Estimated Repeat Rate (~47 families)' },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.06 }}
-                      className={`bg-white border border-slate-200 rounded-xl p-4 text-center ${i === 0 ? 'col-span-2' : ''}`}
-                    >
-                      <p className={`font-black text-slate-900 ${i === 0 ? 'text-3xl md:text-4xl text-disney' : 'text-xl'}`}>{item.value}</p>
-                      <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">{item.label}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* 12.2 Structured Consumption Model */}
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                  <span className="w-7 h-7 bg-disney/10 rounded-lg flex items-center justify-center text-disney text-xs font-bold">2</span>
-                  Structured Consumption Model
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                  Global Dream families are not passive buyers. Through the TRIP App ecosystem:
-                </p>
-                <div className="space-y-3 mb-6">
-                  {[
-                    'Dining reservations are pre-programmed',
-                    'Paid experiences are scheduled in advance',
-                    'Merchandise planning is integrated',
-                    'Genie+ and premium add-ons are anticipated',
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <ArrowRight size={12} className="text-disney shrink-0" />
-                      <span className="text-sm text-slate-600">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="bg-white border border-slate-200 rounded-xl p-5">
-                  <p className="text-xs text-slate-400 uppercase tracking-wider mb-1">Conservative In-Park Spending Increase</p>
-                  <p className="text-2xl font-black text-disney">12% per family</p>
-                  <p className="text-xs text-slate-500 mt-2">Projected incremental in-park revenue impact:</p>
-                  <p className="text-xl font-bold text-slate-900">~USD 180,000 <span className="text-sm font-normal text-slate-400">annually</span></p>
-                </div>
-              </div>
-            </div>
-
-            {/* 12.3 Controlled Agent Network */}
-            <div className="mb-16">
-              <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <span className="w-7 h-7 bg-disney/10 rounded-lg flex items-center justify-center text-disney text-xs font-bold">3</span>
-                Controlled Agent Network
-              </h3>
-              <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4">
-                {[
-                  { value: '150', label: 'Active Agents' },
-                  { value: 'Structured', label: 'Commission Control' },
-                  { value: 'Internal', label: 'NRV Audit' },
-                  { value: 'Real-time', label: 'Performance Tracking' },
-                  { value: 'Disney', label: 'Focused Training' },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.06 }}
-                    className="bg-white border border-slate-200 rounded-xl p-4 text-center"
-                  >
-                    <p className="text-lg font-black text-slate-900">{item.value}</p>
-                    <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">{item.label}</p>
-                  </motion.div>
-                ))}
-              </div>
-              <p className="text-sm text-slate-500 mt-4 italic text-center">
-                This ensures scalability without operational risk.
-              </p>
-            </div>
-
-            {/* 12.4 24-Month Structured Projection */}
-            <div className="bg-slate-900 rounded-2xl p-8 md:p-10 text-white">
-              <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <span className="w-7 h-7 bg-white/10 rounded-lg flex items-center justify-center text-white text-xs font-bold">4</span>
-                24-Month Structured Projection
-                <span className="text-[10px] bg-white/10 text-white/60 uppercase tracking-wider px-3 py-1 rounded-full ml-2">Conservative</span>
-              </h3>
-              <div className="grid md:grid-cols-2 gap-8 mt-8">
-                <div>
-                  <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Current Base</p>
-                  <p className="text-4xl md:text-5xl font-black text-white mb-8">USD 1.5M</p>
-                  <div className="space-y-3">
-                    {[
-                      '250 active agents',
-                      'Improved conversion rate',
-                      'Maintained 20% cruise attach',
-                      'Structured app usage mandatory',
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <ArrowRight size={12} className="text-disney-light shrink-0" />
-                        <span className="text-sm text-white/70">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Projected Volume</p>
-                  <p className="text-5xl md:text-6xl font-black text-disney-light tracking-tight">$2.7M</p>
-                  <p className="text-2xl font-bold text-white/50 mt-1">– $3M</p>
-                  <p className="text-xs text-white/30 mt-4 uppercase tracking-wider">Without inflating ticket value</p>
-                </div>
-              </div>
-            </div>
-
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════ */}
-      {/* 13 — STRATEGIC INVITATION                            */}
+      {/* 12 — STRATEGIC INVITATION                            */}
       {/* ═══════════════════════════════════════════════════ */}
       <section className="pdf-section py-24 md:py-32 relative overflow-hidden">
         {/* Background image */}
@@ -909,7 +768,7 @@ const MediaKit = () => {
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <motion.div {...sectionFade}>
-            <p className="text-xs font-bold text-disney-light uppercase tracking-[0.3em] mb-4">13</p>
+            <p className="text-xs font-bold text-disney-light uppercase tracking-[0.3em] mb-4">12</p>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Strategic Invitation</h2>
             <p className="text-base text-slate-300 leading-relaxed mb-10">
               We welcome a 20-minute executive conversation to explore long-term
