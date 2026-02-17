@@ -13,6 +13,7 @@ import AltaAgente from './pages/AltaAgente';
 import GrupalContrato from './pages/GrupalContrato';
 import Technology from './pages/Technology';
 import MediaKit from './pages/MediaKit';
+import Mkt from './pages/Mkt';
 import ToolLayout from './components/ToolLayout';
 import PinGate from './components/PinGate';
 
@@ -52,6 +53,7 @@ const App = () => {
           <Route path="/legales" element={<Legales />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/mediakit" element={<MediaKit />} />
+          <Route path="/mkt" element={<Mkt />} />
         </Route>
 
         {/* Pago: página pública para clientes (sin PIN) */}
