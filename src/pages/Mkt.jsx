@@ -192,6 +192,26 @@ const sectionFade = {
 /*                    MKT PAGE                         */
 /* ════════════════════════════════════════════════════ */
 const Mkt = () => {
+  const videoRef = useRef(null);
+  const videoContainerRef = useRef(null);
+
+  useEffect(() => {
+    const el = videoContainerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play().catch(() => {});
+        } else if (videoRef.current) {
+          videoRef.current.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-white min-h-screen font-poppins">
 
@@ -391,6 +411,41 @@ const Mkt = () => {
               ))}
             </div>
 
+            {/* TRIP App Video + Description */}
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+              <div ref={videoContainerRef} className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-black">
+                <video
+                  ref={videoRef}
+                  src="/assets/fix/appTRIPGlobal.mp4"
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">App TRIP — Motor de Itinerarios</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                  El itinerario se activa automaticamente segun la fecha de viaje. El viajero recibe su agenda diaria
+                  sin necesidad de buscar, consultar ni decidir en el momento. Cada partner integrado aparece
+                  en el momento exacto del viaje donde genera mayor conversion.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    'Activacion automatica por fecha de llegada',
+                    'Navegacion vinculada a cada actividad',
+                    'Partners visibles en el flujo diario del viajero',
+                    'Reduccion de fatiga de decision para familias',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                      <span className="text-xs text-slate-600">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <div className="bg-[#1e3a5f] rounded-2xl p-8 md:p-10 text-center">
               <p className="text-lg md:text-xl text-white font-semibold leading-relaxed max-w-2xl mx-auto">
                 "No somos una agencia tradicional. Operamos como un Hub Digital de Distribucion."
@@ -428,13 +483,13 @@ const Mkt = () => {
                 </div>
               </div>
 
-              {/* Credentials + Quote */}
+              {/* Credentials + Metrics */}
               <div className="md:col-span-3 space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { value: 'CEO', label: 'Global Dream Travel' },
                     { value: 'IATA', label: 'Accredited USA' },
-                    { value: '+2.7M', label: 'Visualizaciones organicas' },
+                    { value: '+2.7M', label: 'Views — Reel viral' },
                     { value: 'LATAM', label: 'Referente turismo familiar' },
                   ].map((item, i) => (
                     <motion.div
@@ -459,7 +514,7 @@ const Mkt = () => {
                     'Red de mas de 150 agentes bajo su liderazgo',
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
                       <span className="text-sm text-slate-600">{item}</span>
                     </div>
                   ))}
@@ -472,6 +527,53 @@ const Mkt = () => {
                   </p>
                   <p className="text-xs text-slate-400 mt-3 uppercase tracking-wider">Andrea Olivera</p>
                 </div>
+              </div>
+            </div>
+
+            {/* ── Metricas del ultimo mes ── */}
+            <div className="mt-16">
+              <p className="text-xs font-bold text-[#1e3a5f] uppercase tracking-[0.3em] mb-6">Metricas Verificadas — Ultimo Periodo</p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+                {[
+                  { value: '2.7M+', label: 'Views Reel Viral' },
+                  { value: '1.9M+', label: 'Alcance Secundario' },
+                  { value: '900K+', label: 'Engagement Organico' },
+                  { value: '83%', label: 'Penetracion No-Seguidores' },
+                  { value: '1.1M+', label: 'Views Ultimos 30 Dias' },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.06 }}
+                    className="bg-white border border-slate-200 rounded-xl p-5 text-center"
+                  >
+                    <p className="text-2xl font-black text-[#1e3a5f]">{item.value}</p>
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">{item.label}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Instagram proof screenshots */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {[
+                  { src: '/assets/metrics-2.7m.jpeg', alt: '2.7M views reel' },
+                  { src: '/assets/metrics-1.9m.jpeg', alt: '1.9M views reel' },
+                  { src: '/assets/metrics-904k.jpeg', alt: '904K engagement' },
+                  { src: '/assets/metrics-30days.jpeg', alt: '1.1M views 30 dias' },
+                ].map((img, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="rounded-xl overflow-hidden border border-slate-200 shadow-sm"
+                  >
+                    <img src={img.src} alt={img.alt} className="w-full h-auto object-contain bg-white" loading="lazy" />
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -495,7 +597,7 @@ const Mkt = () => {
                 {
                   icon: TrendingUp,
                   title: 'Comision Escalonada',
-                  items: ['30% base', '32% por volumen', '35% por escala'],
+                  items: ['40% base', '42% por volumen', '47% por escala'],
                 },
                 {
                   icon: Target,
@@ -597,7 +699,120 @@ const Mkt = () => {
       </section>
 
       {/* ══════════════════════════════════════════════ */}
-      {/* 8 — CALL TO ACTION                             */}
+      {/* 8 — INTEGRACION DE SPONSORS                    */}
+      {/* ══════════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-white border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...sectionFade}>
+            <p className="text-xs font-bold text-[#1e3a5f] uppercase tracking-[0.3em] mb-4">07</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Integracion Estrategica de Sponsors
+            </h2>
+            <div className="w-16 h-px bg-[#1e3a5f] mb-8" />
+            <p className="text-base text-slate-600 leading-relaxed max-w-3xl mb-12">
+              Nuestro ecosistema no es un canal publicitario. Es una plataforma de retroalimentacion donde cada partner
+              se integra directamente en el flujo operativo del viajero, generando valor real en el momento exacto de decision.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {/* What we offer sponsors */}
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+                <h3 className="text-lg font-bold text-slate-900 mb-6">Lo que ofrecemos al sponsor</h3>
+                <div className="space-y-4">
+                  {[
+                    { icon: Smartphone, text: 'Presencia nativa dentro de App TRIP — el viajero lo ve mientras ejecuta su itinerario' },
+                    { icon: Users, text: 'Acceso a +150 agentes que recomiendan activamente el producto al cierre de venta' },
+                    { icon: TrendingUp, text: 'Visibilidad organica a traves de contenido de Andrea Olivera (+2.7M views)' },
+                    { icon: Globe, text: 'Integracion en plataforma B2B — cada agente presenta el producto como parte del ecosistema' },
+                    { icon: Zap, text: 'Activacion automatica pre-viaje: el producto aparece en el momento de mayor receptividad' },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.06 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#1e3a5f]/5 flex items-center justify-center shrink-0 mt-0.5">
+                        <item.icon size={16} className="text-[#1e3a5f]" />
+                      </div>
+                      <span className="text-sm text-slate-600 leading-relaxed">{item.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* What the sponsor brings */}
+              <div className="bg-[#1e3a5f] rounded-2xl p-8 text-white">
+                <h3 className="text-lg font-bold text-white mb-6">Lo que el sponsor aporta al ecosistema</h3>
+                <div className="space-y-4">
+                  {[
+                    'Producto o servicio de alto valor percibido para el viajero',
+                    'Comision o fee por integracion que fortalece la rentabilidad de la red',
+                    'Co-branding que eleva la percepcion de profesionalismo del ecosistema',
+                    'Datos de conversion que permiten optimizar la oferta en tiempo real',
+                    'Cobertura y respaldo que genera confianza en el proceso de venta',
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: 10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.06 }}
+                      className="flex items-start gap-3"
+                    >
+                      <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+                      <span className="text-sm text-white/85 leading-relaxed">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Ideal partner profile */}
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 md:p-10">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Perfil de Sponsor Ideal</h3>
+              <p className="text-sm text-slate-500 mb-8">
+                Buscamos partners cuyo producto sea parte natural del viaje, no una venta forzada.
+              </p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {[
+                  { icon: Shield, title: 'Asistencia al Viajero', desc: 'Seguros y coberturas que se integran desde la reserva hasta el regreso.' },
+                  { icon: Building2, title: 'Hoteleria y Alojamiento', desc: 'Partners de hospedaje que mejoran la experiencia con beneficios exclusivos.' },
+                  { icon: Globe, title: 'Conectividad y Servicios', desc: 'Soluciones de comunicacion, traslados y servicios en destino.' },
+                  { icon: BarChart3, title: 'Financiamiento', desc: 'Opciones de pago y financiacion que facilitan la decision de compra.' },
+                  { icon: Handshake, title: 'Parques y Experiencias', desc: 'Alianzas con proveedores de experiencias y productos en destino.' },
+                  { icon: Target, title: 'Marcas LATAM', desc: 'Empresas con foco en el viajero latinoamericano que buscan canal directo.' },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="bg-white border border-slate-100 rounded-xl p-5"
+                  >
+                    <item.icon size={18} className="text-[#1e3a5f] mb-3" />
+                    <h4 className="text-sm font-bold text-slate-800 mb-1">{item.title}</h4>
+                    <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10 bg-gradient-to-r from-[#1e3a5f] to-[#2d5a8e] rounded-2xl p-8 md:p-10 text-center">
+              <p className="text-lg md:text-xl text-white font-semibold leading-relaxed max-w-2xl mx-auto">
+                "No buscamos sponsors. Buscamos socios que quieran crecer dentro de un ecosistema
+                que ya factura, ya opera y ya tiene la audiencia."
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════ */}
+      {/* 9 — CALL TO ACTION                             */}
       {/* ══════════════════════════════════════════════ */}
       <section className="py-28 md:py-36 bg-[#1e3a5f] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '32px 32px' }} />
