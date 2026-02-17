@@ -1,0 +1,1 @@
+export const EXEC_BRIEF_PASSWORD = 'GDT-LATAM-2025-Exec';

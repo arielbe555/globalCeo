@@ -18,6 +18,8 @@ import EFBrief from './pages/EFBrief';
 import MktFinancial from './pages/MktFinancial';
 import ToolLayout from './components/ToolLayout';
 import PinGate from './components/PinGate';
+import PasswordGate from './components/PasswordGate';
+import LatamExecBrief from './pages/LatamExecBrief';
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -64,6 +66,9 @@ const App = () => {
         <Route element={<ToolLayout />}>
           <Route path="/pago1" element={<PagoSeguro />} />
         </Route>
+
+        {/* Executive Brief — password protected, no layout */}
+        <Route path="/latam-disney-executive-brief-2025" element={<PasswordGate><LatamExecBrief /></PasswordGate>} />
 
         {/* Herramientas internas protegidas con PIN */}
         <Route element={<PinGate><ToolLayout /></PinGate>}>
