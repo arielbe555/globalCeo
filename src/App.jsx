@@ -15,6 +15,7 @@ import Technology from './pages/Technology';
 import MediaKit from './pages/MediaKit';
 import Mkt from './pages/Mkt';
 import EFBrief from './pages/EFBrief';
+import MktFinancial from './pages/MktFinancial';
 import ToolLayout from './components/ToolLayout';
 import PinGate from './components/PinGate';
 
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="/mediakit" element={<MediaKit />} />
           <Route path="/mkt" element={<Mkt />} />
           <Route path="/efbrief" element={<EFBrief />} />
+          <Route path="/mkt/financial" element={<MktFinancial />} />
         </Route>
 
         {/* Pago: página pública para clientes (sin PIN) */}

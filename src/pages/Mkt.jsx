@@ -13,6 +13,7 @@ import {
   Target,
   Building2,
   Handshake,
+  Download,
 } from 'lucide-react';
 
 /* ── Animated counter ─────────────────────────────── */
@@ -234,25 +235,32 @@ const Mkt = () => {
           </div>
 
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6 tracking-tight">
-            Ecosistema de Crecimiento Comercial
+            Canal Estrategico de Distribucion Internacional
           </h1>
-          <p className="text-lg md:text-xl text-slate-500 font-light max-w-3xl mx-auto mb-4">
-            Global Dream Travel
-          </p>
           <div className="w-20 h-px bg-[#1e3a5f] mx-auto my-8" />
-          <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-12">
-            Plataforma tecnologica + Red Comercial + Alcance Organico = Escalabilidad financiera sostenible
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-12">
+            Global Dream Travel integra red comercial, infraestructura tecnologica y posicionamiento digital
+            para generar crecimiento sostenible en el segmento de viajes familiares hacia Estados Unidos.
           </p>
 
-          <a
-            href="https://calendly.com/GLOBALDREAMT"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#1e3a5f] text-white px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-[#162d4a] transition-all hover:shadow-xl hover:shadow-[#1e3a5f]/20 no-underline"
-          >
-            Solicitar Reunion Estrategica
-            <ArrowRight size={18} />
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://calendly.com/GLOBALDREAMT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-[#1e3a5f] text-white px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-[#162d4a] transition-all hover:shadow-xl hover:shadow-[#1e3a5f]/20 no-underline"
+            >
+              Solicitar Reunion Estrategica
+              <ArrowRight size={18} />
+            </a>
+            <a
+              href="/mkt/financial"
+              className="inline-flex items-center gap-3 border-2 border-[#1e3a5f] text-[#1e3a5f] px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-[#1e3a5f] hover:text-white transition-all no-underline"
+            >
+              <Download size={18} />
+              Descargar Informe Tecnico
+            </a>
+          </div>
         </motion.div>
       </section>
 
@@ -264,36 +272,54 @@ const Mkt = () => {
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-[#1e3a5f] uppercase tracking-[0.3em] mb-4">01</p>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              Resultados Economicos Comprobados
+              Resultados Comerciales — Ultimos 12 Meses
             </h2>
-            <div className="w-16 h-px bg-[#1e3a5f] mb-12" />
+            <div className="w-16 h-px bg-[#1e3a5f] mb-8" />
+            <p className="text-base text-slate-600 leading-relaxed max-w-3xl mb-12">
+              Durante el ultimo periodo anual, Global Dream Travel ha gestionado:
+            </p>
 
-            <div className="grid md:grid-cols-2 gap-16 items-start">
-              {/* Big counters */}
-              <div className="space-y-10">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Volumen Anual Vendido</p>
-                  <p className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-                    $<Counter end={127000000} duration={2.5} />
+            {/* 4 big metric cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+              {[
+                { end: 1500, suffix: '+', label: 'Familias Viajando', prefix: '' },
+                { end: 300, suffix: '', label: 'Polizas de Asistencia', prefix: '' },
+                { end: 127000000, suffix: '', label: 'Volumen Total de Ventas', prefix: '$' },
+                { end: 150, suffix: '+', label: 'Agentes Certificados', prefix: '' },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center"
+                >
+                  <p className="text-3xl md:text-4xl font-black text-[#1e3a5f] tracking-tight">
+                    <Counter end={item.end} duration={2.5} prefix={item.prefix} suffix={item.suffix} />
                   </p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Comision Generada (30%)</p>
-                  <p className="text-4xl md:text-5xl font-black text-[#1e3a5f] tracking-tight">
-                    $<Counter end={38100000} duration={2.5} />
-                  </p>
-                </div>
-                <div className="flex gap-8">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Red Activa</p>
-                    <p className="text-3xl font-black text-slate-900">+<Counter end={150} duration={1.5} /></p>
-                    <p className="text-sm text-slate-500">agentes</p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Operacion</p>
-                    <p className="text-lg font-bold text-slate-700">LATAM + USA</p>
-                    <p className="text-sm text-slate-500">IATA Accredited</p>
-                  </div>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-2">{item.label}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* How results are generated */}
+              <div>
+                <p className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-4">Estos resultados se generan a traves de:</p>
+                <div className="space-y-3">
+                  {[
+                    'Red estructurada de 150+ agentes certificados',
+                    'Operacion acreditada IATA (Estados Unidos)',
+                    'Presencia operativa Argentina + Orlando',
+                    'Ecosistema digital propio',
+                    'Operacion activa en Disney, Universal y mercado LATAM',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                      <span className="text-sm text-slate-600">{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -304,10 +330,77 @@ const Mkt = () => {
                   data={[
                     { label: 'Volumen Total', value: 127, display: '$127M', color: '#1e3a5f', colorEnd: '#2d5a8e' },
                     { label: 'Comision Generada', value: 38.1, display: '$38.1M', color: '#1e3a5f', colorEnd: '#3b82f6' },
-                    { label: 'Proyeccion 12 Meses', value: 200, display: '$200M+', color: '#059669', colorEnd: '#34d399' },
+                    { label: 'Proyeccion 12 Meses', value: 250, display: '$250M+', color: '#059669', colorEnd: '#34d399' },
                   ]}
                 />
               </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════ */}
+      {/* 2b — ANALISIS DE PENETRACION Y OPORTUNIDAD     */}
+      {/* ══════════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div {...sectionFade}>
+            <p className="text-xs font-bold text-[#1e3a5f] uppercase tracking-[0.3em] mb-4">02</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Potencial de Expansion Inmediata
+            </h2>
+            <div className="w-16 h-px bg-[#1e3a5f] mb-8" />
+
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-base text-slate-600 leading-relaxed mb-8">
+                  Actualmente, la tasa de penetracion de asistencia sobre el total de familias viajando
+                  se encuentra en torno al <span className="font-bold text-[#1e3a5f]">20%</span>.
+                  Este indicador presenta una oportunidad concreta de crecimiento interno.
+                </p>
+
+                <div className="space-y-3">
+                  {[
+                    'Integracion contextual dentro de itinerarios',
+                    'Activacion automatizada pre-viaje',
+                    'Priorizacion comercial dentro de la red',
+                    'Posicionamiento estructural dentro del ecosistema digital',
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                      className="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-5 py-3"
+                    >
+                      <ArrowRight size={14} className="text-[#1e3a5f] shrink-0" />
+                      <span className="text-sm text-slate-600">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                {/* Penetration rate visual */}
+                <div className="bg-white border border-slate-200 rounded-2xl p-8 text-center">
+                  <p className="text-xs text-slate-400 uppercase tracking-wider mb-2">Tasa de Penetracion Actual</p>
+                  <p className="text-6xl font-black text-[#1e3a5f]">20%</p>
+                  <p className="text-xs text-slate-500 mt-2">sobre 1.500+ familias anuales</p>
+                </div>
+                <div className="bg-[#1e3a5f] rounded-2xl p-8 text-center">
+                  <p className="text-xs text-white/50 uppercase tracking-wider mb-2">Oportunidad Latente</p>
+                  <p className="text-4xl font-black text-white">80%</p>
+                  <p className="text-xs text-white/50 mt-2">de familias sin cobertura integrada</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-4 border-[#1e3a5f] bg-white rounded-r-xl p-6 mt-10">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                La mejora progresiva de penetracion puede generar un incremento significativo de volumen
+                sin necesidad de ampliar la base de clientes.
+              </p>
             </div>
           </motion.div>
         </div>
@@ -364,7 +457,7 @@ const Mkt = () => {
                 <div className="bg-[#1e3a5f] rounded-2xl p-8 text-center mt-6">
                   <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Proyeccion Objetivo</p>
                   <p className="text-4xl md:text-5xl font-black text-white tracking-tight">
-                    $<Counter end={200000000} duration={3} suffix="+" />
+                    $<Counter end={250000000} duration={3} suffix="+" />
                   </p>
                 </div>
               </div>
@@ -465,9 +558,14 @@ const Mkt = () => {
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-[#1e3a5f] uppercase tracking-[0.3em] mb-4">04</p>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              Liderazgo y Posicionamiento
+              Liderazgo con Alcance Organico
             </h2>
-            <div className="w-16 h-px bg-[#1e3a5f] mb-12" />
+            <div className="w-16 h-px bg-[#1e3a5f] mb-8" />
+            <p className="text-base text-slate-600 leading-relaxed max-w-3xl mb-12">
+              La direccion ejecutiva de Global Dream Travel cuenta con un posicionamiento digital
+              que supera las 2.7 millones de visualizaciones organicas en el segmento de viajes familiares
+              hacia Estados Unidos. El canal combina liderazgo visible con estructura comercial real.
+            </p>
 
             <div className="grid md:grid-cols-5 gap-10 items-start">
               {/* Photo */}
@@ -522,12 +620,20 @@ const Mkt = () => {
                   ))}
                 </div>
 
-                <div className="bg-white border-l-4 border-[#1e3a5f] rounded-r-xl p-6 mt-6">
-                  <p className="text-base text-slate-700 italic leading-relaxed">
-                    "Los clientes no compran un producto, compran confianza.
-                    Esa confianza se construye con liderazgo visible."
-                  </p>
-                  <p className="text-xs text-slate-400 mt-3 uppercase tracking-wider">Andrea Olivera</p>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 mt-4">
+                  <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">Este alcance fortalece:</p>
+                  <div className="space-y-2">
+                    {[
+                      'Autoridad en decisiones de compra',
+                      'Confianza en productos complementarios',
+                      'Conversion en momentos de alta intencion',
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <ArrowRight size={12} className="text-[#1e3a5f] shrink-0" />
+                        <span className="text-xs text-slate-600">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -583,67 +689,51 @@ const Mkt = () => {
       </section>
 
       {/* ══════════════════════════════════════════════ */}
-      {/* 6 — MODELO DE ALIANZA                          */}
+      {/* 6 — MODELO DE INTEGRACION ESTRUCTURAL             */}
       {/* ══════════════════════════════════════════════ */}
       <section className="py-24 md:py-32 bg-white border-t border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div {...sectionFade}>
             <p className="text-xs font-bold text-[#1e3a5f] uppercase tracking-[0.3em] mb-4">05</p>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-              Modelo de Crecimiento Compartido
+              Modelo de Integracion Estructural
             </h2>
-            <div className="w-16 h-px bg-[#1e3a5f] mb-12" />
+            <div className="w-16 h-px bg-[#1e3a5f] mb-8" />
+            <p className="text-base text-slate-600 leading-relaxed max-w-3xl mb-12">
+              Global Dream Travel propone una integracion estructural de marca que permite al socio
+              formar parte integral de la experiencia del pasajero — no como producto adicional, sino como
+              componente estrategico del viaje.
+            </p>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[
-                {
-                  icon: TrendingUp,
-                  title: 'Comision Escalonada',
-                  items: ['40% base', '42% por volumen', '47% por escala'],
-                },
-                {
-                  icon: Target,
-                  title: 'Bono por Metas',
-                  items: ['Superacion de objetivos anuales', 'Incentivo por crecimiento'],
-                },
-                {
-                  icon: Smartphone,
-                  title: 'Integracion Tecnologica',
-                  items: ['Integracion exclusiva en App TRIP', 'Visibilidad en plataforma B2B'],
-                },
-                {
-                  icon: Building2,
-                  title: 'Fee de Posicionamiento',
-                  items: ['Presencia en ecosistema digital', 'Activacion pre y post viaje'],
-                },
-              ].map((block, i) => (
+                { icon: Smartphone, title: 'Presencia Permanente en App TRIP', desc: 'La marca acompana al viajero antes, durante y despues del viaje dentro del itinerario dinamico.' },
+                { icon: Users, title: 'Activacion Prioritaria en Red', desc: 'Mas de 150 agentes certificados presentan el producto como parte integral del ecosistema.' },
+                { icon: Zap, title: 'Flujos Automaticos Pre-Viaje', desc: 'Activacion contextual automatica en el momento de mayor receptividad del viajero.' },
+                { icon: Globe, title: 'Comunicacion Directa', desc: 'Acceso a mas de 1.500 familias anuales a traves de canales propios y estructurados.' },
+                { icon: Target, title: 'Posicionamiento Contextual', desc: 'Visibilidad integrada durante toda la planificacion del viaje, no como publicidad sino como valor.' },
+              ].map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ delay: i * 0.08 }}
                   className="bg-slate-50 border border-slate-200 rounded-2xl p-6"
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#1e3a5f]/5 flex items-center justify-center mb-4">
-                    <block.icon size={20} className="text-[#1e3a5f]" />
+                    <item.icon size={20} className="text-[#1e3a5f]" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-800 mb-3">{block.title}</h3>
-                  <ul className="space-y-2">
-                    {block.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-2 text-xs text-slate-500">
-                        <span className="mt-1 w-1 h-1 rounded-full bg-[#1e3a5f] shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-sm font-bold text-slate-800 mb-2">{item.title}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
             <div className="bg-[#1e3a5f] rounded-2xl p-8 text-center">
-              <p className="text-lg text-white font-semibold">
-                "La alianza no es publicitaria. Es estructural."
+              <p className="text-lg text-white font-semibold leading-relaxed max-w-2xl mx-auto">
+                "El objetivo es construir una alianza de largo plazo orientada a expansion sostenible
+                y fortalecimiento mutuo."
               </p>
             </div>
           </motion.div>
@@ -830,15 +920,24 @@ const Mkt = () => {
               Hablemos de numeros reales.
             </p>
 
-            <a
-              href="https://calendly.com/GLOBALDREAMT"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white text-[#1e3a5f] px-12 py-5 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-slate-100 transition-all hover:shadow-2xl no-underline"
-            >
-              Agendar Reunion Estrategica
-              <ArrowRight size={18} />
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://calendly.com/GLOBALDREAMT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-white text-[#1e3a5f] px-12 py-5 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-slate-100 transition-all hover:shadow-2xl no-underline"
+              >
+                Agendar Reunion Estrategica
+                <ArrowRight size={18} />
+              </a>
+              <a
+                href="/mkt/financial"
+                className="inline-flex items-center gap-3 border-2 border-white/30 text-white px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all no-underline"
+              >
+                <Download size={18} />
+                Descargar Informe Tecnico
+              </a>
+            </div>
 
             <div className="mt-20 pt-8 border-t border-white/10 flex items-center justify-center gap-6">
               <img src="/assets/logo-global-dream.png" alt="Global Dream Travel" className="h-8 object-contain opacity-40" />
