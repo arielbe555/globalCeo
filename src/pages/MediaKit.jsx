@@ -143,7 +143,7 @@ const MediaKit = () => {
                   Andrea Olivera leads Global Dream Travel as CEO and primary market operator,
                   combining executive agency management with direct field expertise in the LATAM
                   theme park segment. She manages a structured network of 150+ certified travel
-                  advisors and oversees proprietary technology development.
+                  advisors and oversees integrated technology development.
                 </p>
                 <p className="text-base text-slate-600 leading-relaxed mb-5">
                   With over 2.7 million organic views across digital channels, she operates
@@ -197,7 +197,7 @@ const MediaKit = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Executive Overview</h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
               Global Dream Travel operates as an IATA-accredited agency with structured LATAM distribution
-              and proprietary digital infrastructure designed specifically for theme park travel.
+              and integrated digital infrastructure designed specifically for theme park travel.
             </p>
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
               <p className="text-sm text-slate-700 leading-relaxed mb-4 font-medium">We integrate:</p>
@@ -421,7 +421,7 @@ const MediaKit = () => {
                 <span className="text-white font-bold">The strategic implication for partners:</span>{' '}
                 Global Dream Travel families arrive prepared, stay longer, spend more and leave
                 with higher satisfaction scores. Our technology doesn't just help families —
-                it drives higher per-visitor revenue for every park and resort we send them to.
+                it supports more structured in-park engagement and improved consumption clarity.
               </p>
             </div>
           </motion.div>
@@ -527,7 +527,7 @@ const MediaKit = () => {
                   ))}
                 </ul>
                 <p className="text-xs text-slate-500 italic">
-                  TRIP transforms planning into guided execution.
+                  TRIP supports pre-arrival clarity and structured preparation.
                 </p>
 
               </div>
@@ -658,7 +658,7 @@ const MediaKit = () => {
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">09</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Strategic Collaboration Model</h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
-              We seek alignment beyond traditional influencer campaigns.
+              We aim to contribute through structured collaboration that reinforces Disney's regional initiatives.
             </p>
             <div className="space-y-3">
               {[
@@ -694,7 +694,7 @@ const MediaKit = () => {
             <p className="text-xs font-bold text-disney uppercase tracking-[0.3em] mb-4">10</p>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Differentiation</h2>
             <p className="text-base text-slate-600 leading-relaxed mb-8">
-              Unlike standalone creators or traditional agencies, we combine:
+              Global Dream Travel integrates audience reach, operational infrastructure and digital preparation tools within a structured agency framework:
             </p>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {[
