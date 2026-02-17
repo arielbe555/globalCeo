@@ -79,8 +79,8 @@ const MktFinancial = () => {
             <div className="grid grid-cols-3 gap-4 mb-10">
               {[
                 { end: 1500, suffix: '+', label: 'Familias Anuales', prefix: '' },
-                { end: 300, suffix: '', label: 'Polizas Emitidas', prefix: '' },
-                { end: 127, suffix: 'M', label: 'Volumen de Ventas', prefix: '$' },
+                { end: 325, suffix: '', label: 'Polizas Emitidas', prefix: '' },
+                { end: 132, suffix: 'M', label: 'Volumen de Ventas', prefix: '$' },
               ].map((item, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                   className="border border-slate-200 rounded-xl p-6 text-center">
@@ -93,8 +93,8 @@ const MktFinancial = () => {
             </div>
 
             <div className="bg-white border border-slate-200 rounded-xl p-6 mb-8">
-              <HBar label="Volumen Total" value={127} max={250} display="$127M" delay={0} />
-              <HBar label="Polizas de Asistencia" value={300} max={1500} display="300 emitidas" delay={0.1} />
+              <HBar label="Volumen Total" value={132} max={250} display="$132M" delay={0} />
+              <HBar label="Polizas de Asistencia" value={325} max={1500} display="325 emitidas" delay={0.1} />
               <HBar label="Penetracion Actual" value={20} max={100} display="20%" delay={0.2} />
             </div>
 
@@ -276,7 +276,7 @@ const MktFinancial = () => {
 
             <div className="grid sm:grid-cols-2 gap-4 mb-10">
               {[
-                { title: 'Volumen Consolidado', desc: '$127M en ventas anuales a traves de un canal estructurado y medible.' },
+                { title: 'Volumen Consolidado', desc: '$132M en ventas anuales a traves de un canal estructurado y medible.' },
                 { title: 'Alcance y Posicionamiento', desc: '+2.7M visualizaciones organicas con liderazgo visible en el segmento.' },
                 { title: 'Integracion Tecnologica', desc: 'Ecosistema propio que permite activacion contextual y medicion de impacto.' },
                 { title: 'Crecimiento Proyectado', desc: 'Expansion sostenible del segmento con infraestructura operativa ya implementada.' },

@@ -85,7 +85,7 @@ const ProjectionChart = () => {
   const inView = useInView(ref, { once: true, margin: '-40px' });
 
   const points = [
-    { x: 0, y: 127, label: 'Actual' },
+    { x: 0, y: 132, label: 'Actual' },
     { x: 1, y: 145, label: '6m' },
     { x: 2, y: 170, label: '12m' },
     { x: 3, y: 200, label: '18m' },
@@ -283,8 +283,8 @@ const Mkt = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
               {[
                 { end: 1500, suffix: '+', label: 'Familias Viajando', prefix: '' },
-                { end: 300, suffix: '', label: 'Polizas de Asistencia', prefix: '' },
-                { end: 127000000, suffix: '', label: 'Volumen Total de Ventas', prefix: '$' },
+                { end: 325, suffix: '', label: 'Polizas de Asistencia', prefix: '' },
+                { end: 132000000, suffix: '', label: 'Volumen Total de Ventas', prefix: '$' },
                 { end: 150, suffix: '+', label: 'Agentes Certificados', prefix: '' },
               ].map((item, i) => (
                 <motion.div
@@ -328,7 +328,7 @@ const Mkt = () => {
                 <p className="text-sm font-bold text-slate-700 mb-6 uppercase tracking-wider">Indicadores Financieros</p>
                 <BarChart
                   data={[
-                    { label: 'Volumen Total', value: 127, display: '$127M', color: '#1e3a5f', colorEnd: '#2d5a8e' },
+                    { label: 'Volumen Total', value: 132, display: '$132M', color: '#1e3a5f', colorEnd: '#2d5a8e' },
                     { label: 'Comision Generada', value: 38.1, display: '$38.1M', color: '#1e3a5f', colorEnd: '#3b82f6' },
                     { label: 'Proyeccion 12 Meses', value: 250, display: '$250M+', color: '#059669', colorEnd: '#34d399' },
                   ]}
