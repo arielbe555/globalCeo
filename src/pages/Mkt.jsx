@@ -13,7 +13,7 @@ import {
   Target,
   Building2,
   Handshake,
-  Download,
+
 } from 'lucide-react';
 
 /* ── Animated counter ─────────────────────────────── */
@@ -243,24 +243,15 @@ const Mkt = () => {
             para generar crecimiento sostenible en el segmento de viajes familiares hacia Estados Unidos.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://calendly.com/GLOBALDREAMT"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#1e3a5f] text-white px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-[#162d4a] transition-all hover:shadow-xl hover:shadow-[#1e3a5f]/20 no-underline"
-            >
-              Solicitar Reunion Estrategica
-              <ArrowRight size={18} />
-            </a>
-            <a
-              href="/mkt/financial"
-              className="inline-flex items-center gap-3 border-2 border-[#1e3a5f] text-[#1e3a5f] px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-[#1e3a5f] hover:text-white transition-all no-underline"
-            >
-              <Download size={18} />
-              Descargar Informe Tecnico
-            </a>
-          </div>
+          <a
+            href="https://calendly.com/GLOBALDREAMT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#1e3a5f] text-white px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-[#162d4a] transition-all hover:shadow-xl hover:shadow-[#1e3a5f]/20 no-underline"
+          >
+            Solicitar Reunion Estrategica
+            <ArrowRight size={18} />
+          </a>
         </motion.div>
       </section>
 
@@ -920,24 +911,15 @@ const Mkt = () => {
               Hablemos de numeros reales.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://calendly.com/GLOBALDREAMT"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-white text-[#1e3a5f] px-12 py-5 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-slate-100 transition-all hover:shadow-2xl no-underline"
-              >
-                Agendar Reunion Estrategica
-                <ArrowRight size={18} />
-              </a>
-              <a
-                href="/mkt/financial"
-                className="inline-flex items-center gap-3 border-2 border-white/30 text-white px-10 py-4 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all no-underline"
-              >
-                <Download size={18} />
-                Descargar Informe Tecnico
-              </a>
-            </div>
+            <a
+              href="https://calendly.com/GLOBALDREAMT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white text-[#1e3a5f] px-12 py-5 rounded-xl text-sm font-bold uppercase tracking-wider hover:bg-slate-100 transition-all hover:shadow-2xl no-underline"
+            >
+              Agendar Reunion Estrategica
+              <ArrowRight size={18} />
+            </a>
 
             <div className="mt-20 pt-8 border-t border-white/10 flex items-center justify-center gap-6">
               <img src="/assets/logo-global-dream.png" alt="Global Dream Travel" className="h-8 object-contain opacity-40" />
