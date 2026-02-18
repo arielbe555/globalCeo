@@ -20,6 +20,7 @@ import ToolLayout from './components/ToolLayout';
 import PinGate from './components/PinGate';
 import PasswordGate from './components/PasswordGate';
 import LatamExecBrief from './pages/LatamExecBrief';
+import AssistFinancial from './pages/AssistFinancial';
 
 /* Scroll to top on route change */
 function ScrollToTop() {
@@ -69,6 +70,9 @@ const App = () => {
 
         {/* Executive Brief — password protected, no layout */}
         <Route path="/latam-disney-executive-brief-2025" element={<PasswordGate><LatamExecBrief /></PasswordGate>} />
+
+        {/* Assist Financial — confidencial, sin layout, noindex */}
+        <Route path="/assist-financial" element={<AssistFinancial />} />
 
         {/* Herramientas internas protegidas con PIN */}
         <Route element={<PinGate><ToolLayout /></PinGate>}>
