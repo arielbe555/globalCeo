@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2s03ADxGxRl3O3QwzwxwpSzZ1zo86Kj3cK2O3m4s-BT0ND2QN56nmjoo7VF--0Tn7/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBexOjGVp1YQkoDDKq3yBt861HKEdfSR71hcls9yJdPQ01X1J8hcBUUWE0qtj2Qeq6/exec';
 
 /* =================== Validaciones =================== */
 function luhnCheck(num) {
